@@ -28,9 +28,16 @@ export const DesktopPageLayout = ({ children }) => {
 
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
-				<div className={`absolute w-full h-full overflow-y-scroll pt-6 px-6`}>
+				<div className={`absolute w-full h-full overflow-y-scroll p-6`}>
 					{children}
 				</div>
+			</div>
+
+			<div
+					id={`page-bottom-shadow`}
+					className={`absolute w-full h-6 bottom-0 z-50 px-px`}
+				>
+				<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 			</div>
 		</div>
 	)

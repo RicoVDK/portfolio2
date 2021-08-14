@@ -1,4 +1,5 @@
 import React from 'react';
+import { siteMetadata as Site } from '/gatsby-config';
 
 import SiteHeader from '/src/components/site-header';
 import SpinningCog from '/src/components/spinning-cog';
@@ -30,7 +31,7 @@ export const MobileSiteLayout = ({ location, children }) => (
 export const DesktopSiteLayout = ({ location, children }) => (
 	<div
 		id={'site-wrapper'}
-		className={`relative flex flex-row justify-center w-full h-screen overflow-hidden text-gray-500`}
+		className={`relative flex flex-row justify-center w-full h-screen overflow-hidden text-gray-400`}
 	>
 		<div
 			id={'site-content'}
@@ -41,17 +42,23 @@ export const DesktopSiteLayout = ({ location, children }) => (
 				{/** Side banner. */}
 				<div className={`relative flex flex-col w-1/4 min-w-72 h-full`}>
 					{/** Title. */}
-					<div className={`relative w-full flex-grow border-r border-primary overflow-hidden`}>
+					<div className={`relative flex flex-col justify-center items-center w-full flex-grow border-r border-primary overflow-hidden`}>
 						<SpinningCog
 							wrapClassName={`top-1/2 left-full transform -translate-x-1/2 -translate-y-1/2`}
 							cogClassName={`text-10xl tablet:text-12xl text-gray-800 animate-spin-slower-right`}
 						/>
+
+						<div className={`relative`}>
+							
+						</div>
 					</div>
 
 					{/** Socials bar. */}
 					<div className={`relative w-full h-2/5 border-r border-primary`}>
-						<div className={`absolute w-full h-full border border-primary rounded-bl-full rounded-br-full`}>
-
+						<div className={`absolute flex justify-center items-center w-full h-full border border-primary rounded-bl-full rounded-br-full`}>
+							<div className={`relative text-xl text-primary text-center italic`}>
+								{Site.title}
+							</div>
 						</div>
 					</div>
 				</div>

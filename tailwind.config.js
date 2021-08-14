@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        'spin-slow-right': 'spin 10s linear infinite',
-        'spin-slower-right': 'spin 20s linear infinite',
-        'spin-slow-left': 'reverse-spin 10s linear infinite',
-        'spin-slower-left': 'reverse-spin 20s linear infinite',
+        'spin-slow-right': 'spin 20s linear infinite',
+        'spin-slower-right': 'spin 40s linear infinite',
+        'spin-slow-left': 'reverse-spin 20s linear infinite',
+        'spin-slower-left': 'reverse-spin 40s linear infinite',
       },
       keyframes: {
         'reverse-spin': {
@@ -37,6 +37,7 @@ module.exports = {
       },
       maxWidth: {
         '56': '14rem',
+        '700px': '700px',
         '900px': '900px',
         '1200px': '1200px'
       }

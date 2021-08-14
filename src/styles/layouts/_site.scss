@@ -13,3 +13,31 @@ select,
 a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
+
+::-webkit-scrollbar {
+	width: 0.75rem;
+	height: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: $primary;
+	background-clip: padding-box;
+
+	border-color: transparent;
+	border-style: solid;
+	border-width: 0.2rem;
+	border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: $primary-3;
+}
+
+* {
+	scrollbar-color: $primary transparent;
+	scrollbar-width: thin;
+}
