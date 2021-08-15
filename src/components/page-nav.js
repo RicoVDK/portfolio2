@@ -55,7 +55,7 @@ const PageNav = ({ location }) => {
 				</div>
 
 				{/** Nav. */}
-				<div className={`relative flex flex-row h-full px-16`}>
+				<div className={`relative flex flex-row h-full px-10 desktop:px-16`}>
 					{Object.keys(pages).map((page, index) => (
 						<Link
 							key={index}
