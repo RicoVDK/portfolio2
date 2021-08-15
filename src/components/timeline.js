@@ -32,7 +32,7 @@ export const Entry = ({ date, hasStripe, children }) => {
 					</div>
 				</div>
 
-				<div className={`relative w-full pt-14 pb-6 pl-8 min-h-16 italic`}>
+				<div className={`relative w-full pt-14 pb-6 pl-8 min-h-16 italic text-xsm`}>
 					{children}
 				</div>
 			</div>

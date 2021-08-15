@@ -31,7 +31,7 @@ export const MobileSiteLayout = ({ location, children }) => (
 export const DesktopSiteLayout = ({ location, children }) => (
 	<div
 		id={'site-wrapper'}
-		className={`relative flex flex-row justify-center w-full h-screen overflow-hidden text-gray-400`}
+		className={`relative flex flex-row justify-center w-full h-screen overflow-hidden text-gray-300`}
 	>
 		<div
 			id={'site-content'}

@@ -151,8 +151,7 @@ const IndexPage = ({ location }) => {
 			<TextSub wrapClassName={`pt-6 text-center`}>
 				Thank you for your interest thus far!<br/>
 				<br/>
-				I intentionally did not include any personal info and details which randoms could potentially misuse.<br/>
-				Please understand that this is done for my own safety {'&'} privacy.<br/>
+				I intentionally did not include any personal info and details which could potentially be misused.<br/>
 				For any additional questions, please feel free to contact me.<br/>
 				<br/>
 				Contact info is shared on <TextMark>this page</TextMark>.

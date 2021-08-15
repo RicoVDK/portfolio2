@@ -9,7 +9,7 @@ const TextSub = ({
 	return (
 		<div
 			id={id}
-			className={`relative w-full text-base italic ${wrapClassName}`}
+			className={`relative w-full text-lg ${wrapClassName}`}
 		>
 			<div className={`relative ${textClassName}`}>
 				{children}

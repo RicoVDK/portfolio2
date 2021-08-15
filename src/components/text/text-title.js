@@ -9,7 +9,7 @@ const TextTitle = ({
 	return (
 		<div
 			id={id}
-			className={`relative w-full p-12 text-2xl text-primary text-center ${wrapClassName}`}
+			className={`relative w-full p-12 text-2xl text-primary text-center font-bold ${wrapClassName}`}
 		>
 			<div className={`relative mx-auto ${textClassName}`}>
 				{children}
