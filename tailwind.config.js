@@ -50,7 +50,8 @@ module.exports = {
   },
   variants: {
     extend: {
-      borderWidth: ['responsive']
+      borderWidth: ['responsive'],
+      margin: ['last']
     },
   },
   plugins: [],

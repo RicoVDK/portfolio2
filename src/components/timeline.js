@@ -4,7 +4,12 @@ import React, {
 	cloneElement,
 } from 'react';
 
-export const Entry = ({ date, hasStripe, children }) => {
+export const Entry = ({
+	id = '',
+	date = '0000 Jan.',
+	hasStripe = false,
+	children
+}) => {
 	const getStripeStyle = () => {
 		return hasStripe
 			? `bg-gray-400 w-1`
@@ -12,7 +17,10 @@ export const Entry = ({ date, hasStripe, children }) => {
 	}
 
 	return (
-		<div className={`relative w-full`}>
+		<div
+			id={id}
+			className={`relative w-full`}
+		>
 			<div className={`relative w-full`}>
 				{/** Stripe. */}
 				<div className={`absolute w-8 h-full pt-3`}>

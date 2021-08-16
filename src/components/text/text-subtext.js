@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TextSub = ({
+const TextSubText = ({
 	id = '',
 	wrapClassName = '',
 	textClassName = '',
@@ -18,4 +18,4 @@ const TextSub = ({
 	)
 }
 
-export default TextSub;
+export default TextSubText;

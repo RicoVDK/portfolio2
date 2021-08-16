@@ -4,11 +4,12 @@ import React, {
 import { differenceInYears } from 'date-fns';
 
 import TextTitle from '/src/components/text/text-title';
-import TextSub from '/src/components/text/text-sub';
+import TextSubText from '/src/components/text/text-subtext';
+import TextSubTitle from '/src/components/text/text-subtitle';
 import TextMark from '/src/components/text/text-mark';
 import AffinityCard from '/src/components/affinity-card';
 import Timeline, {
-	Entry
+	Entry as TimelineEntry
 } from '/src/components/timeline';
 
 const IndexPage = ({ location }) => {
@@ -16,7 +17,7 @@ const IndexPage = ({ location }) => {
 
 	return (
 		<div id={`index`}>
-			<TextSub
+			<TextSubText
 				id={'intro'}
 				wrapClassName={`text-center`}
 			>
@@ -28,7 +29,7 @@ const IndexPage = ({ location }) => {
 				<br/>
 				Most of my spare time is spent working on video games as a hobby,<br/>
 				hoping to one day fulfill my dream of being able to live out the rest of my life working on video games that people can enjoy.<br/>
-			</TextSub>
+			</TextSubText>
 
 			<TextTitle id={'affinities'}>
 				Affinities
@@ -87,7 +88,12 @@ const IndexPage = ({ location }) => {
 
 			<div className={`relative max-w-400px mx-auto`}>
 				<Timeline>
-					<Entry date={`2018 Aug. - 2019 Jul.`}>
+					<TimelineEntry
+						id={`history-college-year-one`}
+						date={`2018 Aug. - 2019 Jul.`}
+					>
+						<TextSubTitle>Attending College</TextSubTitle><br/>
+						<br/>
 						Enrolled as a first year in college,<br/>
 						(MBO in the Netherlands)<br/>
 						studying the course Software Development<br/>
@@ -100,8 +106,13 @@ const IndexPage = ({ location }) => {
 						<br/>
 						Each team had their own responsibility of managing internal roles and planning, for both the project itself and meetings.<br/>
 						Taking the initiative was actively encouraged.
-					</Entry>
-					<Entry date={`2019 Aug. - 2020 Jul.`}>
+					</TimelineEntry>
+					<TimelineEntry
+						id={`history-first-internship`}
+						date={`2019 Aug. - 2020 Jul.`}
+					>
+						<TextSubTitle>1st Internship</TextSubTitle><br/>
+						<br/>
 						Began my first internship as a Web Developer in the 2nd year of college.<br/>
 						<br/>
 						Here I got to expand my knowledge in PHP {'&'} JS + JQuery by learning the CMS WordPress, 
@@ -114,9 +125,13 @@ const IndexPage = ({ location }) => {
 						as well as new features, which I pushed through.<br/>
 						<br/>
 						After my internship I was handed a prototype game project, which we designed to be a 2D "Luigi's Mansion" type of game.
-					</Entry>
-					<Entry date={`2020 Aug. - 2021 Jul.`}>
-						The final year of college.<br/>
+					</TimelineEntry>
+					<TimelineEntry
+						id={`history-college-final-year`}
+						date={`2020 Aug. - 2021 Jul.`}
+					>
+
+						<TextSubTitle>The Final Year of College</TextSubTitle><br/>
 						<br/>
 						One half of the school year was spent working on 2 projects.<br/>
 						The first project being <TextMark>a 3D printer dashboard website</TextMark>, which could both be used by students and teachers.<br/>
@@ -128,8 +143,13 @@ const IndexPage = ({ location }) => {
 						<br/>
 						At the end of my internship I had designed {'&'} implemented <TextMark>a working KO tournament system</TextMark> for darting,
 						for which I also implemented (and expanded on) a pre-designed front-end.
-					</Entry>
-					<Entry date={`2021 Apr. - 2021 May`}>
+					</TimelineEntry>
+					<TimelineEntry
+						id={`history-vv-dialogue`}
+						date={`2021 Apr. - 2021 May`}
+					>
+						<TextSubTitle>Writing Vibrant Venture Dialogue</TextSubTitle><br/>
+						<br/>
 						A good friend of mine and owner of <TextMark>Semag Games</TextMark> gave me the opportunity to write dialogue for his game <TextMark>Vibrant Venture</TextMark>.<br/>
 						<br/>
 						The task involved designing a group of characters' personalities based on the only thing available at the time, their artworks,
@@ -137,25 +157,30 @@ const IndexPage = ({ location }) => {
 						<br/>
 						The final document consists out of more than 6000 words!<br/>
 						You can play the game and view my contribution from the update Alpha 5 and on, by visiting the game's town.
-					</Entry>
-					<Entry date={`2021 Jul.`}>
-						I graduate college as a Software Developer on Associate level.<br/>
+					</TimelineEntry>
+					<TimelineEntry
+						id={`history-present-day`}
+						date={`2021 Jul.`}
+					>
+						<TextSubTitle>Present Day</TextSubTitle><br/>
+						<br/>
+						I graduated college as a Software Developer on Associate level.<br/>
 						<br/>
 						Development on the prototype <TextMark>"Project Eterna"</TextMark> is started.<br/>
 						Development on the prototype <TextMark>"Project Birds"</TextMark> is started.<br/>
 						Development on <TextMark>my personal website</TextMark> is started<br/>(yes, this one!).
-					</Entry>
+					</TimelineEntry>
 				</Timeline>
 			</div>
 
-			<TextSub wrapClassName={`pt-6 text-center`}>
+			<TextSubText wrapClassName={`pt-6 text-center`}>
 				Thank you for your interest thus far!<br/>
 				<br/>
-				I intentionally did not include any personal info and details which could potentially be misused.<br/>
+				I intentionally did not include any personal info and details for privacy and safety reasons.<br/>
 				For any additional questions, please feel free to contact me.<br/>
 				<br/>
 				Contact info is shared on <TextMark>this page</TextMark>.
-			</TextSub>
+			</TextSubText>
 		</div>
 	)
 }

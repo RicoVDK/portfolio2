@@ -6,6 +6,10 @@ body {
 	background-color: $black-light;
 }
 
+* {
+	scroll-behavior: smooth;
+}
+
 input,
 textarea,
 button,
