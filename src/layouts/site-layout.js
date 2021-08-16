@@ -5,8 +5,7 @@ import SiteHeader from '/src/components/site-header';
 import SpinningCog from '/src/components/spinning-cog';
 
 import {
-	MobilePageLayout,
-	DesktopPageLayout
+	PageLayout
 } from './page-layout';
 
 export const MobileSiteLayout = ({ location, children }) => (
@@ -22,9 +21,9 @@ export const MobileSiteLayout = ({ location, children }) => (
 		</div>
 
 		{/** Page. */}
-		<MobilePageLayout>
+		<PageLayout>
 			{children}
-		</MobilePageLayout>
+		</PageLayout>
 	</div>
 );
 
@@ -72,9 +71,9 @@ export const DesktopSiteLayout = ({ location, children }) => (
 			</div>
 
 			{/** Page. */}
-			<DesktopPageLayout>
+			<PageLayout>
 				{children}
-			</DesktopPageLayout>
+			</PageLayout>
 			
 			{/* <div className={`relative flex flex-col w-1/4 min-w-72 `}>
 				<div className={`absolute flex flex-col w-full h-full`}>

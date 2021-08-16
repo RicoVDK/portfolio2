@@ -1,7 +1,12 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import React, {
+  useLayoutEffect
+} from 'react';
 
-const NotFoundPage = () => {
+const NotFoundPage = ( location, setContents ) => {
+	useLayoutEffect(() => {
+		setContents([]);
+	}, [setContents])
+
   return (
     <div id={`404`}>
       Not Found

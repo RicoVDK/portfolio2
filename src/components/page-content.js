@@ -7,6 +7,7 @@ import React, {
 export const Entry = ({
 	defaultOpen = true,
 	displayName = 'No Name',
+	href = '#',
 	children,
 }) => {
 	const [open, setOpen] = useState(defaultOpen);
@@ -34,7 +35,7 @@ export const Entry = ({
 
 					<a
 						className={`relative block flex-grow h-8 text-primary select-none group-active:text-gray-800`}
-						href={`#affinities`}
+						href={`#${href}`}
 					>
 						<div className={`absolute flex w-full h-full items-center pr-4 ${
 							childCount.current < 1 ? 'pl-4' : ''

@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {
+	useLayoutEffect
+} from 'react';
 
-const ProjectsPage = ({ location }) => {
+const ProjectsPage = ({ location, setContents, }) => {
+	useLayoutEffect(() => {
+		setContents([]);
+	}, [setContents])
+
 	return (
 		<div id={`projects`}>
 			Projects page	

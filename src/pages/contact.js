@@ -1,6 +1,12 @@
-import React from 'react';
+import React, {
+	useLayoutEffect
+} from 'react';
 
-const ContactPage = ({ location }) => {
+const ContactPage = ({ location, setContents }) => {
+	useLayoutEffect(() => {
+		setContents([]);
+	}, [setContents])
+
 	return (
 		<div id={`contact`}>
 			Contact page	

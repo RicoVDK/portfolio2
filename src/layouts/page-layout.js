@@ -1,11 +1,67 @@
-import React from 'react';
+import React, {
+	useState,
+	cloneElement
+} from 'react';
 
 import TextSubTitle from '/src/components/text/text-subtitle';
+import {
+	OnMobile,
+	OnDesktop
+} from '/src/components/breakpoints';
 import PageContent, {
 	Entry as PageContentEntry
 } from '/src/components/page-content';
 
-export const MobilePageLayout = ({ children }) => {
+export const PageLayout = ({ children }) => {
+	const [contents, setContents] = useState([]);
+
+	const buildPageContentEntries = (contents) => {
+		const elements = [];
+
+		for (let i = 0; i < contents.length; i++) {
+			elements.push(<PageContentEntry
+				key={i}
+				displayName={contents[i].displayName}
+				href={contents[i].id}
+			>
+				{contents[i].children.length > 0 ? buildPageContentEntries(contents[i].children) : undefined}
+			</PageContentEntry>)
+		}
+
+		return elements;
+	}
+
+	return (
+		<>
+			<OnMobile>
+				<MobilePageLayout
+					contents={contents}
+					setContents={setContents}
+					buildPageContentEntries={buildPageContentEntries}
+				>
+					{children}
+				</MobilePageLayout>
+			</OnMobile>
+
+			<OnDesktop>
+				<DesktopPageLayout
+					contents={contents}
+					setContents={setContents}
+					buildPageContentEntries={buildPageContentEntries}
+				>
+					{children}
+				</DesktopPageLayout>
+			</OnDesktop>
+		</>
+	);
+}
+
+export const MobilePageLayout = ({
+	contents,
+	setContents,
+	buildPageContentEntries,
+	children
+}) => {
 	return (
 		<div
 			id={`page`}
@@ -15,7 +71,7 @@ export const MobilePageLayout = ({ children }) => {
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
 				<div className={`absolute w-full h-full overflow-y-scroll p-6`}>
-					{children}
+					{cloneElement(children, { contents, setContents })}
 				</div>
 			</div>
 
@@ -29,7 +85,12 @@ export const MobilePageLayout = ({ children }) => {
 	)
 }
 
-export const DesktopPageLayout = ({ children }) => {
+export const DesktopPageLayout = ({
+	contents,
+	setContents,
+	buildPageContentEntries,
+	children
+}) => {
 	return (
 		<div
 			id={`page`}
@@ -44,15 +105,10 @@ export const DesktopPageLayout = ({ children }) => {
 						</TextSubTitle>
 
 						<PageContent>
-							<PageContentEntry displayName={`Introduction`}/>
-							<PageContentEntry displayName={`Affinities`}/>
-							<PageContentEntry displayName={`History`}>
-								<PageContentEntry displayName={`Attending College`}/>
-								<PageContentEntry displayName={`1st Internship`}/>
-								<PageContentEntry displayName={`The Final Year of College`}/>
-								<PageContentEntry displayName={`Writing Vibrant Venture Dialogue`}/>
-								<PageContentEntry displayName={`Present Day`}/>
-							</PageContentEntry>
+							{contents.length > 0
+								? buildPageContentEntries(contents)
+								: <div className={`relative w-full text-center text-gray-400 italic`}>No referable contents were found...</div>
+							}
 						</PageContent>
 					</div>
 				</div>
@@ -61,7 +117,7 @@ export const DesktopPageLayout = ({ children }) => {
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
 				<div className={`absolute w-full h-full overflow-y-scroll p-6`}>
-					{children}
+					{cloneElement(children, { contents, setContents })}
 				</div>
 			</div>
 

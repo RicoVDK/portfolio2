@@ -1,5 +1,6 @@
 import React, {
-	useRef
+	useRef,
+	useLayoutEffect,
 } from 'react';
 import { differenceInYears } from 'date-fns';
 
@@ -12,8 +13,22 @@ import Timeline, {
 	Entry as TimelineEntry
 } from '/src/components/timeline';
 
-const IndexPage = ({ location }) => {
+const IndexPage = ({ location, setContents }) => {
 	const myAge = useRef(differenceInYears(new Date(), new Date('2001-10-15')));
+
+	useLayoutEffect(() => {
+		setContents([
+			{ displayName: 'Introduction', id: 'intro', children: [] },
+			{ displayName: 'Affinities', id: 'affinities', children: [] },
+			{ displayName: 'History', id: 'history', children: [
+				{ displayName: 'Attending College', id: 'history-college-year-one', children: [] },
+				{ displayName: '1st Internship', id: 'history-first-internship', children: [] },
+				{ displayName: 'Final Year of College', id: 'history-college-final-year', children: [] },
+				{ displayName: 'Writing Vibrant Venture Dialogue', id: 'history-vv-dialogue', children: [] },
+				{ displayName: 'Present Day', id: 'history-present-day', children: [] },
+			] },
+		])
+	}, [setContents]);
 
 	return (
 		<div id={`index`}>
@@ -130,8 +145,7 @@ const IndexPage = ({ location }) => {
 						id={`history-college-final-year`}
 						date={`2020 Aug. - 2021 Jul.`}
 					>
-
-						<TextSubTitle>The Final Year of College</TextSubTitle><br/>
+						<TextSubTitle>Final Year of College</TextSubTitle><br/>
 						<br/>
 						One half of the school year was spent working on 2 projects.<br/>
 						The first project being <TextMark>a 3D printer dashboard website</TextMark>, which could both be used by students and teachers.<br/>
