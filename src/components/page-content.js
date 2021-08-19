@@ -11,7 +11,7 @@ export const Entry = ({
 	children,
 }) => {
 	const [open, setOpen] = useState(defaultOpen);
-	const childCount = useRef(Children.count(children));
+	const childCount = Children.count(children);
 
 	const onTogglePressed = () => {
 		setOpen(!open);
@@ -24,7 +24,7 @@ export const Entry = ({
 				<div className={`relative flex w-full h-8 group`}>
 					<div className={`absolute w-full h-full rounded-full bg-gray-800 group-hover:bg-gray-700 group-active:bg-primary`}></div>
 
-					<div className={`relative flex w-8 h-8 justify-center items-center select-none cursor-pointer ${childCount.current > 0 ? '' : 'hidden'}`}>
+					<div className={`relative flex w-8 h-8 justify-center items-center select-none cursor-pointer ${childCount > 0 ? '' : 'hidden'}`}>
 						<div
 							onClick={onTogglePressed}
 							className={`relative flex w-6 h-6 justify-center items-center bg-gray-800 rounded-full text-xs hover:bg-primary hover:text-gray-800`}
@@ -38,7 +38,7 @@ export const Entry = ({
 						href={`#${href}`}
 					>
 						<div className={`absolute flex w-full h-full items-center pr-4 ${
-							childCount.current < 1 ? 'pl-4' : ''
+							childCount < 1 ? 'pl-4' : ''
 						} text-sm`}>
 							<span className={`relative w-full truncate`}>{displayName}</span>
 						</div>
@@ -47,7 +47,7 @@ export const Entry = ({
 			</div>
 
 			{/** Nesting. */}
-			<div className={`relative w-full px-4 ${childCount.current > 0 && open ? '' : 'hidden'}`}>
+			<div className={`relative w-full px-4 ${childCount > 0 && open ? '' : 'hidden'}`}>
 				<div className={`relative block w-full py-2 px-2 bg-gray-800 rounded-bl-2xl rounded-br-2xl text-sm border-box`}>
 					{children}
 				</div>

@@ -15,6 +15,11 @@ import PageContent, {
 export const PageLayout = ({ children }) => {
 	const [contents, setContents] = useState([]);
 
+	const getInnerContents = (children) => {
+		if (children.length > 0)
+			return buildPageContentEntries(children);
+	}
+
 	const buildPageContentEntries = (contents) => {
 		const elements = [];
 
@@ -24,7 +29,7 @@ export const PageLayout = ({ children }) => {
 				displayName={contents[i].displayName}
 				href={contents[i].id}
 			>
-				{contents[i].children.length > 0 ? buildPageContentEntries(contents[i].children) : undefined}
+				{getInnerContents(contents[i].children)}
 			</PageContentEntry>)
 		}
 
@@ -107,7 +112,7 @@ export const DesktopPageLayout = ({
 						<PageContent>
 							{contents.length > 0
 								? buildPageContentEntries(contents)
-								: <div className={`relative w-full text-center text-gray-400 italic`}>No referable contents were found...</div>
+								: <div className={`relative w-full text-center text-sm text-gray-400 italic`}>This page has no table of contents.</div>
 							}
 						</PageContent>
 					</div>
@@ -116,16 +121,16 @@ export const DesktopPageLayout = ({
 
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
+				<div
+					id={`page-bottom-shadow`}
+					className={`absolute w-full h-6 bottom-0 z-50 px-px pointer-events-none`}
+				>
+					<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
+				</div>
+
 				<div className={`absolute w-full h-full overflow-y-scroll p-6`}>
 					{cloneElement(children, { contents, setContents })}
 				</div>
-			</div>
-
-			<div
-				id={`page-bottom-shadow`}
-				className={`absolute w-full h-6 bottom-0 z-50 px-px`}
-			>
-				<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 			</div>
 		</div>
 	)

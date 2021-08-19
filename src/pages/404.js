@@ -2,7 +2,7 @@ import React, {
   useLayoutEffect
 } from 'react';
 
-const NotFoundPage = ( location, setContents ) => {
+const NotFoundPage = ({ location, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([]);
 	}, [setContents])

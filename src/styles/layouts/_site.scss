@@ -45,3 +45,7 @@ a {
 	scrollbar-color: $primary transparent;
 	scrollbar-width: thin;
 }
+
+.placeholder-italic::placeholder{
+  font-style: italic;
+}

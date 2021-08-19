@@ -34,11 +34,11 @@ const IndexPage = ({ location, setContents }) => {
 		<div id={`index`}>
 			<TextSubText
 				id={'intro'}
-				wrapClassName={`text-center`}
+				wrapClassName={`text-center pt-4`}
 			>
 				Hello and welcome!<br/>
 				<br/>
-				I am a {myAge.current} year old Software Developer who graduated on Associate level in mid 2021,<br/>
+				I am a {myAge.current} year old Software Developer who graduated college on Associate level in mid 2021,<br/>
 				(Equivalent of MBO 4),<br/>
 				and live in the Netherlands.<br/>
 				<br/>
@@ -92,7 +92,8 @@ const IndexPage = ({ location, setContents }) => {
 						Capable of designing websites in a variety of styles,<br/>
 						as well as being experienced in designing and implementing databases.<br/>
 						<br/>
-						Feel free to take a look at a few of my past works <TextMark>here</TextMark>.
+						Experience in using the following:<br/>
+						Laravel, ReactJS, Gatsby, Wordpress, MySQL, Drupal, Django, JQuery, Vue, HTML, JSX, CSS, SCSS, Tailwind
 					</AffinityCard>
 				</div>
 			</div>
@@ -130,7 +131,7 @@ const IndexPage = ({ location, setContents }) => {
 						<br/>
 						Began my first internship as a Web Developer in the 2nd year of college.<br/>
 						<br/>
-						Here I got to expand my knowledge in PHP {'&'} JS + JQuery by learning the CMS WordPress, 
+						Here I got to expand my knowledge in PHP {'&'} JS + JQuery by learning the CMS Wordpress, 
 						while making a one pager with Elementor, which would be the very first website I ever aired and singlehandedly created.<br/>
 						<br/>
 						Alongside that, I created about 1 to 4 websites every day using their custom CMS,
