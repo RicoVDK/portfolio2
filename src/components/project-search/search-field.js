@@ -3,7 +3,7 @@ import React, {
 } from 'react';
 
 const SearchField = ({
-	className = 'relative w-full h-8 p-4 italic focus:outline-none bg-gray-800 rounded-full hover:bg-gray-700',
+	className = 'relative w-full h-8 p-4 italic focus:outline-none bg-gray-800 rounded-full hover:bg-gray-700 border border-gray-700 text-center',
 	placeholder = 'Search...',
 	onChange = () => {},
 }) => {

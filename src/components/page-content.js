@@ -4,6 +4,10 @@ import React, {
 	Children
 } from 'react';
 
+import {
+	buttonScaleHover
+} from '/src/components/effect-styles.js';
+
 export const Entry = ({
 	defaultOpen = true,
 	displayName = 'No Name',
@@ -21,8 +25,8 @@ export const Entry = ({
 		<div className={`relative mb-2 last:mb-0 whitespace-nowrap`}>
 			{/** Toggle */}
 			<div className={`relative w-full h-8`}>
-				<div className={`relative flex w-full h-8 group`}>
-					<div className={`absolute w-full h-full rounded-full bg-gray-800 group-hover:bg-gray-700 group-active:bg-primary`}></div>
+				<div className={`relative flex w-full h-8 group ${buttonScaleHover}`}>
+					<div className={`absolute w-full h-full rounded-full border border-gray-700 bg-gray-800 group-hover:bg-gray-700 group-active:bg-primary`}></div>
 
 					<div className={`relative flex w-8 h-8 justify-center items-center select-none cursor-pointer ${childCount > 0 ? '' : 'hidden'}`}>
 						<div
@@ -48,7 +52,7 @@ export const Entry = ({
 
 			{/** Nesting. */}
 			<div className={`relative w-full px-4 ${childCount > 0 && open ? '' : 'hidden'}`}>
-				<div className={`relative block w-full py-2 px-2 bg-gray-800 rounded-bl-2xl rounded-br-2xl text-sm border-box`}>
+				<div className={`relative block w-full py-2 px-2 bg-gray-800 rounded-bl-2xl rounded-br-2xl border border-t-0 border-gray-700 text-sm border-box`}>
 					{children}
 				</div>
 			</div>

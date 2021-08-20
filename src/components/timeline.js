@@ -30,7 +30,7 @@ export const Entry = ({
 				{/** Ribbon. */}
 				<div className={`absolute w-full`}>
 					{/** Label. */}
-					<div className={`flex absolute h-8 bg-gray-800 rounded-full items-center font-bold text-sm pl-10 pr-4`}>
+					<div className={`flex absolute h-8 bg-gray-800 rounded-full border border-gray-700 items-center font-bold text-sm pl-10 pr-4`}>
 						{date}
 					</div>
 

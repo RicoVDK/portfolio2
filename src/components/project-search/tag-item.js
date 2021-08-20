@@ -9,20 +9,20 @@ const TagItem = ({
 }) => {
 	const getTextColour = () => {
 		if (includeTags.includes(tag))
-			return 'text-green-500';
+			return 'text-gray-800 font-bold';
 		else if (excludeTags.includes(tag))
-			return 'text-red-600';
+			return 'text-gray-800 font-bold';
 			
 		return 'text-gray-300';
 	}
 
-	const getBorderColour = () => {
+	const getBackgroundColour = () => {
 		if (includeTags.includes(tag))
-			return 'border-green-500';
+			return 'bg-green-500 hover:bg-green-400';
 		else if (excludeTags.includes(tag))
-			return 'border-red-600';
+			return 'bg-red-600 hover:bg-red-500';
 			
-		return 'border-gray-700';
+		return 'bg-gray-800 hover:bg-gray-700 border-gray-700';
 	}
 
 	const getIcon = () => {
@@ -42,10 +42,10 @@ const TagItem = ({
 			className={`flex relative w-full items-center px-1 py-1`}
 		>
 			<div className={`relative w-full h-full`}>
-				<div className={`flex relative flex-row w-full h-6 rounded-full border bg-gray-800 hover:bg-gray-700 cursor-pointer ${getBorderColour()}`}>
+				<div className={`flex relative flex-row w-full h-6 rounded-full cursor-pointer border border-transparent ${getBackgroundColour()}`}>
 					{/** Text. */}
 					<div className={`relative h-full flex-grow truncate`}>
-						<div className={`flex absolute w-full h-full px-2 text-sm truncate items-center text-gray-400`}>
+						<div className={`flex absolute w-full h-full px-2 text-sm truncate items-center ${getTextColour()}`}>
 							{text}
 						</div>
 					</div>

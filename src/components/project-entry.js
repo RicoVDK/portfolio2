@@ -1,46 +1,44 @@
 import React from 'react';
 import {
-	navigate
+	Link
 } from 'gatsby';
+
+import {
+	buttonScaleHover
+} from '/src/components/effect-styles.js';
 
 const ProjectEntry = ({
 	title = 'No Title',
 	desc = 'No Desc',
-	img = '',
-	url = '',
+	img = null,
+	url = '#',
+	id = '#,'
 }) => {
-	const onReadClicked = () => {
-		if (url.length);
-			navigate(url);
-	}
-
 	return (
-		<div className={`relative py-6 border-b-1 border-primar3 w-full last:border-b-0`}>
-			{/** Title. */}
-			<div className={`relative text-center px-6 pb-4 font-bold`}>
-				{title}
-			</div>
+		<Link
+			to={url}
+			className={``}
+		>
+			<div
+				id={id}
+				className={`relative flex flex-col w-full h-full bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-3xl items-center m-auto overflow-hidden group ${buttonScaleHover}`}
+			>
+				{/** Hover effect. */}
 
-			{/** Image and Text. */}
-			<div className={`relative flex flex-row w-full h-28`}>
 				{/** Image. */}
-				<div className={`relative h-full w-28 bg-black rounded-2xl border-1 border-gray-400`}>
-					<div
-						onClick={onReadClicked}
-						className={`absolute flex justify-center items-center cursor-pointer bg-gray-800 hover:bg-gray-700 border border-gray-700 rounded-full w-10 h-10 bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2`}
-					>
-						<i className={`fas fa-book-open`}></i>
+				<div className={`relative w-full h-56 overflow-hidden bg-black border-b border-gray-700 text-primary-3`}>
+					<div className={`absolute py-2 px-4 bottom-0 bg-gray-800 group-hover:bg-gray-700 border-t border-r border-gray-700 font-bold rounded-tr-3xl`}>
+						{title}
 					</div>
 				</div>
 
 				{/** Text. */}
-				<div className={`relative flex flex-grow h-full items-center`}>
-					<span className={`absolute pl-4 w-full text-xs text-center italic`}>
-						{desc}
-					</span>
-				</div>
+				<div
+					className={`relative flex w-full flex-grow p-6 text-center items-center italic text-sm`}
+					dangerouslySetInnerHTML={{ __html: desc }}
+				/>
 			</div>
-		</div>
+		</Link>
 	)
 }
 

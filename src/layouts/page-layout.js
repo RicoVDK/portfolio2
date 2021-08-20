@@ -75,7 +75,7 @@ export const MobilePageLayout = ({
 
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
-				<div className={`absolute w-full h-full overflow-y-scroll p-6`}>
+				<div className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
 					{cloneElement(children, { contents, setContents })}
 				</div>
 			</div>
@@ -128,7 +128,7 @@ export const DesktopPageLayout = ({
 					<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 				</div>
 
-				<div className={`absolute w-full h-full overflow-y-scroll p-6`}>
+				<div className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
 					{cloneElement(children, { contents, setContents })}
 				</div>
 			</div>

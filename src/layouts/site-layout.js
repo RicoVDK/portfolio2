@@ -11,7 +11,7 @@ import {
 export const MobileSiteLayout = ({ location, children }) => (
 	<div
 		id={`page-wrapper`}
-		className={`relative flex flex-col items-center h-screen w-full overflow-hidden text-gray-400`}
+		className={`relative flex flex-col items-center h-screen w-full overflow-hidden text-gray-300`}
 	>
 		{/** Header. */}
 		<div className={`relative w-full h-1/5`}>

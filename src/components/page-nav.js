@@ -3,6 +3,10 @@ import { Link } from 'gatsby';
 
 import SpinningCog from './spinning-cog';
 
+import {
+	buttonScaleHover
+} from './effect-styles.js';
+
 const pages = {
 	'projects': {
 		display: 'Projects',
@@ -60,11 +64,11 @@ const PageNav = ({ location }) => {
 						<Link
 							key={index}
 							to={pages[page].url}
-							className={`relative flex-grow h-full group`}
+							className={`relative flex-grow h-full group ${buttonScaleHover}`}
 						>
 							<div className={`absolute w-full h-full px-2 py-2 tablet:py-4`}>
-								<div className={`relative w-full h-full rounded-full ${
-									isActive(pages[page]) ? 'group-hover:bg-primary-3 bg-primary' : 'group-hover:bg-gray-700 bg-gray-800'
+								<div className={`relative w-full h-full rounded-full border border-transparent ${
+									isActive(pages[page]) ? 'group-hover:bg-primary-3 bg-primary' : 'group-hover:bg-gray-700 bg-gray-800 border-gray-700'
 								}`}></div>
 							</div>
 

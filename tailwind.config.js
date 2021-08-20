@@ -39,6 +39,7 @@ module.exports = {
         '56': '14rem',
         '400px': '400px',
         '500px': '500px',
+        '600px': '600px',
         '700px': '700px',
         '900px': '900px',
         '1200px': '1200px'
@@ -52,7 +53,8 @@ module.exports = {
   variants: {
     extend: {
       borderWidth: ['responsive'],
-      margin: ['last']
+      margin: ['last'],
+      transitionProperty: ['hover']
     },
   },
   plugins: [],

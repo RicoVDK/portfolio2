@@ -11,6 +11,18 @@ const Tags = {
 	Contribution: 8,
 	Images: 9,
 	Videos: 10,
+	Internship: 11,
+	Contract: 12,
+	School: 13,
+	SelfInterest: 14,
+	Unity: 15,
+	Godot: 16,
+	Laravel: 17,
+	Django: 18,
+	ReactJS: 19,
+	Direction: 20,
+	Programming: 21,
+	Writing: 22,
 }
 
 const tagDisplayNames = {
@@ -25,6 +37,18 @@ const tagDisplayNames = {
 	[Tags.Contribution]: 'Contribution',
 	[Tags.Images]: 'Images',
 	[Tags.Videos]: 'Videos',
+	[Tags.Internship]: 'Internship',
+	[Tags.Contract]: 'Contract',
+	[Tags.School]: 'School',
+	[Tags.SelfInterest]: 'Self Interest',
+	[Tags.Unity]: 'Unity',
+	[Tags.Godot]: 'Godot',
+	[Tags.Laravel]: 'Laravel',
+	[Tags.Django]: 'Django',
+	[Tags.ReactJS]: 'ReactJS',
+	[Tags.Direction]: 'Direction',
+	[Tags.Programming]: 'Programming',
+	[Tags.Writing]: 'Writing',
 }
 
 export const tagToDisplayName = (tag) => {
