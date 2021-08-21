@@ -1,9 +1,9 @@
 import React, {
 	useState,
+	useEffect,
+	useRef,
 	useLayoutEffect
 } from 'react';
-
-import isEven from '/src/components/utils/is-even';
 
 import Tags from '/src/components/tags';
 import ProjectSearch from '/src/components/project-search';
@@ -30,7 +30,9 @@ const projects = [
 	{
 		displayName: 'Project Eterna',
 		description: `
-			A 2.5D story-driven action adventure RPG that introduces new and unique mechanics to the genre.
+			A 2.5D story-driven action adventure RPG.<br/>
+			<br/>
+			This project is my main focus.
 		`,
 		id: 'entry-eterna',
 		children: [],
@@ -58,6 +60,20 @@ const projects = [
 		]
 	},
 	{
+		displayName: 'Vibrant Venture',
+		description: `
+			This entry contains my latest contribution to this game, made by Semag Games.<br/>
+			<br/>
+			My work involved designing a set of characters' personalities and then writing interactive dialogue for each of them!
+		`,
+		id: 'entry-vibrant-venture',
+		children: [],
+		tags: [
+			Tags.Contribution, Tags.SelfInterest,
+			Tags.Complete, Tags.Writing,
+		]
+	},
+	{
 		displayName: 'DartScore',
 		description: `
 			One of the projects I took part in as a full stack developer during my 2nd internship.<br/>
@@ -71,20 +87,6 @@ const projects = [
 			Tags.Unreleased, Tags.Complete,
 			Tags.Videos, Tags.Django,
 			Tags.ReactJS, Tags.Programming,
-		]
-	},
-	{
-		displayName: 'Vibrant Venture',
-		description: `
-			This entry contains my latest contribution to this game, made by Semag Games.<br/>
-			<br/>
-			My work involved designing a set of characters' personalities and then writing interactive dialogue for each of them!
-		`,
-		id: 'entry-vibrant-venture',
-		children: [],
-		tags: [
-			Tags.Contribution, Tags.SelfInterest,
-			Tags.Complete,
 		]
 	},
 	{
@@ -106,7 +108,7 @@ const projects = [
 	{
 		displayName: '2.5D Unity Prototype',
 		description: `
-			A school project I asked to work on in order to improve my skills in Unity.<br/>
+			A school "exam practice" project I asked to work on in order to improve my skills in Unity.<br/>
 			<br/>
 			This is where I first got to tackle 3D, in an effort to make a base framework
 			for a top-down puzzle adventure game, in a very small timeframe.
@@ -125,9 +127,6 @@ const projects = [
 		displayName: 'Dreamventure',
 		description: `
 			My first Unity school project that involved us having to make a 2D adventure game.<br/>
-			<br/>
-			I provided the main concept for the game, as well as having designed and implemented all of its puzzles and environments.<br/>
-			Due to prior experience, I only aided the other programmers in their work.
 		`,
 		id: 'entry-dreamventure',
 		children: [],
@@ -143,6 +142,30 @@ const projects = [
 
 const ProjectsPage = ({ location, setContents, }) => {
 	const [results, setResults] = useState(projects);
+	const [waiting, setWaiting] = useState(false);
+
+	const getResults = () => {
+		if (waiting) {
+			return <div className={`relative flex flex-col items-center m-auto italic text-gray-400 text-center`}>
+				Waiting for you to stop fiddling with the filters...
+			</div>
+		} else if (results.length > 0) {
+			return <div className={`relative grid w-full max-w-600px grid-cols-1 tablet:grid-cols-2 gap-4 m-auto`}>
+				{results.map((project, index) => (
+					<ProjectEntry
+						key={index}
+						title={project.displayName}
+						desc={project.description}
+						id={project.id}
+					/>
+				))}
+			</div>
+		} else if (results.length < 1) {
+			return <div className={`relative flex flex-col items-center m-auto italic text-gray-400 text-center`}>
+				No projects matched your query... :(
+			</div>
+		}
+	}
 
 	useLayoutEffect(() => {
 		setContents([
@@ -160,26 +183,22 @@ const ProjectsPage = ({ location, setContents, }) => {
 				You can filter by using the search field below, as well as including and excluding tags by opening the options menu below the search field.
 			</TextSubText>
 
-			<div id={`search`} className={`relative flex flex-col w-full items-center pt-12`}>
+			<div
+				id={`search`}
+				className={`relative flex flex-col w-full items-center pt-12`}
+			>
 				<ProjectSearch
 					toSearch={projects}
+					waiting={waiting}
+					setWaiting={setWaiting}
 					setResults={setResults}
 				/>
 
-				<TextTitle>
+				<TextTitle id={`results`}>
 					Results
 				</TextTitle>
 				
-				<div id={`results`} className={`relative grid w-full max-w-600px grid-cols-1 tablet:grid-cols-2 gap-4 m-auto`}>
-					{results.map((project, index) => (
-						<ProjectEntry
-							key={index}
-							title={project.displayName}
-							desc={project.description}
-							id={project.id}
-						/>
-					))}
-				</div>
+				{getResults()}
 			</div>
 		</div>
 	)

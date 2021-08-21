@@ -1,6 +1,7 @@
 import React, {
 	useState,
 	useLayoutEffect,
+	useEffect,
 	useRef,
 } from 'react';
 
@@ -13,8 +14,14 @@ import Tags, {
 	tagToDisplayName
 } from '/src/components/tags';
 
-const ProjectSearch = ({ lang, toSearch, setResults }) => {
+const ProjectSearch = ({
+	toSearch,
+	waiting,
+	setWaiting,
+	setResults
+}) => {
 	const [open, setOpen] = useState(false);
+	const [init, setInit] = useState(true);
 	const [searchOptions, setSearchOptions] = useState({
 		query: '',
 		includeTags: [],
@@ -25,6 +32,9 @@ const ProjectSearch = ({ lang, toSearch, setResults }) => {
 	const outerContentHeightRef = useRef(0);
 	const innerContentHeightRef = useRef(0);
 	const animFrame = useRef(null);
+	const waitFrame = useRef(null);
+	const resultsTimeStamp = useRef(0);
+	const checkCount = useRef(0);
 
 	const search = () => {
 		const localResults = [];
@@ -154,9 +164,42 @@ const ProjectSearch = ({ lang, toSearch, setResults }) => {
 		}
 	}
 
+	const checkResultsTimeStamp = (timestamp) => {
+		checkCount.current = timestamp;
+
+		if ((checkCount.current - resultsTimeStamp.current) * 0.001 > 1) {
+			setWaiting(false);
+			cancelAnimationFrame(waitFrame.current);
+			search();
+
+			waitFrame.current = null;
+
+			return;
+		}
+
+		waitFrame.current = requestAnimationFrame(checkResultsTimeStamp);
+	}
+
 	useLayoutEffect(() => {
-		search();
-	}, [searchOptions]);
+		if (init) {
+			search();
+			setInit(false);
+
+			return;
+		}
+
+		setWaiting(true);
+
+		if (waitFrame.current) {
+			cancelAnimationFrame(waitFrame.current);
+
+			waitFrame.current = null;
+		}
+
+		resultsTimeStamp.current = performance.now();
+		checkCount.current = 0;
+		waitFrame.current = requestAnimationFrame(checkResultsTimeStamp);
+	}, [setWaiting, searchOptions]);
 	
 	return (
 		<div className={`relative w-full max-w-500px`}>
