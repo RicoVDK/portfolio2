@@ -2,7 +2,10 @@ import React, {
 	useRef,
 	useLayoutEffect,
 } from 'react';
-import { differenceInYears } from 'date-fns';
+import {
+	differenceInYears,
+	format
+} from 'date-fns';
 
 import TextTitle from '/src/components/text/text-title';
 import TextSubText from '/src/components/text/text-subtext';
@@ -15,6 +18,7 @@ import Timeline, {
 
 const IndexPage = ({ location, setContents }) => {
 	const myAge = useRef(differenceInYears(new Date(), new Date('2001-10-15')));
+	const date = useRef(format(new Date(), `yyyy MMM`));
 
 	useLayoutEffect(() => {
 		setContents([
@@ -25,6 +29,8 @@ const IndexPage = ({ location, setContents }) => {
 				{ displayName: '1st Internship', id: 'history-first-internship', children: [] },
 				{ displayName: 'Final Year of College', id: 'history-college-final-year', children: [] },
 				{ displayName: 'Writing Vibrant Venture Dialogue', id: 'history-vv-dialogue', children: [] },
+				{ displayName: 'Graduating', id: 'history-graduating', children: [] },
+				// { displayName: 'Semag Games\' Website', id: 'history-semag-website', children: [] },
 				{ displayName: 'Present Day', id: 'history-present-day', children: [] },
 			] },
 		])
@@ -38,12 +44,14 @@ const IndexPage = ({ location, setContents }) => {
 			>
 				Hello and welcome!<br/>
 				<br/>
-				I am a {myAge.current} year old Software Developer who graduated college on Associate level in mid 2021,<br/>
+				I am a {myAge.current} year old Dutch Software Developer who graduated college on Associate level in mid 2021,<br/>
 				(Equivalent of MBO 4),<br/>
 				and live in the Netherlands.<br/>
 				<br/>
 				Most of my spare time is spent working on video games as a hobby,<br/>
 				hoping to one day fulfill my dream of being able to live out the rest of my life working on video games that people can enjoy.<br/>
+				<br/>
+				I have a great interest and affinity for learning new things, which is luckily what the field I work in is all about!<br/>
 			</TextSubText>
 
 			<TextTitle id={'affinities'}>
@@ -102,7 +110,7 @@ const IndexPage = ({ location, setContents }) => {
 				History
 			</TextTitle>
 
-			<div className={`relative max-w-400px mx-auto`}>
+			<div className={`relative max-w-500px mx-auto`}>
 				<Timeline>
 					<TimelineEntry
 						id={`history-college-year-one`}
@@ -115,7 +123,7 @@ const IndexPage = ({ location, setContents }) => {
 						studying the course Software Development<br/>
 						<br/>
 						During my first year I learned the basics of object oriented programming, 
-						as well as how to work in a team.<br/>
+						as well as how to work in a team by literally just being assigned a team and a project.<br/>
 						<br/>
 						We would have new projects and be assigned to a new team every 2-3 months, 
 						effectively repeating and honing our development process while we gained practical experience.<br/>
@@ -161,7 +169,7 @@ const IndexPage = ({ location, setContents }) => {
 					</TimelineEntry>
 					<TimelineEntry
 						id={`history-vv-dialogue`}
-						date={`2021 Apr. - 2021 May`}
+						date={`2021 Apr. - 2021 May.`}
 					>
 						<TextSubTitle>Writing Vibrant Venture Dialogue</TextSubTitle><br/>
 						<br/>
@@ -174,16 +182,42 @@ const IndexPage = ({ location, setContents }) => {
 						You can play the game and view my contribution from the update Alpha 5 and on, by visiting the game's town.
 					</TimelineEntry>
 					<TimelineEntry
-						id={`history-present-day`}
+						id={`history-graduating`}
 						date={`2021 Jul.`}
 					>
-						<TextSubTitle>Present Day</TextSubTitle><br/>
+						<TextSubTitle>Graduating</TextSubTitle><br/>
 						<br/>
 						I graduated college as a Software Developer on Associate level.<br/>
 						<br/>
-						Development on the prototype <TextMark>"Project Eterna"</TextMark> is started.<br/>
-						Development on the prototype <TextMark>"Project Birds"</TextMark> is started.<br/>
-						Development on <TextMark>my personal website</TextMark> is started<br/>(yes, this one!).
+						Development on the prototype <TextMark>"Project Eterna"</TextMark> was started.<br/>
+						Development on the prototype <TextMark>"Project Birds"</TextMark> was started.<br/>
+						Development on (the first version) of <TextMark>my personal website</TextMark> was started<br/>(yes, this one!).
+					</TimelineEntry>
+					{/* <TimelineEntry
+						id={`history-semag-website`}
+						date={`2021 Aug.`}
+					>
+						<TextSubTitle>Semag Games' Website</TextSubTitle><br/>
+						<br/>
+						Much like before, my friend asked me to lend a hand in creating a website for his company, where their games could be displayed as well.<br/>
+						<br/>
+
+						Due to my already tackling 3 projects, and having my hands quite full on this website at the time,
+						I instead offered advice on how to approach the project using my own experience,
+						and helped him get a hang of ReactJS {'&'} Sass.<br/>
+						<br/>
+						I also made the website responsive and helped fixing styling related issues.<br/>
+						You can read more on this <TextMark>here</TextMark>.
+					</TimelineEntry> */}
+					<TimelineEntry
+						id={`history-present-day`}
+						date={`${date.current}.`}
+					>
+						<TextSubTitle>Present Day</TextSubTitle><br/>
+						<br/>
+						Currently looking for contract work,<br/>
+						working on Project Eterna {'&'} Birds simultaneously,<br/>
+						and tending to this website.
 					</TimelineEntry>
 				</Timeline>
 			</div>

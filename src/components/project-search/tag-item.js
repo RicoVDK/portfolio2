@@ -1,5 +1,9 @@
 import React from 'react';
 
+import {
+	buttonScaleHover
+} from '/src/components/effect-styles';
+
 const TagItem = ({
 	tag = 0,
 	text = 'No Text',
@@ -42,7 +46,7 @@ const TagItem = ({
 			className={`flex relative w-full items-center px-1 py-1`}
 		>
 			<div className={`relative w-full h-full`}>
-				<div className={`flex relative flex-row w-full h-6 rounded-full cursor-pointer border border-transparent ${getBackgroundColour()}`}>
+				<div className={`flex relative flex-row w-full h-6 rounded-full cursor-pointer border border-transparent ${getBackgroundColour()} ${buttonScaleHover}`}>
 					{/** Text. */}
 					<div className={`relative h-full flex-grow truncate`}>
 						<div className={`flex absolute w-full h-full px-2 text-sm truncate items-center ${getTextColour()}`}>

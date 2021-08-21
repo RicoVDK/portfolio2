@@ -23,6 +23,8 @@ const Tags = {
 	Direction: 20,
 	Programming: 21,
 	Writing: 22,
+	Backend: 23,
+	Frontend: 24,
 }
 
 const tagDisplayNames = {
@@ -49,6 +51,8 @@ const tagDisplayNames = {
 	[Tags.Direction]: 'Direction',
 	[Tags.Programming]: 'Programming',
 	[Tags.Writing]: 'Writing',
+	[Tags.Backend]: 'Backend',
+	[Tags.Frontend]: 'Frontend',
 }
 
 export const tagToDisplayName = (tag) => {

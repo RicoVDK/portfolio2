@@ -231,7 +231,7 @@ const ProjectSearch = ({
 							/>
 						)}
 					</div>
-					<div className={`grid relative grid-cols-1 px-1 pb-1`}>
+					<div className={`grid relative grid-cols-1 px-1 pb-1 w-1/2 m-auto`}>
 						<OptionButton
 							text={`Include All`}
 							onClick={includeAllTags}
