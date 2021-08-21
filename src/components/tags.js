@@ -56,7 +56,7 @@ const tagDisplayNames = {
 }
 
 export const tagToDisplayName = (tag) => {
-	return tagDisplayNames.hasOwnProperty(tag) ? tagDisplayNames[tag] : 'No Tag';
+	return tagDisplayNames.hasOwnProperty(tag) ? tagDisplayNames[tag] : 'NO TAG';
 }
 
 export default Tags;
