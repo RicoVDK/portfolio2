@@ -11,6 +11,8 @@ import TextTitle from '/src/components/text/text-title';
 import TextSubText from '/src/components/text/text-subtext';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TextMark from '/src/components/text/text-mark';
+import TextClipboard from '/src/components/text/text-clipboard';
+import TextLink from '/src/components/text/text-link';
 import AffinityCard from '/src/components/affinity-card';
 import Timeline, {
 	Entry as TimelineEntry
@@ -87,7 +89,7 @@ const IndexPage = ({ location, setContents }) => {
 						4+ years of experience as a hobby,<br/>
 						ontop of having made 2 prototypes as part of a school project.<br/>
 						<br/>
-						Currently working on 2 additional prototypes of my own, which you can find <TextMark>here</TextMark>.<br/>
+						Currently working on 2 additional prototypes of my own, which you can find <TextLink to={`/projects?search=eterna`}>here</TextLink>.<br/>
 						<br/>
 						Experienced in using both Unity {'&'} Godot.
 					</AffinityCard>

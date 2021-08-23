@@ -15,18 +15,19 @@ import Tags, {
 } from '/src/components/tags';
 
 const ProjectSearch = ({
-	toSearch,
-	waiting,
+	toSearch = [],
+	waiting = false,
+	initOptions = {
+		query: '',
+		includeTags: [],
+		excludeTags: [],
+	},
 	setWaiting,
 	setResults
 }) => {
 	const [open, setOpen] = useState(false);
 	const [init, setInit] = useState(true);
-	const [searchOptions, setSearchOptions] = useState({
-		query: '',
-		includeTags: [],
-		excludeTags: [],
-	});
+	const [searchOptions, setSearchOptions] = useState(initOptions);
 	const innerContentRef = useRef(null);
 	const outerContentRef = useRef(null);
 	const outerContentHeightRef = useRef(0);

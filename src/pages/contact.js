@@ -8,7 +8,9 @@ import TextSubText from '/src/components/text/text-subtext';
 import TextItalic from '/src/components/text/text-italic';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TNFTable from '/src/components/tnf-table';
-import CenteredUL from '/src/components/centered-ul';
+import TextClipboard from '/src/components/text/text-clipboard';
+import IconTextTable from '/src/components/icon-text-table';
+import TextLink from '/src/components/text/text-link';
 
 const ContactPage = ({ location, setContents }) => {
 	useLayoutEffect(() => {
@@ -30,8 +32,7 @@ const ContactPage = ({ location, setContents }) => {
 			
 			<div className={`w-full px-4 pb-4 text-center`}>
 				<TextItalic>
-					You can expect a response within the same week if either "Full time" or "Part time" is set to available.<br/>
-					(This also applies if I sent you here myself)
+					Last updated 2021 Aug 23
 				</TextItalic>
 			</div>
 
@@ -46,22 +47,65 @@ const ContactPage = ({ location, setContents }) => {
 				]}
 			/>
 
-			<TextTitle id={`expectations`}>
-				Expectations
+			<TextTitle id={`when-contacting`}>
+				When Contacting...
 			</TextTitle>
 
-			<TextSubText wrapClassName={`text-center px-4`}>
-				To make communications as swift and smooth as possible, I request to see and know the following:<br/>
+			<div className={`w-full text-center px-4`}>
+				Please include the following information depending on your goal...<br/>
 				<br/>
-				<div className={``}>
-					<TextSubTitle id={`for-emails`}>For emails:</TextSubTitle><br/>
-					<CenteredUL>
-						<li>Your company/business name.</li>
-						<li>Your website, or social media if not applicable.</li>
-					</CenteredUL>
+				<TextSubTitle>For business {'&'} hiring:</TextSubTitle><br/>
+				<div className={`relative text-center text-base italic`}>
+					- The name of the company/business you represent. -<br/>
+					- A link to your official website, or social media if the former is not applicable. -<br/>
+					- The reason for contacting. What is it about? I'm curious! -
 				</div>
+				<br/>
+				<TextSubTitle>For website feature suggestions:</TextSubTitle><br/>
+				<div className={`relative text-center text-base italic`}>
+					- What feature you would like to see on this website. -
+					- Why you think it should be implemented. -
+				</div>
+				<br/>
+				<TextSubTitle>For general questions:</TextSubTitle><br/>
+				<div className={`relative text-center text-base italic`}>
+					- Your questions, obviously! -
+				</div>
+				<br/>
+				<TextSubTitle>For reporting website-related issues:</TextSubTitle><br/>
+				<div className={`relative text-center text-base italic`}>
+					- The name of the browser you're using. -<br/>
+					- What you were doing when said issue occurred. -<br/>
+					- Screenshots that display the issue (Optional). -<br/>
+					- A recording showing a replication of the issue (Optional). -<br/>
+					- The build number of the browser you're currently using (Optional). -
+				</div>
+			</div>
 
-			</TextSubText>
+			<TextTitle id={`contact-info`}>
+				Contact Information
+			</TextTitle>
+
+			<IconTextTable
+				className={`m-auto max-w-500px`}
+				contents={[
+					{
+						icon: 'fab fa-twitter',
+						displayName: 'Twitter',
+						child: <TextLink
+							to={`https://twitter.com/ricovdk`}
+							external={true}
+						>
+							@ricovdk<i className={`fas fa-external-link-alt text-xs pl-2`} />
+						</TextLink>
+					},
+					{
+						icon: 'fas fa-envelope',
+						displayName: 'E-Mail',
+						child: <TextClipboard>@gmail.com<i className={`far fa-copy text-sm pl-2`} /></TextClipboard>
+					},
+				]}
+			/>
 		</div>
 	)
 }
