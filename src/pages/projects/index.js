@@ -32,6 +32,7 @@ const ProjectsPage = ({ location, setContents, }) => {
 						desc={project.description}
 						id={project.id}
 						disabled={project.disabled}
+						url={project.url}
 					/>
 				))}
 			</div>

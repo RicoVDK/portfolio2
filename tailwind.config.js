@@ -22,7 +22,8 @@ module.exports = {
           '2': '#FBBF24',
           '3': '#F59E0B'
         },
-        'gray-900': '#1e1e27'
+        'gray-900': '#1e1e27',
+        'red-1000': '#2f1c1c',
       },
       fontSize: {
         '10xl': '10rem',
@@ -43,6 +44,9 @@ module.exports = {
         '700px': '700px',
         '900px': '900px',
         '1200px': '1200px'
+      },
+      minHeight: {
+        'full': '100%',
       },
       padding: {
         '18': '4.5rem',

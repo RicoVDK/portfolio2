@@ -9,10 +9,11 @@ const Projects = [
 			This entry includes an insight in its development.
 		`,
 		id: 'entry-portfolio',
+		url: 'ricosoftworks',
 		disabled: false,
 		children: [],
 		tags: [
-			Tags.WebDev, Tags.WIP,
+			Tags.WebDev, Tags.Released,
 			Tags.SelfInterest, Tags.ReactJS,
 			Tags.Frontend,
 		]
@@ -22,9 +23,11 @@ const Projects = [
 	// 	description: `
 	// 		I lend a hand in developing the company's website in order to help out my friend.<br/>
 	// 		<br/>
-	// 		Here you can also read about how I approached making existing content responsive.
+	// 		Here you can also read about how I approached making existing content responsive,
+	//		as well as how I implemented the mobile nav menu.
 	// 	`,
 	// 	id: 'entry-semag-website',
+	//	url: '#',
 	// 	disabled: false,
 	// 	children: [],
 	// 	tags: [
@@ -41,6 +44,7 @@ const Projects = [
 			This project is my main focus.
 		`,
 		id: 'entry-eterna',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
@@ -57,6 +61,7 @@ const Projects = [
 			A first person puzzle horror featuring malformed animals as consequence of experiments that went terribly wrong.
 		`,
 		id: 'entry-birds',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
@@ -75,6 +80,7 @@ const Projects = [
 			My work involved designing a set of characters' personalities and then writing interactive dialogue for each of them!
 		`,
 		id: 'entry-vibrant-venture',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
@@ -90,6 +96,7 @@ const Projects = [
 			Here you can read more about my task that involved designing and implementing a tournament system for darting!
 		`,
 		id: 'entry-dartscore',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
@@ -108,6 +115,7 @@ const Projects = [
 			It features a web application accessible to teachers and students, where they can upload 3D models.
 		`,
 		id: 'entry-3d-printer-dashboard',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
@@ -127,6 +135,7 @@ const Projects = [
 			It's the first project that involved a team made up of two different courses; Software Development & Media Designer.
 		`,
 		id: 'entry-phantasma',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
@@ -146,6 +155,7 @@ const Projects = [
 			for a top-down puzzle adventure game, in a very small timeframe.
 		`,
 		id: 'entry-2_5d-unity-prototype',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
@@ -162,6 +172,7 @@ const Projects = [
 			My first Unity school project that involved us having to make a 2D adventure game.<br/>
 		`,
 		id: 'entry-dreamventure',
+		url: '#',
 		disabled: true,
 		children: [],
 		tags: [
