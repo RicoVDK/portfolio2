@@ -53,7 +53,7 @@ const IndexPage = ({ location, setContents }) => {
 				Most of my spare time is spent working on video games as a hobby,<br/>
 				hoping to one day fulfill my dream of being able to live out the rest of my life working on video games that people can enjoy.<br/>
 				<br/>
-				I have a great interest and affinity for learning new things, which is luckily what the field I work in is all about!<br/>
+				I have a great interest and affinity for learning new things, which luckily plays a big role in the field I work in!<br/>
 			</TextSubText>
 
 			<TextTitle id={'affinities'}>
@@ -89,7 +89,7 @@ const IndexPage = ({ location, setContents }) => {
 						4+ years of experience as a hobby,<br/>
 						ontop of having made 2 prototypes as part of a school project.<br/>
 						<br/>
-						Currently working on 2 additional prototypes of my own, which you can find <TextLink to={`/projects?it=game-dev_prototype_wip`}>here</TextLink>.<br/>
+						Currently working on 2 additional prototypes of my own, which you can find <TextLink to={`/projects`}>here</TextLink>.<br/>
 						<br/>
 						Experienced in using both Unity {'&'} Godot.
 					</AffinityCard>
@@ -193,7 +193,7 @@ const IndexPage = ({ location, setContents }) => {
 						<br/>
 						Development on the prototype <TextMark>"Project Eterna"</TextMark> was started.<br/>
 						Development on the prototype <TextMark>"Project Birds"</TextMark> was started.<br/>
-						Development on (the first version) of <TextMark>my personal website</TextMark> was started<br/>(yes, this one!).
+						Development on (the first version) of <TextMark>my personal website</TextMark> was started<br/>.
 					</TimelineEntry>
 					{/* <TimelineEntry
 						id={`history-semag-website`}
