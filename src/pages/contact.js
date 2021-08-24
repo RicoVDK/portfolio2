@@ -63,7 +63,7 @@ const ContactPage = ({ location, setContents }) => {
 				<br/>
 				<TextSubTitle>For website feature suggestions:</TextSubTitle><br/>
 				<div className={`relative text-center text-base italic`}>
-					- What feature you would like to see on this website. -
+					- What feature you would like to see on this website. -<br/>
 					- Why you think it should be implemented. -
 				</div>
 				<br/>

@@ -17,17 +17,16 @@ import Tags, {
 const ProjectSearch = ({
 	toSearch = [],
 	waiting = false,
-	initOptions = {
-		query: '',
-		includeTags: [],
-		excludeTags: [],
-	},
 	setWaiting,
 	setResults
 }) => {
 	const [open, setOpen] = useState(false);
 	const [init, setInit] = useState(true);
-	const [searchOptions, setSearchOptions] = useState(initOptions);
+	const [searchOptions, setSearchOptions] = useState({
+		query: '',
+		includeTags: [],
+		excludeTags: [],
+	});
 	const innerContentRef = useRef(null);
 	const outerContentRef = useRef(null);
 	const outerContentHeightRef = useRef(0);
@@ -38,11 +37,9 @@ const ProjectSearch = ({
 	const checkCount = useRef(0);
 
 	const search = () => {
-		const localResults = [];
-
-		toSearch.map((project) => {
-			const hasIncluded = searchOptions.includeTags.some(tag => project.tags.includes(tag));
-			const hasExcluded = searchOptions.excludeTags.some(tag => project.tags.includes(tag));
+		setResults(toSearch.map((project) => {
+			const hasIncluded = searchOptions.includeTags.every(tag => project.tags.includes(tag));
+			const hasExcluded = searchOptions.excludeTags.every(tag => project.tags.includes(tag));
 
 			if (searchOptions.excludeTags.length && hasExcluded)
 				return
@@ -50,27 +47,18 @@ const ProjectSearch = ({
 			if (searchOptions.query.length) {
 				const title = project.displayName;
 
-				if (title.toLowerCase().indexOf(searchOptions.query.toLowerCase()) > -1) {
-					localResults.push(project);
-
-					return
-				}
-
-				return
+				if (title.toLowerCase().indexOf(searchOptions.query.toLowerCase()) === -1)
+					return;
 			}
 			
 			if (searchOptions.includeTags.length && hasIncluded) {
-				localResults.push(project);
-
-				return
+				return project;
 			} else if (searchOptions.includeTags.length) {
 				return
 			}
 
-			localResults.push(project);
-		})
-
-		setResults(localResults);
+			return project;
+		}).filter(project => project !== undefined));
 	}
 
 	const includeAllTags = () => {

@@ -89,7 +89,7 @@ const IndexPage = ({ location, setContents }) => {
 						4+ years of experience as a hobby,<br/>
 						ontop of having made 2 prototypes as part of a school project.<br/>
 						<br/>
-						Currently working on 2 additional prototypes of my own, which you can find <TextLink to={`/projects?search=eterna`}>here</TextLink>.<br/>
+						Currently working on 2 additional prototypes of my own, which you can find <TextLink to={`/projects?it=game-dev_prototype_wip`}>here</TextLink>.<br/>
 						<br/>
 						Experienced in using both Unity {'&'} Godot.
 					</AffinityCard>

@@ -17,11 +17,6 @@ import Projects from '/project-index';
 const ProjectsPage = ({ location, setContents, }) => {
 	const [results, setResults] = useState(Projects);
 	const [waiting, setWaiting] = useState(false);
-	const initSearchOptions = useRef({
-		query: '',
-		includeTags: [],
-		excludeTags: [],
-	});
 
 	const getResults = () => {
 		if (waiting) {
@@ -53,17 +48,6 @@ const ProjectsPage = ({ location, setContents, }) => {
 		]);
 	}, [setContents, results]);
 
-	useLayoutEffect(() => {
-		const params = queryString.parse(location.search);
-		console.log(location, params);
-
-		initSearchOptions.current = {
-			query: params.hasOwnProperty('search') ? params.search : '',
-			includeTags: [],
-			excludeTags: [],
-		}
-	}, [initSearchOptions]);
-
 	return (
 		<div id={`projects`}>
 			<TextSubText wrapClassName={`text-center pt-6`}>
@@ -80,7 +64,6 @@ const ProjectsPage = ({ location, setContents, }) => {
 				<ProjectSearch
 					toSearch={Projects}
 					waiting={waiting}
-					initOptions={initSearchOptions.current}
 					setWaiting={setWaiting}
 					setResults={setResults}
 				/>
