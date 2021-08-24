@@ -31,6 +31,7 @@ const ProjectsPage = ({ location, setContents, }) => {
 						title={project.displayName}
 						desc={project.description}
 						id={project.id}
+						disabled={project.disabled}
 					/>
 				))}
 			</div>
@@ -59,7 +60,7 @@ const ProjectsPage = ({ location, setContents, }) => {
 
 			<div
 				id={`search`}
-				className={`relative flex flex-col w-full items-center pt-12`}
+				className={`relative flex flex-col w-full items-center py-12`}
 			>
 				<ProjectSearch
 					toSearch={Projects}

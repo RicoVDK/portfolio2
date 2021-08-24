@@ -41,7 +41,7 @@ const Projects = [
 			This project is my main focus.
 		`,
 		id: 'entry-eterna',
-		disabled: false,
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.Prototype,
@@ -57,7 +57,7 @@ const Projects = [
 			A first person puzzle horror featuring malformed animals as consequence of experiments that went terribly wrong.
 		`,
 		id: 'entry-birds',
-		disabled: false,
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.Prototype,
@@ -75,7 +75,7 @@ const Projects = [
 			My work involved designing a set of characters' personalities and then writing interactive dialogue for each of them!
 		`,
 		id: 'entry-vibrant-venture',
-		disabled: false,
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.Contribution, Tags.SelfInterest,
@@ -90,7 +90,7 @@ const Projects = [
 			Here you can read more about my task that involved designing and implementing a tournament system for darting!
 		`,
 		id: 'entry-dartscore',
-		disabled: false,
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.WebDev, Tags.Internship,
@@ -108,7 +108,7 @@ const Projects = [
 			It features a web application accessible to teachers and students, where they can upload 3D models.
 		`,
 		id: 'entry-3d-printer-dashboard',
-		disabled: false,
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.WebDev, Tags.School,
@@ -127,6 +127,7 @@ const Projects = [
 			It's the first project that involved a team made up of two different courses; Software Development & Media Designer.
 		`,
 		id: 'entry-phantasma',
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.School,
@@ -145,6 +146,7 @@ const Projects = [
 			for a top-down puzzle adventure game, in a very small timeframe.
 		`,
 		id: 'entry-2_5d-unity-prototype',
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.School,
@@ -160,6 +162,7 @@ const Projects = [
 			My first Unity school project that involved us having to make a 2D adventure game.<br/>
 		`,
 		id: 'entry-dreamventure',
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.School,

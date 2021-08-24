@@ -224,7 +224,7 @@ const IndexPage = ({ location, setContents }) => {
 				</Timeline>
 			</div>
 
-			<TextSubText wrapClassName={`pt-6 text-center`}>
+			<TextSubText wrapClassName={`pt-6 pb-12 text-center`}>
 				Thank you for your interest thus far!<br/>
 				<br/>
 				I intentionally did not include any personal info and details for privacy and safety reasons.<br/>
