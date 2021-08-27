@@ -21,7 +21,7 @@ const SiteHeader = ({ location }) => {
 				{/** Page shadow. */}
 				<div
 					id={`page-shadow`}
-					className={`absolute w-full h-6 bottom-0 transform translate-y-full z-50 px-px pointer-events-none`}
+					className={`absolute w-full h-6 bottom-0 transform translate-y-full z-25 px-px pointer-events-none`}
 				>
 					<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
 				</div>

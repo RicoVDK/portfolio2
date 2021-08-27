@@ -33,6 +33,7 @@ const ProjectsPage = ({ location, setContents, }) => {
 						id={project.id}
 						disabled={project.disabled}
 						url={project.url}
+						img={project.img}
 					/>
 				))}
 			</div>

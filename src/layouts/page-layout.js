@@ -12,12 +12,15 @@ import PageContent, {
 	Entry as PageContentEntry
 } from '/src/components/page-content';
 
-export const PageLayout = ({ children }) => {
+export const PageLayout = ({ setModal, children }) => {
 	const [contents, setContents] = useState([]);
 
 	const getInnerContents = (children) => {
 		if (children.length > 0)
 			return buildPageContentEntries(children);
+
+		// Otherwise return void.
+		// Benefit of JS where we don't have to deal with "undefined" litered in our array.
 	}
 
 	const buildPageContentEntries = (contents) => {
@@ -42,6 +45,7 @@ export const PageLayout = ({ children }) => {
 				<MobilePageLayout
 					contents={contents}
 					setContents={setContents}
+					setModal={setModal}
 					buildPageContentEntries={buildPageContentEntries}
 				>
 					{children}
@@ -52,6 +56,7 @@ export const PageLayout = ({ children }) => {
 				<DesktopPageLayout
 					contents={contents}
 					setContents={setContents}
+					setModal={setModal}
 					buildPageContentEntries={buildPageContentEntries}
 				>
 					{children}
@@ -64,6 +69,7 @@ export const PageLayout = ({ children }) => {
 export const MobilePageLayout = ({
 	contents,
 	setContents,
+	setModal,
 	buildPageContentEntries,
 	children
 }) => {
@@ -76,13 +82,13 @@ export const MobilePageLayout = ({
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
 				<div className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
-					{cloneElement(children, { contents, setContents })}
+					{cloneElement(children, { contents, setContents, setModal })}
 				</div>
 			</div>
 
 			<div
 					id={`page-bottom-shadow`}
-					className={`absolute w-full h-6 bottom-0 z-50 px-px`}
+					className={`absolute w-full h-6 bottom-0 z-25 px-px`}
 				>
 				<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 			</div>
@@ -93,6 +99,7 @@ export const MobilePageLayout = ({
 export const DesktopPageLayout = ({
 	contents,
 	setContents,
+	setModal,
 	buildPageContentEntries,
 	children
 }) => {
@@ -123,13 +130,13 @@ export const DesktopPageLayout = ({
 			<div className={`relative flex-grow h-full`}>
 				<div
 					id={`page-bottom-shadow`}
-					className={`absolute w-full h-6 bottom-0 z-50 px-px pointer-events-none`}
+					className={`absolute w-full h-6 bottom-0 z-25 px-px pointer-events-none`}
 				>
 					<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 				</div>
 
 				<div className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
-					{cloneElement(children, { contents, setContents })}
+					{cloneElement(children, { contents, setContents, setModal })}
 				</div>
 			</div>
 		</div>

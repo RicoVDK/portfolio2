@@ -11,7 +11,6 @@ import TextTitle from '/src/components/text/text-title';
 import TextSubText from '/src/components/text/text-subtext';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TextMark from '/src/components/text/text-mark';
-import TextClipboard from '/src/components/text/text-clipboard';
 import TextLink from '/src/components/text/text-link';
 import AffinityCard from '/src/components/affinity-card';
 import Timeline, {
@@ -193,7 +192,6 @@ const IndexPage = ({ location, setContents }) => {
 						<br/>
 						Development on the prototype <TextMark>"Project Eterna"</TextMark> was started.<br/>
 						Development on the prototype <TextMark>"Project Birds"</TextMark> was started.<br/>
-						Development on (the first version) of <TextMark>my personal website</TextMark> was started<br/>.
 					</TimelineEntry>
 					{/* <TimelineEntry
 						id={`history-semag-website`}
@@ -208,7 +206,7 @@ const IndexPage = ({ location, setContents }) => {
 						I instead offered advice on how to approach the project using my own experience,
 						and helped him get a hang of ReactJS {'&'} Sass.<br/>
 						<br/>
-						I also made the website responsive and helped fixing styling related issues.<br/>
+						I also made the website responsive, added a mobile nav bar, and helped fixing styling related issues.<br/>
 						You can read more on this <TextMark>here</TextMark>.
 					</TimelineEntry> */}
 					<TimelineEntry

@@ -61,7 +61,8 @@ module.exports = {
     extend: {
       borderWidth: ['responsive'],
       margin: ['last'],
-      transitionProperty: ['hover']
+      transitionProperty: ['hover'],
+      display: ['hover', 'group-hover']
     },
   },
   plugins: [],

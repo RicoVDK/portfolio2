@@ -1,5 +1,7 @@
 import Tags from '/src/components/tags';
 
+import EntryPortfolioIcon from '/src/images/projects/ricosoftworks/ricosoftworks-icon.png';
+
 const Projects = [
 	{
 		displayName: 'Rico\'s Softworks',
@@ -10,6 +12,7 @@ const Projects = [
 		`,
 		id: 'entry-portfolio',
 		url: 'ricosoftworks',
+		img: EntryPortfolioIcon,
 		disabled: false,
 		children: [],
 		tags: [
@@ -28,6 +31,7 @@ const Projects = [
 	// 	`,
 	// 	id: 'entry-semag-website',
 	//	url: '#',
+	//	img: null,
 	// 	disabled: false,
 	// 	children: [],
 	// 	tags: [
@@ -45,6 +49,7 @@ const Projects = [
 		`,
 		id: 'entry-eterna',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [
@@ -62,6 +67,7 @@ const Projects = [
 		`,
 		id: 'entry-birds',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [
@@ -81,6 +87,7 @@ const Projects = [
 		`,
 		id: 'entry-vibrant-venture',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [
@@ -97,6 +104,7 @@ const Projects = [
 		`,
 		id: 'entry-dartscore',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [
@@ -116,6 +124,7 @@ const Projects = [
 		`,
 		id: 'entry-3d-printer-dashboard',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [
@@ -136,6 +145,7 @@ const Projects = [
 		`,
 		id: 'entry-phantasma',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [
@@ -156,6 +166,7 @@ const Projects = [
 		`,
 		id: 'entry-2_5d-unity-prototype',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [
@@ -173,6 +184,7 @@ const Projects = [
 		`,
 		id: 'entry-dreamventure',
 		url: '#',
+		img: null,
 		disabled: true,
 		children: [],
 		tags: [

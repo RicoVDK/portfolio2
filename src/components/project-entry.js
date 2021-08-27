@@ -26,6 +26,12 @@ const ProjectEntry = ({
 			>
 				{/** Image. */}
 				<div className={`relative w-full h-56 overflow-hidden bg-black border-b border-gray-700 text-primary-3`}>
+					<img
+						src={img}
+						className={`relative w-full h-full object-contain transition-all duration-500 opacity-0`}
+						onLoad={(event) => event.target.style.opacity = 1}
+					/>
+
 					<div className={`absolute py-2 px-4 bottom-0 bg-gray-800 group-hover:bg-gray-700 border-t border-r border-gray-700 font-bold rounded-tr-3xl`}>
 						{title}
 					</div>

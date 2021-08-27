@@ -1,9 +1,12 @@
 import React from 'react';
 
+import IMGViewer from '/src/components/img-viewer';
+
 const ProjectBanner = ({
 	id = '',
 	className = '',
 	img = null,
+	setModal,
 	children,
 }) => {
 	return (
@@ -13,10 +16,11 @@ const ProjectBanner = ({
 		>
 			{/** Image. */}
 			<div className={`absolute w-full h-full border-t border-b border-gray-700`}>
-				<img
-					className={`relative block h-full w-full object-contain transition-all duration-500 opacity-0`}
-					onLoad={(event) => event.target.style.opacity = 1}
+				<IMGViewer
+					title={`An in-dev screenshot of the website`}
+					date={`2021/08/27`}
 					src={img}
+					setModal={setModal}
 				/>
 
 				<div className={`absolute left-1/2 bottom-0 bg-gray-800 border border-b-0 border-gray-700 rounded-tl-3xl rounded-tr-3xl m-auto text-center px-4 tablet:px-6 py-1 tablet:py-2 transform -translate-x-1/2 whitespace-nowrap`}>
