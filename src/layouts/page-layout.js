@@ -88,7 +88,7 @@ export const MobilePageLayout = ({
 
 			<div
 					id={`page-bottom-shadow`}
-					className={`absolute w-full h-6 bottom-0 z-25 px-px`}
+					className={`absolute w-full h-6 bottom-0 z-40 px-px`}
 				>
 				<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 			</div>
@@ -130,7 +130,7 @@ export const DesktopPageLayout = ({
 			<div className={`relative flex-grow h-full`}>
 				<div
 					id={`page-bottom-shadow`}
-					className={`absolute w-full h-6 bottom-0 z-25 px-px pointer-events-none`}
+					className={`absolute w-full h-6 bottom-0 z-40 px-px pointer-events-none`}
 				>
 					<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 				</div>

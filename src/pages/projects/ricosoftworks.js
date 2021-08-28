@@ -51,6 +51,7 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				{ displayName: 'Contact Page (Design)', id: 'contact-page-design', children: [] },
 				{ displayName: 'Contact Page (Code)', id: 'contact-page-code', children: [] },
 			] },
+			{ displayName: 'Celebration', id: 'celebration', children: [] },
 		]);
 	}, [setContents]);
 
@@ -371,6 +372,18 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 						/>
 					</IMGGridEntry>
 				</IMGGrid><br/>
+			</TextCenter>
+
+			<TextTitle id={`celebration`}>
+				Celebration
+			</TextTitle>
+
+			<TextCenter>
+				That's about all I felt like writing about for now!<br/>
+				After all the implementing, which takes us to the present day, I started writing some project posts.<br/>
+				This was the very first one! I hope you could enjoy it in some way.<br/>
+				<br/>
+				For any additional questions or feedback, feel free to <TextLink to={`/contact`}>contact me</TextLink>!
 			</TextCenter>
 		</ProjectLayout>
 	)
