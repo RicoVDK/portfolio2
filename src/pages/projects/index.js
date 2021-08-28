@@ -4,13 +4,13 @@ import React, {
 	useRef,
 	useLayoutEffect
 } from 'react';
-import queryString from 'query-string';
 
 import ProjectSearch from '/src/components/project-search';
 import ProjectEntry from '/src/components/project-entry';
 import TextTitle from '/src/components/text/text-title';
 import TextSubText from '/src/components/text/text-subtext';
 import TextMark from '/src/components/text/text-mark';
+import TextBold from '/src/components/text/text-bold';
 
 import Projects from '/project-index';
 
@@ -54,7 +54,7 @@ const ProjectsPage = ({ location, setContents, }) => {
 	return (
 		<div id={`projects`}>
 			<TextSubText wrapClassName={`text-center pt-6`}>
-				Here you'll find <span className={`font-bold`}>{'>'}some{'<'}</span> of the projects I have worked, or am working on!<br/>
+				Here you'll find <TextBold>{'>'}some{'<'}</TextBold> of the projects I have worked, or am working on!<br/>
 				<TextMark>Please keep in mind that not all of these are owned by me.</TextMark><br/>
 				<br/>
 				You can filter by using the search field below, as well as including and excluding tags by opening the options menu below the search field.

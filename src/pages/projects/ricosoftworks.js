@@ -22,6 +22,16 @@ import AboutCode01 from '/src/images/projects/ricosoftworks/ricosoftworks-about-
 import AboutCode02 from '/src/images/projects/ricosoftworks/ricosoftworks-about-code02.png';
 import AboutCode03 from '/src/images/projects/ricosoftworks/ricosoftworks-about-code03.png';
 import AboutCode04 from '/src/images/projects/ricosoftworks/ricosoftworks-about-code04.png';
+import ProjectsCode01 from '/src/images/projects/ricosoftworks/ricosoftworks-projects-code01.png';
+import ProjectsCode02 from '/src/images/projects/ricosoftworks/ricosoftworks-projects-code02.png';
+import ProjectsCode03 from '/src/images/projects/ricosoftworks/ricosoftworks-projects-code03.png';
+import ProjectsCode04 from '/src/images/projects/ricosoftworks/ricosoftworks-projects-code04.png';
+import ProjectsCode05 from '/src/images/projects/ricosoftworks/ricosoftworks-projects-code05.png';
+import ProjectsCode06 from '/src/images/projects/ricosoftworks/ricosoftworks-projects-code06.png';
+import ContactCode01 from '/src/images/projects/ricosoftworks/ricosoftworks-contact-code01.png';
+import ContactCode02 from '/src/images/projects/ricosoftworks/ricosoftworks-contact-code02.png';
+import ContactCode03 from '/src/images/projects/ricosoftworks/ricosoftworks-contact-code03.png';
+import ContactCode04 from '/src/images/projects/ricosoftworks/ricosoftworks-contact-code04.png';
 
 const RicoSoftworks = ({ setContents, setModal }) => {
 	useLayoutEffect(() => {
@@ -36,6 +46,10 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 			{ displayName: 'Implementation', id: 'implementation', children: [
 				{ displayName: 'About Page (Design)', id: 'about-page-design', children: [] },
 				{ displayName: 'About Page (Code)', id: 'about-page-code', children: [] },
+				{ displayName: 'Projects Page (Design)', id: 'projects-page-design', children: [] },
+				{ displayName: 'Projects Page (Code)', id: 'projects-page-code', children: [] },
+				{ displayName: 'Contact Page (Design)', id: 'contact-page-design', children: [] },
+				{ displayName: 'Contact Page (Code)', id: 'contact-page-code', children: [] },
 			] },
 		]);
 	}, [setContents]);
@@ -221,7 +235,142 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 							setModal={setModal}
 						/>
 					</IMGGridEntry>
-				</IMGGrid>
+				</IMGGrid><br/>
+				<br/>
+				<TextSubTitle id={`projects-page-design`} className={`py-4`}>Projects Page (Design)</TextSubTitle><br/>
+				<br/>
+				The best part about this website. The treasure vault. The projects page!<br/>
+				I already decided that I wanted to incorporate a way to search and filter the project entries.<br/>
+				The reason why I think this page needs it, is because I'm always working on <TextItalic>something</TextItalic>.<br/>
+				There are constant new additions to the page due to my endless curiosity.<br/>
+				<br/>
+				First things first, the search bar.<br/>
+				Keeping in mind the fact that everything on the page is pretty much centered, and the site has a "rounded" style,<br/>
+				I decided to center the search bar and give it a rounded border as to keep things consistent. That was a piece of cake!<br/>
+				<br/>
+				The toolbar, however, was a piece of work.<br/>
+				The window needs the ability to be opened and closed, preferrably not shrinking down the contents in its process, 
+				while also making the height of the window scale with its content.<br/>
+				The window would house all of the tags, since they take up a considerable amount of space if there are lots of them.<br/>
+				Speaking of there being a lot of tags... If that's the case, I should probably add the ability to select or deselect them all in one go.<br/>
+				Visitor quality of life heavily outweights the downsides (as there are practically none), so let's include that too.<br/>
+				<br/>
+				Back on the topic of the actual toolbar window, I need to somehow grab the height of the inner relative element that houses the actual tags, 
+				and then apply that height onto the absolute element that wraps that inner relative element whenever the toggle is pressed.<br/>
+				That way, I can scale my window according to the dynamic content height, and also prevent the contents from shrinking down. Neat!<br/>
+				<br/>
+				Lastly, I need a way to visualize all projects.<br/>
+				I decided to go with a 2-column grid because this kind of thing is essentially why grid exists.<br/>
+				Coupling it with the actual project entries that used flexbox, I should be able to make some pretty okay looking entries.<br/>
+				<br/>
+				What about pagination? Meh. I personally don't think its necessary because of the versatile filter we have.<br/>
+				However, once the projects start piling up to the 100s I think it becomes a necessity.<br/>
+				<br/>
+				<TextSubTitle id={`projects-page-code`} className={`py-4`}>Projects Page (Code)</TextSubTitle><br/>
+				<br/>
+				Less talking more code!!!<br/>
+				<TextItalic>(Well written code doesn't require comments :) )</TextItalic><br/>
+				<br/>
+				<IMGGrid>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Search filter & bulk tag selecting`}
+							date={`2021/08/28`}
+							src={ProjectsCode01}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Animating & applying query settings`}
+							date={`2021/08/28`}
+							src={ProjectsCode02}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Toggle & debounce timer`}
+							date={`2021/08/28`}
+							src={ProjectsCode03}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Search JSX structure`}
+							date={`2021/08/28`}
+							src={ProjectsCode04}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Projects page source code`}
+							date={`2021/08/28`}
+							src={ProjectsCode05}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Project entry source code`}
+							date={`2021/08/28`}
+							src={ProjectsCode06}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+				</IMGGrid><br/>
+				<br/>
+				<TextSubTitle id={`contact-page-design`} className={`py-4`}>Contact Page (Design)</TextSubTitle><br/>
+				<br/>
+				The important thing here was to first make sure people include the right information <TextItalic>before</TextItalic> sharing contact info.<br/>
+				So, I designed a table which I call a "TNF table" (true, null, false), which would accept an array of objects, 
+				each containing a display name and its TNF value.<br/>
+				True would display a check, false would display a cross, and null would display an orange question mark for uncertainty.<br/>
+				With this I can already showcase what I'm available for, eliminating the need for people to ask me personally.<br/>
+				I also made up a list of subjects I could potentially be approached with and added information which I would like to receive.<br/>
+				<br/>
+				Lastly I wanted to display my contact information in a way that differed slightly from the rest, 
+				so I made each into a "bar" that contained an icon and text.<br/>
+				It needed to be swift and interactive, so I made the text for twitter a link and the text for mailing copyable.<br/>
+				<br/>
+				<TextSubTitle id={`contact-page-code`} className={`py-4`}>Contact Page (Code)</TextSubTitle><br/>
+				<br/>
+				<IMGGrid>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`The contact page (mostly)`}
+							date={`2021/08/28`}
+							src={ContactCode01}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`TNF table source code`}
+							date={`2021/08/28`}
+							src={ContactCode02}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Contact info component source code`}
+							date={`2021/08/28`}
+							src={ContactCode03}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Text clipboard component source code`}
+							date={`2021/08/28`}
+							src={ContactCode04}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+				</IMGGrid><br/>
 			</TextCenter>
 		</ProjectLayout>
 	)

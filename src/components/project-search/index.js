@@ -16,7 +16,6 @@ import Tags, {
 
 const ProjectSearch = ({
 	toSearch = [],
-	waiting = false,
 	setWaiting,
 	setResults
 }) => {
@@ -45,9 +44,7 @@ const ProjectSearch = ({
 				return
 
 			if (searchOptions.query.length) {
-				const title = project.displayName;
-
-				if (title.toLowerCase().indexOf(searchOptions.query.toLowerCase()) === -1)
+				if (project.displayName.toLowerCase().indexOf(searchOptions.query.toLowerCase()) === -1)
 					return;
 			}
 			
@@ -156,7 +153,7 @@ const ProjectSearch = ({
 	const checkResultsTimeStamp = (timestamp) => {
 		checkCount.current = timestamp;
 
-		if ((checkCount.current - resultsTimeStamp.current) * 0.001 > 1) {
+		if ((checkCount.current - resultsTimeStamp.current) > 1000) {
 			setWaiting(false);
 			cancelAnimationFrame(waitFrame.current);
 			search();
@@ -234,9 +231,6 @@ const ProjectSearch = ({
 							onClick={disableAllTags}
 						/>
 					</div>
-					
-					{/** Bottom Border. */}
-					{/* <div className={`absolute w-full bottom-0 border-b border-primary`}></div> */}
 				</div>
 			</div>
 

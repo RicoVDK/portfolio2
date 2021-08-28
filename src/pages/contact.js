@@ -95,10 +95,10 @@ const ContactPage = ({ location, setContents }) => {
 						icon: 'fab fa-twitter',
 						displayName: 'Twitter',
 						child: <TextLink
-							to={`https://twitter.com/ricovdk`}
+							to={`https://twitter.com/`}
 							external={true}
 						>
-							@ricovdk<i className={`fas fa-external-link-alt text-xs pl-2`} />
+							@twitter<i className={`fas fa-external-link-alt text-xs pl-2`} />
 						</TextLink>
 					},
 					{
