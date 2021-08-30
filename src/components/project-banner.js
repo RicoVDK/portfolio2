@@ -5,6 +5,8 @@ import IMGViewer from '/src/components/img-viewer';
 const ProjectBanner = ({
 	id = '',
 	className = '',
+	imgTitle = '',
+	date = '',
 	img = null,
 	setModal,
 	children,
@@ -17,8 +19,8 @@ const ProjectBanner = ({
 			{/** Image. */}
 			<div className={`absolute w-full h-full border-t border-b border-gray-700`}>
 				<IMGViewer
-					title={`An in-dev screenshot of the website`}
-					date={`2021/08/27`}
+					title={imgTitle}
+					date={date}
 					src={img}
 					setModal={setModal}
 				/>

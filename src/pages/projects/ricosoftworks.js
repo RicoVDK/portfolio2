@@ -1,5 +1,4 @@
 import React, {
-	useRef,
 	useLayoutEffect,
 } from 'react';
 
@@ -32,6 +31,10 @@ import ContactCode01 from '/src/images/projects/ricosoftworks/ricosoftworks-cont
 import ContactCode02 from '/src/images/projects/ricosoftworks/ricosoftworks-contact-code02.png';
 import ContactCode03 from '/src/images/projects/ricosoftworks/ricosoftworks-contact-code03.png';
 import ContactCode04 from '/src/images/projects/ricosoftworks/ricosoftworks-contact-code04.png';
+import PostCode01 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code01.png';
+import PostCode02 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code02.png';
+import PostCode03 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code03.png';
+import PostCode04 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code04.png';
 
 const RicoSoftworks = ({ setContents, setModal }) => {
 	useLayoutEffect(() => {
@@ -51,7 +54,9 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				{ displayName: 'Contact Page (Design)', id: 'contact-page-design', children: [] },
 				{ displayName: 'Contact Page (Code)', id: 'contact-page-code', children: [] },
 			] },
-			{ displayName: 'Celebration', id: 'celebration', children: [] },
+			{ displayName: 'Celebration', id: 'celebration', children: [
+				{ displayName: 'Post Entries (Code)', id: 'post-code', children: [] },
+			] },
 		]);
 	}, [setContents]);
 
@@ -60,6 +65,8 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 			<ProjectBanner
 				id={`project`}
 				className={`mb-6`}
+				imgTitle={`An in-dev screenshot of the website`}
+				date={`2021/08/27`}
 				img={Header}
 				setModal={setModal}
 			>
@@ -90,7 +97,8 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				</TextSubTitle><br/>
 				<br/>
 				Before we dive right into implementing features, I thought of 3 important questions to ask myself.<br/>
-				So let's answer these first! These questions are fairly straightforward and listed in general perspective, but can help define the ground works we should be focusing on:<br/>
+				So let's answer these first! These questions are fairly straightforward and listed in general perspective, 
+				but can help define the ground works we should be focusing on:<br/>
 				<br/>
 				<TextLeft>
 					<TextItalic><TextBold>
@@ -177,6 +185,9 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				I knew that my website was going to be static and I didn't need any back-end, so I looked into a framework that optimized for exactly that purpose.<br/>
 				That's when I stumbled upon Gatsby, and determined it would be good to encapsulate my website in its framework as it's primarily targeted towards portfolio websites, 
 				which is exactly the kind of website I'm making!<br/>
+				<br/>
+				As far as it goes design-wise, I was thinking of mixing retro with modern.<br/>
+				For that, I want to use some bold colours and get a bit creative with page decoration.<br/>
 				<br/>
 				<TextSubTitle id={`about-page-design`} className={`py-4`}>About Page (Design)</TextSubTitle><br/>
 				<br/>
@@ -379,11 +390,54 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 			</TextTitle>
 
 			<TextCenter>
+				I finished working on all site functionalities the 30th of august, a day away from the project deadline!<br/>
+				In the end I didn't work on the website every day, as I was still allowing myself to have some days off 
+				since it's still summer vacation at this time of the year. So I wanted to enjoy my last one a bit too!<br/>
+				<br/>
 				That's about all I felt like writing about for now!<br/>
 				After all the implementing, which takes us to the present day, I started writing some project posts.<br/>
 				This was the very first one! I hope you could enjoy it in some way.<br/>
 				<br/>
-				For any additional questions or feedback, feel free to <TextLink to={`/contact`}>contact me</TextLink>!
+				For any additional questions or feedback, feel free to <TextLink to={`/contact`}>contact me</TextLink>!<br/>
+				<br/>
+				<TextSubTitle id={`post-code`} className={`py-4`}>Post Entries (Code)</TextSubTitle><br/>
+				<br/>
+				As a small bonus, here's an insight into how project posts are made.<br/>
+				<br/>
+				<IMGGrid>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`The many many imports`}
+							date={`2021/08/30`}
+							src={PostCode01}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Basic post structure using existing components`}
+							date={`2021/08/30`}
+							src={PostCode02}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Using the image grid`}
+							date={`2021/08/30`}
+							src={PostCode03}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Image viewer component`}
+							date={`2021/08/30`}
+							src={PostCode04}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+				</IMGGrid>
 			</TextCenter>
 		</ProjectLayout>
 	)

@@ -3,14 +3,14 @@ import React, {
 } from 'react';
 
 import TextTitle from '/src/components/text/text-title';
-import TextMark from '/src/components/text/text-mark';
-import TextSubText from '/src/components/text/text-subtext';
 import TextItalic from '/src/components/text/text-italic';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TNFTable from '/src/components/tnf-table';
 import TextClipboard from '/src/components/text/text-clipboard';
 import IconTextTable from '/src/components/icon-text-table';
 import TextLink from '/src/components/text/text-link';
+
+import { siteMetadata } from '/gatsby-config';
 
 const ContactPage = ({ location, setContents }) => {
 	useLayoutEffect(() => {
@@ -95,7 +95,7 @@ const ContactPage = ({ location, setContents }) => {
 						icon: 'fab fa-twitter',
 						displayName: 'Twitter',
 						child: <TextLink
-							to={`https://twitter.com/`}
+							to={siteMetadata.socials.twitter}
 							external={true}
 						>
 							@twitter<i className={`fas fa-external-link-alt text-xs pl-2`} />
@@ -104,7 +104,9 @@ const ContactPage = ({ location, setContents }) => {
 					{
 						icon: 'fas fa-envelope',
 						displayName: 'E-Mail',
-						child: <TextClipboard>@gmail.com<i className={`far fa-copy text-sm pl-2`} /></TextClipboard>
+						child: <TextClipboard>
+							{siteMetadata.socials.mail}<i className={`far fa-copy text-sm pl-2`} />
+						</TextClipboard>
 					},
 				]}
 			/>

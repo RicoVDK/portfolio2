@@ -36,7 +36,7 @@ const PageNav = ({ location }) => {
 			role={`navigation`}
 			className={`relative w-full h-2/5 border-r border-l border-primary desktop:border-0`}
 		>
-			<div className={`absolute w-full h-full rounded-bl-full rounded-br-full border border-primary overflow-hidden`}>
+			<div className={`absolute w-full h-full rounded-bl-3xl rounded-br-3xl border border-primary overflow-hidden`}>
 				{/** Cogs. */}
 				<div className={`absolute flex justify-center w-full h-full top-0 left-0`}>
 					<div
@@ -59,7 +59,7 @@ const PageNav = ({ location }) => {
 				</div>
 
 				{/** Nav. */}
-				<div className={`relative flex flex-row h-full px-10 desktop:px-16`}>
+				<div className={`relative flex flex-row h-full px-2 desktop:px-4`}>
 					{Object.keys(pages).map((page, index) => (
 						<Link
 							key={index}

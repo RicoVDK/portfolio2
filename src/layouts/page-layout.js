@@ -111,7 +111,7 @@ export const DesktopPageLayout = ({
 			{/** Sidebar. */}
 			<div className={`relative w-1/4 min-w-72 h-full border-r border-primary`}>
 				<div className={`absolute w-full h-full`}>
-					<div className={`relative w-full h-full p-4`}>
+					<div className={`relative flex flex-col w-full h-full p-4 overflow-hidden`}>
 						<TextSubTitle className={`relative block text-center w-full pb-2`}>
 							Page contents
 						</TextSubTitle>

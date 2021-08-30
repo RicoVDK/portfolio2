@@ -60,17 +60,15 @@ export const DesktopSiteLayout = ({ location, children }) => {
 								cogClassName={`text-10xl tablet:text-12xl text-gray-800 animate-spin-slower-right`}
 							/>
 
-							<div className={`relative`}>
-								
+							<div className={`relative text-xl text-primary text-center italic`}>
+								{Site.title}
 							</div>
 						</div>
 
 						{/** Socials bar. */}
 						<div className={`relative w-full h-2/5 border-r border-primary`}>
-							<div className={`absolute flex justify-center items-center w-full h-full border border-primary rounded-bl-full rounded-br-full`}>
-								<div className={`relative text-xl text-primary text-center italic`}>
-									{Site.title}
-								</div>
+							<div className={`absolute flex justify-center items-center w-full h-full border border-primary rounded-bl-3xl rounded-br-3xl`}>
+								
 							</div>
 						</div>
 					</div>

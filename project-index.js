@@ -1,6 +1,7 @@
 import Tags from '/src/components/tags';
 
 import EntryPortfolioIcon from '/src/images/projects/ricosoftworks/ricosoftworks-icon.png';
+import EntryEternaIcon from '/src/images/projects/eterna/eterna-icon.png';
 
 const Projects = [
 	{
@@ -48,9 +49,9 @@ const Projects = [
 			This project is my main focus.
 		`,
 		id: 'entry-eterna',
-		url: '#',
-		img: null,
-		disabled: true,
+		url: 'eterna',
+		img: EntryEternaIcon,
+		disabled: false,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.Prototype,
@@ -66,7 +67,7 @@ const Projects = [
 			A first person puzzle horror featuring malformed animals as consequence of experiments that went terribly wrong.
 		`,
 		id: 'entry-birds',
-		url: '#',
+		url: 'birds',
 		img: null,
 		disabled: true,
 		children: [],
@@ -86,7 +87,7 @@ const Projects = [
 			My work involved designing a set of characters' personalities and then writing interactive dialogue for each of them!
 		`,
 		id: 'entry-vibrant-venture',
-		url: '#',
+		url: 'vibrant-venture',
 		img: null,
 		disabled: true,
 		children: [],
@@ -103,7 +104,7 @@ const Projects = [
 			Here you can read more about my task that involved designing and implementing a tournament system for darting!
 		`,
 		id: 'entry-dartscore',
-		url: '#',
+		url: 'dartscore',
 		img: null,
 		disabled: true,
 		children: [],
@@ -123,7 +124,7 @@ const Projects = [
 			It features a web application accessible to teachers and students, where they can upload 3D models.
 		`,
 		id: 'entry-3d-printer-dashboard',
-		url: '#',
+		url: '3d-printer-dashboard',
 		img: null,
 		disabled: true,
 		children: [],
@@ -144,7 +145,7 @@ const Projects = [
 			It's the first project that involved a team made up of two different courses; Software Development & Media Designer.
 		`,
 		id: 'entry-phantasma',
-		url: '#',
+		url: 'phantasma',
 		img: null,
 		disabled: true,
 		children: [],
@@ -165,7 +166,7 @@ const Projects = [
 			for a top-down puzzle adventure game, in a very small timeframe.
 		`,
 		id: 'entry-2_5d-unity-prototype',
-		url: '#',
+		url: '2_5d-unity-prototype',
 		img: null,
 		disabled: true,
 		children: [],
@@ -183,7 +184,7 @@ const Projects = [
 			My first Unity school project that involved us having to make a 2D adventure game.<br/>
 		`,
 		id: 'entry-dreamventure',
-		url: '#',
+		url: 'dreamventure',
 		img: null,
 		disabled: true,
 		children: [],

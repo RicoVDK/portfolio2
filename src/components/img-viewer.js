@@ -21,14 +21,14 @@ const IMGViewer = ({
 				/>
 
 				{/** Image. */}
-				<div className={`relative w-5/6 h-5/6 group`}>
+				<div className={`relative w-5/6 h-5/6 group rounded-3xl overflow-hidden`}>
 					<img
-						className={`relative block w-full h-full object-contain transition-all duration-500 opacity-0 bg-gray-800 border border-gray-700`}
+						className={`relative block w-full h-full object-scale-down transition-all duration-500 opacity-0 bg-gray-800 border border-gray-700 rounded-3xl`}
 						onLoad={(event) => event.target.style.opacity = 1}
 						src={src}
 					/>
 
-					{title.length && <div className={`absolute hidden group-hover:block w-full py-6 px-4 italic text-xl top-0 left-0 bg-black bg-opacity-50`}>
+					{title.length && <div className={`absolute hidden group-hover:block w-full py-6 pl-4 pr-24 italic text-xl top-0 left-0 bg-black bg-opacity-50`}>
 						{title}
 					</div>}
 
@@ -54,7 +54,7 @@ const IMGViewer = ({
 	return (
 		<div
 			id={id}
-			className={`relative w-full h-full overflow-hidden cursor-pointer group ${className}`}
+			className={`relative w-full h-full overflow-hidden cursor-pointer group text-white ${className}`}
 			onClick={showModal}
 		>
 			{/** Glow. */}

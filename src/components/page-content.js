@@ -64,8 +64,10 @@ const PageContent = ({
 	children
 }) => {
 	return(
-		<div className={`relative w-full p-1`}>
-			{children}
+		<div className={`relative w-full flex-grow overflow-y-scroll`}>
+			<div className={`relative w-full p-1`}>
+				{children}
+			</div>
 		</div>
 	)
 }
