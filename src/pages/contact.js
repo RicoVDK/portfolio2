@@ -92,6 +92,13 @@ const ContactPage = ({ location, setContents }) => {
 				className={`m-auto max-w-500px pb-12`}
 				contents={[
 					{
+						icon: 'fas fa-envelope',
+						displayName: 'E-Mail',
+						child: <TextClipboard>
+							{siteMetadata.socials.mail}<i className={`far fa-copy text-sm pl-2`} />
+						</TextClipboard>
+					},
+					{
 						icon: 'fab fa-twitter',
 						displayName: 'Twitter',
 						child: <TextLink
@@ -100,13 +107,6 @@ const ContactPage = ({ location, setContents }) => {
 						>
 							@twitter<i className={`fas fa-external-link-alt text-xs pl-2`} />
 						</TextLink>
-					},
-					{
-						icon: 'fas fa-envelope',
-						displayName: 'E-Mail',
-						child: <TextClipboard>
-							{siteMetadata.socials.mail}<i className={`far fa-copy text-sm pl-2`} />
-						</TextClipboard>
 					},
 				]}
 			/>

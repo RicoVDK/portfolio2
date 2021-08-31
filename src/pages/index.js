@@ -228,7 +228,7 @@ const IndexPage = ({ location, setContents }) => {
 				I intentionally did not include any personal info and details for privacy and safety reasons.<br/>
 				For any additional questions, please feel free to contact me.<br/>
 				<br/>
-				Contact info is shared on <TextMark>this page</TextMark>.
+				Contact info is shared on <TextLink to={`/contact`}>this page</TextLink>.
 			</TextSubText>
 		</div>
 	)

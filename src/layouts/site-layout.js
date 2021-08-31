@@ -5,6 +5,8 @@ import { siteMetadata as Site } from '/gatsby-config';
 
 import SiteHeader from '/src/components/site-header';
 import SpinningCog from '/src/components/spinning-cog';
+import SocialButton from '/src/components/social-button';
+import { buttonScaleHover } from '/src/components/effect-styles';
 
 import {
 	PageLayout
@@ -28,7 +30,7 @@ export const MobileSiteLayout = ({ location, children }) => {
 			</div>
 
 			{/** Page. */}
-			<PageLayout setModal={setModal}>
+			<PageLayout location={location} setModal={setModal}>
 				{children}
 			</PageLayout>
 		</div>
@@ -67,8 +69,25 @@ export const DesktopSiteLayout = ({ location, children }) => {
 
 						{/** Socials bar. */}
 						<div className={`relative w-full h-2/5 border-r border-primary`}>
-							<div className={`absolute flex justify-center items-center w-full h-full border border-primary rounded-bl-3xl rounded-br-3xl`}>
-								
+							<div className={`absolute flex w-full h-full border border-primary rounded-bl-3xl rounded-br-3xl justify-evenly items-center`}>
+								<SocialButton
+									className={`bg-gray-500 pointer-events-none ${buttonScaleHover}`}
+									to={Site.socials.youtube}
+								>
+									<i className={`fas fa-caret-right text-4xl pl-1`} />
+								</SocialButton>
+								<SocialButton
+									className={`bg-blue-500 hover:bg-blue-400 ${buttonScaleHover}`}
+									to={Site.socials.twitter}
+								>
+									<i className={`fab fa-twitter text-xl`} />
+								</SocialButton>
+								<SocialButton
+									className={`bg-transparent hover:text-gray-400 ${buttonScaleHover}`}
+									to={Site.socials.git}
+								>
+									<i className={`fab fa-github text-5xl`} />
+								</SocialButton>
 							</div>
 						</div>
 					</div>
@@ -82,7 +101,7 @@ export const DesktopSiteLayout = ({ location, children }) => {
 				</div>
 
 				{/** Page. */}
-				<PageLayout setModal={setModal}>
+				<PageLayout location={location} setModal={setModal}>
 					{children}
 				</PageLayout>
 			</div> 

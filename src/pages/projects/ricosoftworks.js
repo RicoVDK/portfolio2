@@ -241,7 +241,7 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 					</IMGGridEntry>
 					<IMGGridEntry>
 						<IMGViewer
-							title={`Rendering the content buttons with recursion`}
+							title={`Rendering the content buttons with recursion. (Optimizable using .map())`}
 							date={`2021/08/27`}
 							src={AboutCode04}
 							setModal={setModal}

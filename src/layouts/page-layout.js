@@ -1,6 +1,8 @@
 import React, {
 	useState,
-	cloneElement
+	useRef,
+	cloneElement,
+	useLayoutEffect
 } from 'react';
 
 import TextSubTitle from '/src/components/text/text-subtitle';
@@ -12,8 +14,10 @@ import PageContent, {
 	Entry as PageContentEntry
 } from '/src/components/page-content';
 
-export const PageLayout = ({ setModal, children }) => {
+export const PageLayout = ({ location, setModal, children }) => {
 	const [contents, setContents] = useState([]);
+	const pageScroller = useRef(null);
+	const lastPathName = useRef('');
 
 	const getInnerContents = (children) => {
 		if (children.length > 0)
@@ -39,27 +43,48 @@ export const PageLayout = ({ setModal, children }) => {
 		return elements;
 	}
 
+	useLayoutEffect(() => {
+		if (!pageScroller || !pageScroller.current)
+			return;
+
+		if (location.pathname) {
+			if (location.pathname !== lastPathName.current) {
+				pageScroller.current.scrollTo(0, 0);
+			}
+
+			lastPathName.current = location.pathname
+		}
+	}, [location, pageScroller])
+
 	return (
 		<>
 			<OnMobile>
 				<MobilePageLayout
+					pageScroller={pageScroller}
 					contents={contents}
-					setContents={setContents}
-					setModal={setModal}
 					buildPageContentEntries={buildPageContentEntries}
 				>
-					{children}
+					{cloneElement(children, {
+						contents,
+						setContents,
+						setModal,
+						buildPageContentEntries
+					})}
 				</MobilePageLayout>
 			</OnMobile>
 
 			<OnDesktop>
 				<DesktopPageLayout
+					pageScroller={pageScroller}
 					contents={contents}
-					setContents={setContents}
-					setModal={setModal}
 					buildPageContentEntries={buildPageContentEntries}
 				>
-					{children}
+					{cloneElement(children, {
+						contents,
+						setContents,
+						setModal,
+						buildPageContentEntries
+					})}
 				</DesktopPageLayout>
 			</OnDesktop>
 		</>
@@ -67,9 +92,8 @@ export const PageLayout = ({ setModal, children }) => {
 }
 
 export const MobilePageLayout = ({
+	pageScroller,
 	contents,
-	setContents,
-	setModal,
 	buildPageContentEntries,
 	children
 }) => {
@@ -81,8 +105,8 @@ export const MobilePageLayout = ({
 
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
-				<div className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
-					{cloneElement(children, { contents, setContents, setModal })}
+				<div ref={pageScroller} className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
+					{children}
 				</div>
 			</div>
 
@@ -97,9 +121,8 @@ export const MobilePageLayout = ({
 }
 
 export const DesktopPageLayout = ({
+	pageScroller,
 	contents,
-	setContents,
-	setModal,
 	buildPageContentEntries,
 	children
 }) => {
@@ -111,7 +134,7 @@ export const DesktopPageLayout = ({
 			{/** Sidebar. */}
 			<div className={`relative w-1/4 min-w-72 h-full border-r border-primary`}>
 				<div className={`absolute w-full h-full`}>
-					<div className={`relative flex flex-col w-full h-full p-4 overflow-hidden`}>
+					<div className={`relative flex flex-col w-full h-full py-4 px-1 overflow-hidden`}>
 						<TextSubTitle className={`relative block text-center w-full pb-2`}>
 							Page contents
 						</TextSubTitle>
@@ -135,8 +158,8 @@ export const DesktopPageLayout = ({
 					<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
 				</div>
 
-				<div className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
-					{cloneElement(children, { contents, setContents, setModal })}
+				<div ref={pageScroller} className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
+					{children}
 				</div>
 			</div>
 		</div>
