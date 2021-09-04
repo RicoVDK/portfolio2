@@ -9,6 +9,7 @@ import TNFTable from '/src/components/tnf-table';
 import TextClipboard from '/src/components/text/text-clipboard';
 import IconTextTable from '/src/components/icon-text-table';
 import TextLink from '/src/components/text/text-link';
+import TextSubText from '/src/components/text/text-subtext';
 
 import { siteMetadata } from '/gatsby-config';
 
@@ -31,10 +32,9 @@ const ContactPage = ({ location, setContents }) => {
 			<TextTitle id={`availability`}>
 				Availability
 			</TextTitle>
-			
 			<div className={`w-full px-4 pb-4 text-center`}>
 				<TextItalic>
-					Last updated 2021 Aug 23
+					Last updated 2021/09/04
 				</TextItalic>
 			</div>
 
@@ -43,8 +43,8 @@ const ContactPage = ({ location, setContents }) => {
 				contents={[
 					{ displayName: 'Full time', tnf: true },
 					{ displayName: 'Part time', tnf: true },
-					{ displayName: 'Intern', tnf: false },
 					{ displayName: 'Commission', tnf: false },
+					{ displayName: 'Intern', tnf: false },
 					{ displayName: 'Volunteer', tnf: false },
 				]}
 			/>
@@ -52,7 +52,6 @@ const ContactPage = ({ location, setContents }) => {
 			<TextTitle id={`when-contacting`}>
 				When Contacting
 			</TextTitle>
-
 			<div className={`w-full text-center px-4`}>
 				Please include the following information depending on your goal...<br/>
 				<br/>
@@ -87,7 +86,6 @@ const ContactPage = ({ location, setContents }) => {
 			<TextTitle id={`contact-info`}>
 				Contact Information
 			</TextTitle>
-
 			<IconTextTable
 				className={`m-auto max-w-500px pb-12`}
 				contents={[

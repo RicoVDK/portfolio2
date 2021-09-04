@@ -111,10 +111,10 @@ export const MobilePageLayout = ({
 			</div>
 
 			<div
-					id={`page-bottom-shadow`}
-					className={`absolute w-full h-6 bottom-0 z-40 px-px`}
+					id={`page-top-shadow`}
+					className={`absolute w-full h-6 top-0 z-30 px-px`}
 				>
-				<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
+				<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
 			</div>
 		</div>
 	)

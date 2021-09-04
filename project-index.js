@@ -44,9 +44,7 @@ const Projects = [
 	{
 		displayName: 'Project Eterna',
 		description: `
-			A 2.5D story-driven action adventure RPG.<br/>
-			<br/>
-			This project is my main focus.
+			A 2.5D story-driven action adventure RPG.
 		`,
 		id: 'entry-eterna',
 		url: 'eterna',
@@ -64,12 +62,13 @@ const Projects = [
 	{
 		displayName: 'Project Birds',
 		description: `
-			A first person puzzle horror featuring malformed animals as consequence of experiments that went terribly wrong.
+			A first person puzzle horror where the player is forced to explore and escape from a dark environment 
+			that houses disturbing truths, as well as terrifying twisted entities looking for their next meal.
 		`,
 		id: 'entry-birds',
 		url: 'birds',
 		img: null,
-		disabled: true,
+		disabled: false,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.Prototype,

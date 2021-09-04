@@ -7,7 +7,6 @@ import NoContent from '/src/components/no-content';
 
 const NotFoundPage = ({ location, setContents }) => {
 	useLayoutEffect(() => {
-    console.log(location);
 		setContents([]);
 	}, [setContents])
 

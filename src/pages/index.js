@@ -49,10 +49,11 @@ const IndexPage = ({ location, setContents }) => {
 				(Equivalent of MBO 4),<br/>
 				and live in the Netherlands.<br/>
 				<br/>
-				Most of my spare time is spent working on video games as a hobby,<br/>
+				My passion is to work on video games, which is what I do as a hobby in my spare time,<br/>
 				hoping to one day fulfill my dream of being able to live out the rest of my life working on video games that people can enjoy.<br/>
 				<br/>
 				I have a great interest and affinity for learning new things, which luckily plays a big role in the field I work in!<br/>
+				Due to my versatile skillset, I am able to work in various fields of Software Development.
 			</TextSubText>
 
 			<TextTitle id={'affinities'}>
@@ -158,15 +159,16 @@ const IndexPage = ({ location, setContents }) => {
 						<TextSubTitle>Final Year of College</TextSubTitle><br/>
 						<br/>
 						One half of the school year was spent working on 2 projects.<br/>
-						The first project being <TextMark>a 3D printer dashboard website</TextMark>, which could both be used by students and teachers.<br/>
+						The first project being a <TextLink to={`/projects/3d-printer-dashboard`}>3D printer dashboard</TextLink>, 
+						which could both be used by students and teachers.<br/>
 						The second and last one was an early Unity 2.5D prototype, in which I taught myself the basics of 3D {'&'} grid movement + more.<br/>
 						<br/>
 						The last half of the school year was an exam in the form of a final internship.<br/>
 						Once again, Web Development, I learned Python + Django in the first two weeks,
 						and got familiar with ReactJS afterwards.<br/>
 						<br/>
-						At the end of my internship I had designed {'&'} implemented <TextMark>a working KO tournament system</TextMark> for darting,
-						for which I also implemented (and expanded on) a pre-designed front-end.
+						At the end of my internship I had designed {'&'} implemented <TextLink to={`/projects/dartscore`}>a working KO tournament system</TextLink> for darting,
+						for which I also implemented (and expanded on) its front-end.
 					</TimelineEntry>
 					<TimelineEntry
 						id={`history-vv-dialogue`}
@@ -174,7 +176,10 @@ const IndexPage = ({ location, setContents }) => {
 					>
 						<TextSubTitle>Writing Vibrant Venture Dialogue</TextSubTitle><br/>
 						<br/>
-						A good friend of mine and owner of <TextMark>Semag Games</TextMark> gave me the opportunity to write dialogue for his game <TextMark>Vibrant Venture</TextMark>.<br/>
+						A good friend of mine and owner of <TextMark>Semag Games</TextMark> gave me the opportunity to write dialogue for his game <TextLink
+							external={true}
+							to={`https://store.steampowered.com/app/1264520/Vibrant_Venture/`}
+						>Vibrant Venture</TextLink>.<br/>
 						<br/>
 						The task involved designing a group of characters' personalities based on the only thing available at the time, their artworks,
 						and then writing a big batch of interactive dialogue for each of them.<br/>
@@ -190,8 +195,8 @@ const IndexPage = ({ location, setContents }) => {
 						<br/>
 						I graduated college as a Software Developer on Associate level.<br/>
 						<br/>
-						Development on the prototype <TextMark>"Project Eterna"</TextMark> was started.<br/>
-						Development on the prototype <TextMark>"Project Birds"</TextMark> was started.<br/>
+						Development on the prototype <TextLink to={`/projects/eterna`}>Project Eterna</TextLink> was started.<br/>
+						Development on the prototype <TextLink to={`/projects/birds`}>Project Birds</TextLink> was started.<br/>
 					</TimelineEntry>
 					{/* <TimelineEntry
 						id={`history-semag-website`}
@@ -225,8 +230,8 @@ const IndexPage = ({ location, setContents }) => {
 			<TextSubText wrapClassName={`pt-6 pb-12 text-center`}>
 				Thank you for your interest thus far!<br/>
 				<br/>
-				I intentionally did not include any personal info and details for privacy and safety reasons.<br/>
-				For any additional questions, please feel free to contact me.<br/>
+				personal details are excluded on this website for privacy reasons.<br/>
+				For any additional questions, like requesting my CV, please feel free to contact me.<br/>
 				<br/>
 				Contact info is shared on <TextLink to={`/contact`}>this page</TextLink>.
 			</TextSubText>

@@ -35,6 +35,8 @@ import PostCode01 from '/src/images/projects/ricosoftworks/ricosoftworks-post-co
 import PostCode02 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code02.png';
 import PostCode03 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code03.png';
 import PostCode04 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code04.png';
+import PostCode05 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code05.png';
+import PostCode06 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code06.png';
 
 const RicoSoftworks = ({ setContents, setModal }) => {
 	useLayoutEffect(() => {
@@ -434,6 +436,22 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 							title={`Image viewer component`}
 							date={`2021/08/30`}
 							src={PostCode04}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Adding a project entry to the index`}
+							date={`2021/09/04`}
+							src={PostCode05}
+							setModal={setModal}
+						/>
+					</IMGGridEntry>
+					<IMGGridEntry>
+						<IMGViewer
+							title={`Defining tags`}
+							date={`2021/09/04`}
+							src={PostCode06}
 							setModal={setModal}
 						/>
 					</IMGGridEntry>

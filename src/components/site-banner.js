@@ -1,6 +1,9 @@
 import React from 'react';
 
 import SpinningCog from './spinning-cog';
+import {
+	OnMobile,
+} from '/src/components/breakpoints';
 
 const SiteBanner = () => {
 	return (
@@ -9,6 +12,7 @@ const SiteBanner = () => {
 			className={`relative w-full flex-grow bg-gray-800 border-r border-l border-primary`}
 		>
 			<div className={`relative w-full h-full overflow-hidden`}>
+
 				<SpinningCog
 					wrapClassName={`top-1/2 transform -translate-x-1/2 -translate-y-1/2`}
 					cogClassName={`text-10xl tablet:text-12xl text-primary animate-spin-slower-right`}
@@ -42,6 +46,13 @@ const SiteBanner = () => {
 					wrapClassName={`left-full top-1/2 transform -translate-x-1/2 -translate-y-1/2`}
 					cogClassName={`text-10xl tablet:text-12xl text-primary animate-spin-slower-left`}
 				/>
+				<OnMobile>
+					<div className={`absolute flex w-full h-full top-0 left-0 justify-center items-center italic font-bold text-primary text-lg tablet:text-2xl z-10`}>
+						<div className={`relative px-6 py-2 tablet:px-10 text-center bg-gray-800 border border-gray-700 rounded-full`}>
+							Rico's Softworks
+						</div>
+					</div>
+				</OnMobile>
 			</div>
 		</div>
 	)

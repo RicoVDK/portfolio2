@@ -2,6 +2,10 @@ import React from 'react';
 
 import SiteBanner from './site-banner';
 import PageNav from './page-nav';
+import {
+	OnMobile,
+	OnDesktop
+} from '/src/components/breakpoints';
 
 const SiteHeader = ({ location }) => {
 	return (
@@ -10,20 +14,34 @@ const SiteHeader = ({ location }) => {
 			className={`relative w-full w-full h-full bg-transparent`}
 		>
 			<div className={`absolute flex flex-col w-full h-full`}>
-				{/** Banner. */}
-				<SiteBanner />
+				<OnDesktop>
+					{/** Banner. */}
+					<SiteBanner />
+				</OnDesktop>
+				<OnDesktop>
+					{/** Navigation. */}
+					<PageNav
+						location={location}
+					/>
+				</OnDesktop>
 
-				{/** Navigation. */}
-				<PageNav
-					location={location}
-				/>
+				<OnMobile>
+					{/** Navigation. */}
+					<PageNav
+						location={location}
+					/>
+				</OnMobile>
+				<OnMobile>
+					{/** Banner. */}
+					<SiteBanner />
+				</OnMobile>
 
 				{/** Page shadow. */}
 				<div
 					id={`page-shadow`}
-					className={`absolute w-full h-6 bottom-0 transform translate-y-full z-40 px-px pointer-events-none`}
+					className={`absolute w-full h-6 desktop:bottom-0 transform -translate-y-full desktop:translate-y-full z-30 px-px pointer-events-none`}
 				>
-					<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
+					<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent desktop:from-transparent desktop:to-gray-900`}></div>
 				</div>
 			</div>
 		</div>

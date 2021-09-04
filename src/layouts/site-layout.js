@@ -1,5 +1,6 @@
 import React, {
-	useState
+	useState,
+	useRef,
 } from 'react';
 import { siteMetadata as Site } from '/gatsby-config';
 
@@ -7,6 +8,7 @@ import SiteHeader from '/src/components/site-header';
 import SpinningCog from '/src/components/spinning-cog';
 import SocialButton from '/src/components/social-button';
 import { buttonScaleHover } from '/src/components/effect-styles';
+import useBuildNumber from '/src/components/use-build-number';
 
 import {
 	PageLayout
@@ -14,6 +16,7 @@ import {
 
 export const MobileSiteLayout = ({ location, children }) => {
 	const [modal, setModal] = useState(null);
+	const build = useRef(useBuildNumber());
 
 	return (
 		<div
@@ -21,24 +24,25 @@ export const MobileSiteLayout = ({ location, children }) => {
 			className={`relative flex flex-col items-center h-screen w-full overflow-hidden text-gray-300`}
 		>
 			{modal}
-			
-			{/** Header. */}
-			<div className={`relative w-full h-1/5`}>
-				<SiteHeader
-					location={location}
-				/>
-			</div>
 
 			{/** Page. */}
 			<PageLayout location={location} setModal={setModal}>
 				{children}
 			</PageLayout>
+			
+			{/** Header. */}
+			<div className={`relative w-full h-1/5 max-h-1050px`}>
+				<SiteHeader
+					location={location}
+				/>
+			</div>
 		</div>
 	)
 };
 
 export const DesktopSiteLayout = ({ location, children }) => {
 	const [modal, setModal] = useState(null);
+	const build = useRef(useBuildNumber());
 
 	return (
 		<div
@@ -52,18 +56,26 @@ export const DesktopSiteLayout = ({ location, children }) => {
 				className={`relative flex flex-col min-w-1000px w-3/4 max-w-1200px h-full border-l border-r border-primary z-10`}
 			>
 				{/** Header. */}
-				<div className={`relative flex w-full h-1/5 bg-gray-900`}>
+				<div className={`relative flex w-full h-1/5 max-h-1050px bg-gray-900`}>
 					{/** Side banner. */}
 					<div className={`relative flex flex-col w-1/4 min-w-72 h-full`}>
 						{/** Title. */}
 						<div className={`relative flex flex-col justify-center items-center w-full flex-grow border-r border-primary overflow-hidden`}>
-							<SpinningCog
+							{/* <SpinningCog
 								wrapClassName={`top-1/2 left-full transform -translate-x-1/2 -translate-y-1/2`}
 								cogClassName={`text-10xl tablet:text-12xl text-gray-800 animate-spin-slower-right`}
-							/>
+							/> */}
 
-							<div className={`relative text-xl text-primary text-center italic`}>
-								{Site.title}
+							<div className={`relative w-full text-xl text-primary text-center italic font-bold p-4`}>
+								<div className={`relative w-full text-center bg-gray-800 border border-gray-700 rounded-full p-2`}>
+									Rico's Softworks
+								</div>
+							</div>
+
+							<div className={`absolute w-full p-1 bottom-0 left-0`}>
+								<div className={`relative m-auto text-gray-800 italic text-sm`}>
+									{build.current}
+								</div>
 							</div>
 						</div>
 
@@ -107,14 +119,14 @@ export const DesktopSiteLayout = ({ location, children }) => {
 			</div> 
 
 			{/** Cog. */}
-			<div className={`absolute w-3/4 h-1/5 min-w-1000px max-w-1200px z-0`}>
+			{/* <div className={`absolute w-3/4 h-1/5 min-w-1000px max-w-1200px z-0`}>
 				<div className={`relative w-full h-3/5`}>
 					<SpinningCog
 						wrapClassName={`left-full top-1/2 transform -translate-x-1/2 -translate-y-1/2`}
 						cogClassName={`text-10xl tablet:text-12xl text-gray-800 animate-spin-slower-left`}
 					/>
 				</div>
-			</div>
+			</div> */}
 		</div>
 	)
 };

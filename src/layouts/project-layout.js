@@ -22,10 +22,10 @@ const ProjectLayout = ({
 				<NoContent
 					icon={<i className={`fas fa-lock text-8xl`} />}
 				>
-					<span className={`text-xl font-bold`}>You can't view this content.</span><br/>
+					<span className={`text-xl font-bold`}>You can't view this post.</span><br/>
 					<br/>
-					The contents for this project are unavailable,
-					either because it's being worked on, or it's temporarily locked.<br/>
+					The contents for this project post are unavailable.<br/>
+					Either because it's being worked on, or it's temporarily locked.<br/>
 					<br/>
 					Why don't you go see if another project piques your interest on the <TextLink to={`/projects`}>projects page</TextLink>?
 				</NoContent>

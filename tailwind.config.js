@@ -50,6 +50,9 @@ module.exports = {
       minHeight: {
         'full': '100%',
       },
+      maxHeight: {
+        '1050px': '1050px',
+      },
       padding: {
         '18': '4.5rem',
       }

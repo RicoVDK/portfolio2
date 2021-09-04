@@ -26,11 +26,11 @@ import Code02 from '/src/images/projects/eterna/eterna-code02.png';
 import Code03 from '/src/images/projects/eterna/eterna-code03.png';
 import Code04 from '/src/images/projects/eterna/eterna-code04.png';
 
-const RicoSoftworks = ({ setModal, setContents }) => {
+const Eterna = ({ setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([
 			{ displayName: 'What is Eterna?', id: 'about', children: [] },
-			{ displayName: 'July 2021 (v0.0.1a)', id: 'july-2021', children: [
+			{ displayName: 'July 2021 (v0.0.1p)', id: 'july-2021', children: [
 				{ displayName: 'Development', id: 'july-2021-dev', children: [] },
 				{ displayName: 'Gameplay', id: 'july-2021-gameplay', children: [] },
 				{ displayName: 'Node Structure', id: 'july-2021-node', children: [] },
@@ -55,8 +55,8 @@ const RicoSoftworks = ({ setModal, setContents }) => {
 			<TextTitle id={`about`}>What is Eterna?</TextTitle>
 			<TextCenter>
 				Project Eterna is a 2.5D story driven RPG.<br/>
-				The code name "Eterna" was chosen due to the story's relation to the concept of time, 
-				as well as it being the project goal to make a story that can be expanded upon and last forever in the memories of the players.<br/>
+				The code name "Eterna" was chosen due to the relation to the concept of time, 
+				as well as for it to have a story that lasts.<br/>
 				<br/>
 				Info regarding the game's mechanics, storyline, and concepts won't be explained in detail, 
 				or might not even be talked about in this post in effort to keep most, if not everything, a surprise.<br/>
@@ -66,7 +66,7 @@ const RicoSoftworks = ({ setModal, setContents }) => {
 				Taking the above into consideration, this post will only detail the technical aspect of this project.
 			</TextCenter>
 			
-			<TextTitle id={`july-2021`}>July 2021 (v0.0.1a)</TextTitle>
+			<TextTitle id={`july-2021`}>July 2021 (v0.0.1p)</TextTitle>
 			<TextCenter>
 				<TextSubTitle id={`july-2021-dev`} className={`py-4`}>Development</TextSubTitle><br/>
 				<br/>
@@ -200,4 +200,4 @@ const RicoSoftworks = ({ setModal, setContents }) => {
 	)
 }
 
-export default RicoSoftworks;
+export default Eterna;

@@ -21,7 +21,7 @@ const IMGViewer = ({
 				/>
 
 				{/** Image. */}
-				<div className={`relative w-5/6 h-5/6 group rounded-3xl overflow-hidden`}>
+				<div className={`relative w-11/12 h-5/6 tablet:w-5/6 tablet:h-5/6 group rounded-3xl overflow-hidden`}>
 					<img
 						className={`relative block w-full h-full object-scale-down transition-all duration-500 opacity-0 bg-gray-800 border border-gray-700 rounded-3xl`}
 						onLoad={(event) => event.target.style.opacity = 1}
