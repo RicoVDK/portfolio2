@@ -12,8 +12,9 @@ const TextLink = ({
 }) => {
 	return (
 		<TextMark className={`hover:text-primary-3 cursor-pointer ${className}`}>
-			{ external
+			{ to === '#' ? <span className={className}>{children}</span> : external
 				? <a
+						className={className}
 						target={`_blank`}
 						rel={`noopener`}
 						href={to}
@@ -21,6 +22,7 @@ const TextLink = ({
 						{children}
 					</a>
 				: <Link
+						className={className}
 						to={to}
 					>
 						{children}

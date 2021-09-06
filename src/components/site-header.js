@@ -11,38 +11,36 @@ const SiteHeader = ({ location }) => {
 	return (
 		<div
 			id={`header`}
-			className={`relative w-full w-full h-full bg-transparent`}
+			className={`relative flex flex-col w-full w-full h-full bg-transparent`}
 		>
-			<div className={`absolute flex flex-col w-full h-full`}>
-				<OnDesktop>
-					{/** Banner. */}
-					<SiteBanner />
-				</OnDesktop>
-				<OnDesktop>
-					{/** Navigation. */}
-					<PageNav
-						location={location}
-					/>
-				</OnDesktop>
+			<OnDesktop>
+				{/** Banner. */}
+				<SiteBanner />
+			</OnDesktop>
+			<OnDesktop>
+				{/** Navigation. */}
+				<PageNav
+					location={location}
+				/>
+			</OnDesktop>
 
-				<OnMobile>
-					{/** Navigation. */}
-					<PageNav
-						location={location}
-					/>
-				</OnMobile>
-				<OnMobile>
-					{/** Banner. */}
-					<SiteBanner />
-				</OnMobile>
+			<OnMobile>
+				{/** Navigation. */}
+				<PageNav
+					location={location}
+				/>
+			</OnMobile>
+			<OnMobile>
+				{/** Banner. */}
+				<SiteBanner />
+			</OnMobile>
 
-				{/** Page shadow. */}
-				<div
-					id={`page-shadow`}
-					className={`absolute w-full h-6 desktop:bottom-0 transform -translate-y-full desktop:translate-y-full z-30 px-px pointer-events-none`}
-				>
-					<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent desktop:from-transparent desktop:to-gray-900`}></div>
-				</div>
+			{/** Page shadow. */}
+			<div
+				id={`page-shadow`}
+				className={`absolute w-full h-6 desktop:bottom-0 transform -translate-y-full desktop:translate-y-full z-30 px-px pointer-events-none`}
+			>
+				<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent desktop:from-transparent desktop:to-gray-900`}></div>
 			</div>
 		</div>
 	)

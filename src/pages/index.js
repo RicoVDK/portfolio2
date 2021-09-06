@@ -45,15 +45,12 @@ const IndexPage = ({ location, setContents }) => {
 			>
 				Hello and welcome!<br/>
 				<br/>
-				I am a {myAge.current} year old Dutch Software Developer who graduated college on Associate level in mid 2021,<br/>
-				(Equivalent of MBO 4),<br/>
+				I am a {myAge.current} year old Dutch Software Developer who graduated MBO 4 at Landstede Harderwijk,<br/>
+				(Equivalent to college on Associate level)<br/>
 				and live in the Netherlands.<br/>
 				<br/>
 				My passion is to work on video games, which is what I do as a hobby in my spare time,<br/>
 				hoping to one day fulfill my dream of being able to live out the rest of my life working on video games that people can enjoy.<br/>
-				<br/>
-				I have a great interest and affinity for learning new things, which luckily plays a big role in the field I work in!<br/>
-				Due to my versatile skillset, I am able to work in various fields of Software Development.
 			</TextSubText>
 
 			<TextTitle id={'affinities'}>

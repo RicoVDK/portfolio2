@@ -12,6 +12,7 @@ export const Entry = ({
 	defaultOpen = true,
 	displayName = 'No Name',
 	href = '#',
+	onClick = () => {},
 	children,
 }) => {
 	const [open, setOpen] = useState(defaultOpen);
@@ -40,6 +41,7 @@ export const Entry = ({
 					<a
 						className={`relative block flex-grow h-8 text-primary select-none group-active:text-gray-800`}
 						href={`#${href}`}
+						onClick={onClick}
 					>
 						<div className={`absolute flex w-full h-full items-center pr-4 ${
 							childCount < 1 ? 'pl-4' : ''
@@ -64,9 +66,20 @@ const PageContent = ({
 	children
 }) => {
 	return(
-		<div className={`relative w-full flex-grow overflow-y-scroll overflow-x-hidden`}>
-			<div className={`relative w-full pl-4 pr-2 py-1`}>
-				{children}
+		<div className={`relative w-full flex-grow border-b border-t border-gray-700`}>
+			<div className={`absolute w-full h-4 top-0 z-10 pointer-events-none`}>
+				<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
+			</div>
+			<div className={`absolute w-full h-4 bottom-0 z-10 pointer-events-none`}>
+				<div className={`relative w-full h-full bg-gradient-to-t from-gray-900 to-transparent`}></div>
+			</div>
+			
+			<div className={`absolute w-full h-full`}>
+				<div className={`relative w-full h-full overflow-y-scroll overflow-x-hidden py-4`}>
+					<div className={`relative w-full pl-4 pr-2 py-1`}>
+						{children}
+					</div>
+				</div>
 			</div>
 		</div>
 	)

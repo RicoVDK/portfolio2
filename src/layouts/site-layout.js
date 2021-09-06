@@ -2,12 +2,9 @@ import React, {
 	useState,
 	useRef,
 } from 'react';
-import { siteMetadata as Site } from '/gatsby-config';
 
 import SiteHeader from '/src/components/site-header';
-import SpinningCog from '/src/components/spinning-cog';
-import SocialButton from '/src/components/social-button';
-import { buttonScaleHover } from '/src/components/effect-styles';
+import SocialsBar from '/src/components/socials-bar';
 import useBuildNumber from '/src/components/use-build-number';
 
 import {
@@ -16,7 +13,7 @@ import {
 
 export const MobileSiteLayout = ({ location, children }) => {
 	const [modal, setModal] = useState(null);
-	const build = useRef(useBuildNumber());
+	const [sideOpen, setSideOpen] = useState(false);
 
 	return (
 		<div
@@ -26,15 +23,32 @@ export const MobileSiteLayout = ({ location, children }) => {
 			{modal}
 
 			{/** Page. */}
-			<PageLayout location={location} setModal={setModal}>
+			<PageLayout
+				location={location}
+				sideOpen={sideOpen}
+				setModal={setModal}
+				setSideOpen={setSideOpen}
+			>
 				{children}
 			</PageLayout>
 			
 			{/** Header. */}
-			<div className={`relative w-full h-1/5 max-h-1050px`}>
+			<div className={`relative w-full`}>
 				<SiteHeader
 					location={location}
 				/>
+			</div>
+
+			{/** Side Toggle. */}
+			<div className={`absolute w-16 h-8 tablet:w-24 tablet:h-12 z-40 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-30 tablet:-translate-y-36`}>
+				<div
+					onClick={() => setSideOpen(!sideOpen)}
+					className={`relative flex w-full h-full rounded-tl-full rounded-tr-full border border-b-0 border-gray-700 justify-center items-center ${
+						sideOpen ? 'bg-primary' : 'bg-gray-800'
+					}`}
+				>
+					<i className={`fas fa-bars text-xl tablet:text-3xl ${sideOpen ? 'text-gray-800' : 'text-primary'}`} />
+				</div>
 			</div>
 		</div>
 	)
@@ -42,7 +56,7 @@ export const MobileSiteLayout = ({ location, children }) => {
 
 export const DesktopSiteLayout = ({ location, children }) => {
 	const [modal, setModal] = useState(null);
-	const build = useRef(useBuildNumber());
+	const build = useBuildNumber();
 
 	return (
 		<div
@@ -56,11 +70,11 @@ export const DesktopSiteLayout = ({ location, children }) => {
 				className={`relative flex flex-col min-w-1000px w-3/4 max-w-1200px h-full border-l border-r border-primary z-10`}
 			>
 				{/** Header. */}
-				<div className={`relative flex w-full h-1/5 max-h-1050px bg-gray-900`}>
+				<div className={`relative flex w-full bg-gray-900`}>
 					{/** Side banner. */}
-					<div className={`relative flex flex-col w-1/4 min-w-72 h-full`}>
+					<div className={`relative flex flex-col w-1/4 min-w-72`}>
 						{/** Title. */}
-						<div className={`relative flex flex-col justify-center items-center w-full flex-grow border-r border-primary overflow-hidden`}>
+						<div className={`relative flex flex-col justify-center items-center w-full h-24 border-r border-primary overflow-hidden`}>
 							{/* <SpinningCog
 								wrapClassName={`top-1/2 left-full transform -translate-x-1/2 -translate-y-1/2`}
 								cogClassName={`text-10xl tablet:text-12xl text-gray-800 animate-spin-slower-right`}
@@ -74,34 +88,13 @@ export const DesktopSiteLayout = ({ location, children }) => {
 
 							<div className={`absolute w-full p-1 bottom-0 left-0`}>
 								<div className={`relative m-auto text-gray-800 italic text-sm`}>
-									{build.current}
+									{build}
 								</div>
 							</div>
 						</div>
 
 						{/** Socials bar. */}
-						<div className={`relative w-full h-2/5 border-r border-primary`}>
-							<div className={`absolute flex w-full h-full border border-primary rounded-bl-3xl rounded-br-3xl justify-evenly items-center`}>
-								<SocialButton
-									className={`bg-gray-500 pointer-events-none ${buttonScaleHover}`}
-									to={Site.socials.youtube}
-								>
-									<i className={`fas fa-caret-right text-4xl pl-1`} />
-								</SocialButton>
-								<SocialButton
-									className={`bg-blue-500 hover:bg-blue-400 ${buttonScaleHover}`}
-									to={Site.socials.twitter}
-								>
-									<i className={`fab fa-twitter text-xl`} />
-								</SocialButton>
-								<SocialButton
-									className={`bg-transparent hover:text-gray-400 ${buttonScaleHover}`}
-									to={Site.socials.git}
-								>
-									<i className={`fab fa-github text-5xl`} />
-								</SocialButton>
-							</div>
-						</div>
+						<SocialsBar className={`border-r border-t border-primary`}/>
 					</div>
 
 					{/** Main banner. */}

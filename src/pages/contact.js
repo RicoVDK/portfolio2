@@ -5,11 +5,13 @@ import React, {
 import TextTitle from '/src/components/text/text-title';
 import TextItalic from '/src/components/text/text-italic';
 import TextSubTitle from '/src/components/text/text-subtitle';
-import TNFTable from '/src/components/tnf-table';
 import TextClipboard from '/src/components/text/text-clipboard';
 import IconTextTable from '/src/components/icon-text-table';
 import TextLink from '/src/components/text/text-link';
-import TextSubText from '/src/components/text/text-subtext';
+import TextCenterLeft from '/src/components/text/text-center-left';
+import TNFTable, {
+	TNFIconClass
+} from '/src/components/tnf-table';
 
 import { siteMetadata } from '/gatsby-config';
 
@@ -34,17 +36,22 @@ const ContactPage = ({ location, setContents }) => {
 			</TextTitle>
 			<div className={`w-full px-4 pb-4 text-center`}>
 				<TextItalic>
-					Last updated 2021/09/04
-				</TextItalic>
+					Updated 05/09/2021
+				</TextItalic><br/>
+				{/* <br/>
+				<TextCenterLeft>
+					<i className={TNFIconClass(true)} /> = Available<br/>
+					<i className={TNFIconClass(null)} /> = Only for Game Dev<br/>
+					<i className={TNFIconClass(false)} /> = Unavailable<br/>
+				</TextCenterLeft> */}
 			</div>
 
 			<TNFTable
 				className={`m-auto`}
 				contents={[
-					{ displayName: 'Full time', tnf: true },
+					{ displayName: 'Full time', tnf: false },
 					{ displayName: 'Part time', tnf: true },
 					{ displayName: 'Commission', tnf: false },
-					{ displayName: 'Intern', tnf: false },
 					{ displayName: 'Volunteer', tnf: false },
 				]}
 			/>
@@ -92,7 +99,7 @@ const ContactPage = ({ location, setContents }) => {
 					{
 						icon: 'fas fa-envelope',
 						displayName: 'E-Mail',
-						child: <TextClipboard>
+						child: <TextClipboard className={`block text-center w-full truncate`}>
 							{siteMetadata.socials.mail}<i className={`far fa-copy text-sm pl-2`} />
 						</TextClipboard>
 					},
@@ -100,6 +107,7 @@ const ContactPage = ({ location, setContents }) => {
 						icon: 'fab fa-twitter',
 						displayName: 'Twitter',
 						child: <TextLink
+							className={`block text-center w-full truncate`}
 							to={siteMetadata.socials.twitter}
 							external={true}
 						>

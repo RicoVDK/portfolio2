@@ -28,13 +28,13 @@ const IconTextTable = ({
 							</div>
 
 							{/** Text. */}
-							<div className={`relative flex h-full pl-16 pr-6 items-center font-bold`}>
+							<div className={`relative flex h-full pl-14 pr-4 tablet:pl-16 tablet:pr-6 items-center font-bold whitespace-nowrap`}>
 								{content.displayName}
 							</div>
 						</div>
 
 						{/** Child. */}
-						<div className={`relative flex flex-grow h-12 justify-center items-center`}>
+						<div className={`relative flex flex-grow h-12 justify-center items-center px-2 truncate`}>
 							{content.child}
 						</div>
 					</div>

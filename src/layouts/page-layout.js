@@ -2,10 +2,12 @@ import React, {
 	useState,
 	useRef,
 	cloneElement,
-	useLayoutEffect
+	useLayoutEffect,
+	useEffect
 } from 'react';
 
 import TextSubTitle from '/src/components/text/text-subtitle';
+import SocialsBar from '/src/components/socials-bar';
 import {
 	OnMobile,
 	OnDesktop
@@ -14,7 +16,13 @@ import PageContent, {
 	Entry as PageContentEntry
 } from '/src/components/page-content';
 
-export const PageLayout = ({ location, setModal, children }) => {
+export const PageLayout = ({
+	location,
+	sideOpen,
+	setModal,
+	setSideOpen,
+	children
+}) => {
 	const [contents, setContents] = useState([]);
 	const pageScroller = useRef(null);
 	const lastPathName = useRef('');
@@ -35,6 +43,7 @@ export const PageLayout = ({ location, setModal, children }) => {
 				key={i}
 				displayName={contents[i].displayName}
 				href={contents[i].id}
+				onClick={() => setSideOpen(false)}
 			>
 				{getInnerContents(contents[i].children)}
 			</PageContentEntry>)
@@ -62,6 +71,8 @@ export const PageLayout = ({ location, setModal, children }) => {
 				<MobilePageLayout
 					pageScroller={pageScroller}
 					contents={contents}
+					sideOpen={sideOpen}
+					setSideOpen={setSideOpen}
 					buildPageContentEntries={buildPageContentEntries}
 				>
 					{cloneElement(children, {
@@ -94,9 +105,20 @@ export const PageLayout = ({ location, setModal, children }) => {
 export const MobilePageLayout = ({
 	pageScroller,
 	contents,
+	sideOpen,
+	setSideOpen,
 	buildPageContentEntries,
 	children
 }) => {
+	const [sideStyle, setSideStyle] = useState(null);
+
+	useEffect(() => {
+		setSideStyle(sideOpen ? {
+			transform: `translateY(0)`,
+			opacity: 1,
+		} : null);
+	}, [sideOpen]);
+
 	return (
 		<div
 			id={`page`}
@@ -105,7 +127,43 @@ export const MobilePageLayout = ({
 
 			{/** Page. */}
 			<div className={`relative flex-grow h-full`}>
-				<div ref={pageScroller} className={`absolute w-full h-full overflow-y-scroll py-6 pl-6 pr-3`}>
+				{/** Sidebar. */}
+				<div className={`absolute w-full h-full px-6 z-40 ${
+					sideOpen ? 'block' : 'hidden'}`
+				}>
+					<div
+						style={sideStyle}
+						className={`relative flex w-full h-full justify-center transition duration-200 transform translate-y-1/2 opacity-0`}
+					>
+						<div className={`relative flex w-full h-full max-w-400px flex-col bg-gray-900 border-l border-r border-primary`}>
+							<SocialsBar />
+
+							<div className={`relative w-full flex-grow`}>
+								<div className={`absolute w-full h-full`}>
+									<div className={`relative flex flex-col w-full h-full pt-4 pb-10 tablet:pb-14 px-1 overflow-hidden`}>
+
+										<div className={`absolute w-full h-4 top-0 z-10 pointer-events-none`}>
+											<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
+										</div>
+
+										<TextSubTitle className={`relative block text-center w-full pb-4`}>
+											Page contents
+										</TextSubTitle>
+
+										<PageContent>
+											{contents.length > 0
+												? buildPageContentEntries(contents)
+												: <div className={`relative w-full text-center text-sm text-gray-400 italic`}>This page has no table of contents.</div>
+											}
+										</PageContent>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div ref={pageScroller} className={`absolute w-full h-full overflow-y-scroll pt-6 pb-10 tablet:pb-14 pl-6 pr-3`}>
 					{children}
 				</div>
 			</div>
@@ -135,7 +193,7 @@ export const DesktopPageLayout = ({
 			<div className={`relative w-1/4 min-w-72 h-full border-r border-primary`}>
 				<div className={`absolute w-full h-full`}>
 					<div className={`relative flex flex-col w-full h-full py-4 px-1 overflow-hidden`}>
-						<TextSubTitle className={`relative block text-center w-full pb-2`}>
+						<TextSubTitle className={`relative block text-center w-full pb-4`}>
 							Page contents
 						</TextSubTitle>
 
