@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SpinningCog from './spinning-cog';
+import SiteTitleTag from '/src/components/site-title-tag';
 import {
 	OnMobile,
 } from '/src/components/breakpoints';
@@ -48,9 +49,7 @@ const SiteBanner = () => {
 				/>
 				<OnMobile>
 					<div className={`absolute flex w-full h-full top-0 left-0 justify-center items-center italic font-bold text-primary text-lg tablet:text-2xl z-10`}>
-						<div className={`relative px-6 py-1 tablet:px-10 text-center bg-gray-800 border border-gray-700 rounded-full`}>
-							Rico's Softworks
-						</div>
+						<SiteTitleTag />
 					</div>
 				</OnMobile>
 			</div>

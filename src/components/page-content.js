@@ -7,6 +7,9 @@ import React, {
 import {
 	buttonScaleHover
 } from '/src/components/effect-styles.js';
+import {
+	pillClickEffect
+} from '/src/components/click-effects';
 
 export const Entry = ({
 	defaultOpen = true,
@@ -16,16 +19,21 @@ export const Entry = ({
 	children,
 }) => {
 	const [open, setOpen] = useState(defaultOpen);
+	const vRef = useRef();
 	const childCount = Children.count(children);
 
 	const onTogglePressed = () => {
 		setOpen(!open);
 	}
 
+	const onEntryClicked = () => {
+		pillClickEffect(vRef.current);
+	}
+
 	return (
 		<div className={`relative mb-2 last:mb-0 whitespace-nowrap`}>
 			{/** Toggle */}
-			<div className={`relative w-full h-8`}>
+			<div ref={vRef} onClick={onEntryClicked} className={`relative w-full h-8`}>
 				<div className={`relative flex w-full h-8 group ${buttonScaleHover}`}>
 					<div className={`absolute w-full h-full rounded-full border border-gray-700 bg-gray-800 group-hover:bg-gray-700 group-active:bg-primary`}></div>
 
@@ -66,7 +74,7 @@ const PageContent = ({
 	children
 }) => {
 	return(
-		<div className={`relative w-full flex-grow border-b border-t border-gray-700`}>
+		<div className={`relative w-full flex-grow border-b border-t border-gray-700 overflox-x-visible`}>
 			<div className={`absolute w-full h-4 top-0 z-10 pointer-events-none`}>
 				<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
 			</div>
@@ -75,7 +83,7 @@ const PageContent = ({
 			</div>
 			
 			<div className={`absolute w-full h-full`}>
-				<div className={`relative w-full h-full overflow-y-scroll overflow-x-hidden py-4`}>
+				<div className={`relative h-full overflow-y-scroll overflow-x-hidden py-4`}>
 					<div className={`relative w-full pl-4 pr-2 py-1`}>
 						{children}
 					</div>

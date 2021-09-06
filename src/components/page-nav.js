@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-import SpinningCog from './spinning-cog';
+import { pillClickEffect } from '/src/components/click-effects';
 
 import {
 	buttonScaleHover
@@ -23,12 +23,19 @@ const pages = {
 }
 
 const PageNav = ({ location }) => {
-	const isActive = (page) => {
-		if (page.url.length <= 1)
-			return location.pathname.length <= 1;
+	const getLinkProps = ({ isCurrent }) => {
+		return {
+			className: isCurrent
+				? `relative flex flex-grow h-full text-gray-800 bg-primary border border-gray-700 rounded-full justify-center items-center pointer-events-none font-bold`
+				: `relative flex flex-grow h-full text-primary bg-gray-800 border border-gray-700 rounded-full ${
+					buttonScaleHover
+				} justify-center items-center hover:bg-gray-700`
+		}
+	}
 
-		return location.pathname.indexOf(page.url) > -1
-	};
+	const onLinkClicked = (event) => {
+		pillClickEffect(event.target);
+	}
 
 	return (
 		<div
@@ -60,25 +67,17 @@ const PageNav = ({ location }) => {
 					</div> */}
 
 					{/** Nav. */}
-					<div className={`relative flex flex-row h-full px-2 desktop:px-4`}>
+					<div className={`relative flex flex-row h-full px-2 desktop:px-4 py-2 tablet:py-4`}>
 						{Object.keys(pages).map((page, index) => (
-							<Link
-								key={index}
-								to={pages[page].url}
-								className={`relative flex-grow h-full group ${buttonScaleHover}`}
-							>
-								<div className={`absolute w-full h-full px-2 py-2 tablet:py-4`}>
-									<div className={`relative w-full h-full rounded-full border border-transparent ${
-										isActive(pages[page]) ? 'group-hover:bg-primary-3 bg-primary' : 'group-hover:bg-gray-700 bg-gray-800 border-gray-700'
-									}`}></div>
-								</div>
-
-								<div className={`absolute flex justify-center items-center w-full h-full text-md tablet:text-lg ${
-									isActive(pages[page]) ? 'text-gray-900 font-bold' : 'text-primary'
-								}`}>
+							<div key={index} className={`relative h-full px-2 flex-grow tablet:text-lg`}>
+								<Link
+									to={pages[page].url}
+									getProps={getLinkProps}
+									onClick={onLinkClicked}
+								>
 									{pages[page].display}
-								</div>
-							</Link>
+								</Link>
+							</div>
 						))}
 					</div>
 				</div>

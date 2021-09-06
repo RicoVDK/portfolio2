@@ -10,13 +10,35 @@ module.exports = {
         'spin-slower-right': 'spin 40s linear infinite',
         'spin-slow-left': 'reverse-spin 20s linear infinite',
         'spin-slower-left': 'reverse-spin 40s linear infinite',
+        'pill-click-effect': 'pill-click-grow 0.2s linear forwards',
+        'square-click-effect': 'square-click-grow 0.2s linear',
       },
       keyframes: {
         'reverse-spin': {
           from: {
             transform: 'rotate(360deg)'
           },
-        }
+        },
+        'pill-click-grow': {
+          from: {
+            transform: 'scaleX(1) scaleY(1)',
+            opacity: '1',
+          },
+          to: {
+            transform: 'scaleX(1.25) scaleY(1.75)',
+            opacity: '0'
+          }
+        },
+        'square-click-grow': {
+          from: {
+            transform: 'scaleX(1) scaleY(1)',
+            opacity: '1',
+          },
+          to: {
+            transform: 'scaleX(1.25) scaleY(1.25)',
+            opacity: '0'
+          }
+        },
       },
       colors: {
         primary: {
@@ -59,6 +81,9 @@ module.exports = {
       },
       translate: {
         '-30': '-7.5rem',
+      },
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(ellipse closest-side, var(--tw-gradient-stops))',
       }
     },
     screens: {

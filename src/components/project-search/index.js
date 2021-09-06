@@ -239,7 +239,7 @@ const ProjectSearch = ({
 				<div 
 					onClick={onToggleClicked} 
 					className={`relative flex w-16 h-8 justify-center items-center font-bold rounded-bl-full rounded-br-full cursor-pointer border border-t-0 border-transparent ${
-						open ? 'bg-primary text-gray-800 hover:bg-primary-3' : 'bg-gray-800 text-primary hover:bg-gray-700 border-gray-700'
+						open ? 'bg-primary text-gray-800' : 'bg-gray-800 text-primary hover:bg-gray-700 border-gray-700'
 					}`}
 				>
 					<i className={`fas fa-cogs`}></i>

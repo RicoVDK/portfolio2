@@ -6,6 +6,7 @@ import React, {
 import SiteHeader from '/src/components/site-header';
 import SocialsBar from '/src/components/socials-bar';
 import useBuildNumber from '/src/components/use-build-number';
+import SiteTitleTag from '/src/components/site-title-tag';
 
 import {
 	PageLayout
@@ -50,6 +51,11 @@ export const MobileSiteLayout = ({ location, children }) => {
 					<i className={`fas fa-bars text-xl tablet:text-3xl ${sideOpen ? 'text-gray-800' : 'text-primary'}`} />
 				</div>
 			</div>
+			
+			{/** Fade. */}
+			<div className={`absolute w-28 h-28 tablet:w-40 tablet:h-40 z-30 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-30 tablet:-translate-y-36 overflow-hidden pointer-events-none`}>
+				<div className={`relative w-full h-full bottom-0 transform translate-y-1/2 bg-gradient-radial from-gray-900 to-transparent`} />
+			</div>
 		</div>
 	)
 };
@@ -80,11 +86,7 @@ export const DesktopSiteLayout = ({ location, children }) => {
 								cogClassName={`text-10xl tablet:text-12xl text-gray-800 animate-spin-slower-right`}
 							/> */}
 
-							<div className={`relative w-full text-xl text-primary text-center italic font-bold p-4`}>
-								<div className={`relative w-full text-center bg-gray-800 border border-gray-700 rounded-full p-2`}>
-									Rico's Softworks
-								</div>
-							</div>
+							<SiteTitleTag />
 
 							<div className={`absolute w-full p-1 bottom-0 left-0`}>
 								<div className={`relative m-auto text-gray-800 italic text-sm`}>
