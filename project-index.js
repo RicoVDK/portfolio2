@@ -68,7 +68,7 @@ const Projects = [
 		id: 'entry-birds',
 		url: 'birds',
 		img: null,
-		disabled: false,
+		disabled: true,
 		children: [],
 		tags: [
 			Tags.GameDev, Tags.Prototype,
@@ -105,7 +105,7 @@ const Projects = [
 		id: 'entry-dartscore',
 		url: 'dartscore',
 		img: null,
-		disabled: true,
+		disabled: false,
 		children: [],
 		tags: [
 			Tags.WebDev, Tags.Internship,

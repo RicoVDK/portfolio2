@@ -21,7 +21,7 @@ const IMGViewer = ({
 				/>
 
 				{/** Image. */}
-				<div className={`relative w-11/12 h-5/6 tablet:w-5/6 tablet:h-5/6 group rounded-3xl overflow-hidden`}>
+				<div className={`relative w-11/12 h-5/6 tablet:w-5/6 tablet:h-5/6 group rounded-3xl overflow-hidden text-white`}>
 					<img
 						className={`relative block w-full h-full object-scale-down transition-all duration-500 opacity-0 bg-gray-800 border border-gray-700 rounded-3xl`}
 						onLoad={(event) => event.target.style.opacity = 1}
@@ -54,7 +54,7 @@ const IMGViewer = ({
 	return (
 		<div
 			id={id}
-			className={`relative w-full h-full overflow-hidden cursor-pointer group text-white ${className}`}
+			className={`relative overflow-hidden cursor-pointer group text-white ${className ? className : 'w-full h-full'}`}
 			onClick={showModal}
 		>
 			{/** Glow. */}
@@ -64,7 +64,7 @@ const IMGViewer = ({
 					{title}
 				</div>
 
-				<i className={`fas fa-expand-alt text-4xl`} />
+				<i className={`fas fa-expand-alt text-4xl z-10`} />
 
 				<div className={`relative w-full py-2 px-4 truncate`}>
 					{date}
