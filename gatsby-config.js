@@ -6,7 +6,7 @@ module.exports = {
     socials: {
       twitter: "https://twitter.com/ricovdk",
       mail: "work@ricosoftworks.com",
-      youtube: "https://youtube.com",
+      gitlab: "https://gitlab.com/rico_vdk/",
       git: "https://github.com/RicoVDK",
     },
   },

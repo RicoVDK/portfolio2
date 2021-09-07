@@ -49,8 +49,8 @@ const IndexPage = ({ location, setContents }) => {
 				(Equivalent to college on Associate level)<br/>
 				and live in the Netherlands.<br/>
 				<br/>
-				My passion is to work on video games, which is what I do as a hobby in my spare time,<br/>
-				hoping to one day fulfill my dream of being able to live out the rest of my life working on video games that people can enjoy.<br/>
+				My passion is to work on video games, which is what I do as a hobby in my spare time.<br/>
+				My dream is to be able to live out the rest of my life working on video games that people can enjoy.<br/>
 			</TextSubText>
 
 			<TextTitle id={'affinities'}>

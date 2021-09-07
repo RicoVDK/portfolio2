@@ -7,6 +7,9 @@ import SiteHeader from '/src/components/site-header';
 import SocialsBar from '/src/components/socials-bar';
 import useBuildNumber from '/src/components/use-build-number';
 import SiteTitleTag from '/src/components/site-title-tag';
+import {
+	circleClickEffect
+} from '/src/components/click-effects';
 
 import {
 	PageLayout
@@ -15,6 +18,12 @@ import {
 export const MobileSiteLayout = ({ location, children }) => {
 	const [modal, setModal] = useState(null);
 	const [sideOpen, setSideOpen] = useState(false);
+	const vRef = useRef(null);
+
+	const onTogglePressed = () => {
+		setSideOpen(!sideOpen);
+		circleClickEffect(vRef.current);
+	}
 
 	return (
 		<div
@@ -43,7 +52,8 @@ export const MobileSiteLayout = ({ location, children }) => {
 			{/** Side Toggle. */}
 			<div className={`absolute w-16 h-8 tablet:w-24 tablet:h-12 z-40 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-30 tablet:-translate-y-36`}>
 				<div
-					onClick={() => setSideOpen(!sideOpen)}
+					onClick={onTogglePressed}
+					ref={vRef}
 					className={`relative flex w-full h-full rounded-tl-full rounded-tr-full border border-b-0 border-gray-700 justify-center items-center ${
 						sideOpen ? 'bg-primary' : 'bg-gray-800'
 					}`}

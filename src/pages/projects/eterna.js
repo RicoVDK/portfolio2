@@ -45,7 +45,7 @@ const Eterna = ({ setModal, setContents }) => {
 			<ProjectBanner
 				id={`project`}
 				imgTitle={`Extremely early prototype screenshot`}
-				date={`2021/08/30`}
+				date={`30/08/2021`}
 				img={Header}
 				setModal={setModal}
 			>
@@ -90,7 +90,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`Custom physics`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Gameplay01}
 							setModal={setModal}
 						/>
@@ -98,7 +98,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`Smooth & Dynamic slope physics`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Gameplay02}
 							setModal={setModal}
 						/>
@@ -106,7 +106,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`Early fully custom debug menu`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Gameplay03}
 							setModal={setModal}
 						/>
@@ -132,7 +132,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`App structure`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Node02}
 							setModal={setModal}
 						/>
@@ -140,7 +140,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`Player node structure`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Node01}
 							setModal={setModal}
 						/>
@@ -153,7 +153,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`Movable entity physics loop`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Code01}
 							setModal={setModal}
 						/>
@@ -161,7 +161,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`Movable entity controller. This is where a movable entity reads its variables from.`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Code02}
 							setModal={setModal}
 						/>
@@ -171,7 +171,7 @@ const Eterna = ({ setModal, setContents }) => {
 							title={
 								`UI window controller (as seen in the 3rd gameplay GIF).`
 							}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Code03}
 							setModal={setModal}
 						/>
@@ -179,7 +179,7 @@ const Eterna = ({ setModal, setContents }) => {
 					<IMGGridEntry>
 						<IMGViewer
 							title={`Debug menu`}
-							date={`2021/08/30`}
+							date={`30/08/2021`}
 							src={Code04}
 							setModal={setModal}
 						/>

@@ -71,7 +71,7 @@ const ContactPage = ({ location, setContents }) => {
 				<br/>
 				<TextSubTitle id={`general-questions`}>For general questions:</TextSubTitle><br/>
 				<div className={`relative text-center text-base italic`}>
-					- Your questions, obviously! There's no such thing as a dumb question. -
+					- Your questions, obviously! -
 				</div>
 				<br/>
 				<TextSubTitle id={`feature-suggestions`}>For website feature suggestions:</TextSubTitle><br/>

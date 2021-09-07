@@ -41,7 +41,7 @@ const PageNav = ({ location }) => {
 		<div
 			id={`navigation`}
 			role={`navigation`}
-			className={`relative w-full h-14 tablet:h-20 border-r border-l border-primary desktop:border-0 z-40`}
+			className={`relative w-full h-14 tablet:h-20 border-r border-l border-primary desktop:border-0 select-none z-40`}
 		>
 			<div className={`absolute flex h-full w-full`}>
 				<div className={`relative flex-grow h-full bg-gray-900 rounded-tl-3xl rounded-tr-3xl desktop:rounded-tl-none desktop:rounded-tr-none desktop:rounded-bl-3xl desktop:rounded-br-3xl border border-primary overflow-hidden`}>

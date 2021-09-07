@@ -140,7 +140,7 @@ export const MobilePageLayout = ({
 
 							<div className={`relative w-full flex-grow`}>
 								<div className={`absolute w-full h-full`}>
-									<div className={`relative flex flex-col w-full h-full pt-4 pb-10 tablet:pb-14 px-1 overflow-y-hidden`}>
+									<div className={`relative flex flex-col w-full h-full pt-4 pb-10 tablet:pb-14 px-1 overflow-hidden`}>
 
 										<div className={`absolute w-full h-4 top-0 z-10 pointer-events-none`}>
 											<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
@@ -192,7 +192,7 @@ export const DesktopPageLayout = ({
 			{/** Sidebar. */}
 			<div className={`relative w-1/4 min-w-72 h-full border-r border-primary`}>
 				<div className={`absolute w-full h-full`}>
-					<div className={`relative flex flex-col w-full h-full py-4 px-1 overflow-y-hidden overflow-x-visible`}>
+					<div className={`relative flex flex-col w-full h-full py-4 px-1 overflow-hidden`}>
 						<TextSubTitle className={`relative block text-center w-full pb-4`}>
 							Page contents
 						</TextSubTitle>

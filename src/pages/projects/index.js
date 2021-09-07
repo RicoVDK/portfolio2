@@ -56,9 +56,10 @@ const ProjectsPage = ({ location, setContents, }) => {
 		<div id={`projects`}>
 			<TextSubText wrapClassName={`text-center pt-6`}>
 				Here you'll find <TextBold>{'>'}some{'<'}</TextBold> of the projects I have worked, or am working on!<br/>
-				<TextMark>Please keep in mind that not all of these are owned by me.</TextMark><br/>
+				<TextItalic>Please keep in mind that not all of these are owned by me.</TextItalic><br />
 				<br/>
 				You can filter by using the search field below, as well as including and excluding tags by opening the options menu below the search field.<br/>
+				<br />
 				<TextItalic>Projects are ordered from new to old.</TextItalic>
 			</TextSubText>
 

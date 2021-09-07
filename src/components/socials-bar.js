@@ -11,16 +11,16 @@ const SocialsBar = ({ className }) => {
 			<div className={`absolute w-full h-full border border-t-0 border-primary rounded-bl-3xl rounded-br-3xl `} />
 
 			<SocialButton
-				className={`bg-gray-500 pointer-events-none ${buttonScaleHover}`}
-				to={siteMetadata.socials.youtube}
+				className={`bg-yellow-600 hover:bg-yellow-500 ${buttonScaleHover}`}
+				to={siteMetadata.socials.gitlab}
 			>
-				<i className={`fas fa-caret-right text-4xl pl-1`} />
+				<i className={`fab fa-gitlab text-2xl`} />
 			</SocialButton>
 			<SocialButton
 				className={`bg-blue-500 hover:bg-blue-400 ${buttonScaleHover}`}
 				to={siteMetadata.socials.twitter}
 			>
-				<i className={`fab fa-twitter text-xl`} />
+				<i className={`fab fa-twitter text-2xl`} />
 			</SocialButton>
 			<SocialButton
 				className={`bg-transparent hover:text-gray-400 ${buttonScaleHover}`}

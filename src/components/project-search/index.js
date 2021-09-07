@@ -10,6 +10,9 @@ import lerp from '/src/components/utils/lerp';
 import SearchField from './search-field';
 import TagItem from './tag-item';
 import OptionButton from './option-button';
+import {
+	circleClickEffect
+} from '/src/components/click-effects';
 import Tags, {
 	tagToDisplayName
 } from '/src/components/tags';
@@ -28,6 +31,7 @@ const ProjectSearch = ({
 	});
 	const innerContentRef = useRef(null);
 	const outerContentRef = useRef(null);
+	const toggleRef = useRef(null);
 	const outerContentHeightRef = useRef(0);
 	const innerContentHeightRef = useRef(0);
 	const animFrame = useRef(null);
@@ -139,6 +143,8 @@ const ProjectSearch = ({
 	}
 
 	const onToggleClicked = () => {
+		circleClickEffect(toggleRef.current);
+		
 		if (!animFrame.current) {
 			innerContentHeightRef.current = innerContentRef.current.getBoundingClientRect().height;
 
@@ -238,6 +244,7 @@ const ProjectSearch = ({
 			<div className={`relative flex w-full justify-center`}>
 				<div 
 					onClick={onToggleClicked} 
+					ref={toggleRef}
 					className={`relative flex w-16 h-8 justify-center items-center font-bold rounded-bl-full rounded-br-full cursor-pointer border border-t-0 border-transparent ${
 						open ? 'bg-primary text-gray-800' : 'bg-gray-800 text-primary hover:bg-gray-700 border-gray-700'
 					}`}

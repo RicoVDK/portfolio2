@@ -2,6 +2,7 @@ import Tags from '/src/components/tags';
 
 import EntryPortfolioIcon from '/src/images/projects/ricosoftworks/ricosoftworks-icon.png';
 import EntryEternaIcon from '/src/images/projects/eterna/eterna-icon.png';
+import EntryDartScoreIcon from '/src/images/projects/dartscore/dartscore-icon.png';
 
 const Projects = [
 	{
@@ -104,7 +105,7 @@ const Projects = [
 		`,
 		id: 'entry-dartscore',
 		url: 'dartscore',
-		img: null,
+		img: EntryDartScoreIcon,
 		disabled: false,
 		children: [],
 		tags: [

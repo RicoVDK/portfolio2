@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {
+	useRef
+} from 'react';
 
 import {
 	buttonScaleHover
 } from '/src/components/effect-styles';
+import {
+	pillClickEffect
+} from '/src/components/click-effects';
 
 const TagItem = ({
 	tag = 0,
@@ -11,6 +16,8 @@ const TagItem = ({
 	includeTags = [],
 	excludeTags = [],
 }) => {
+	const tagRef = useRef(null);
+
 	const getTextColour = () => {
 		if (includeTags.includes(tag))
 			return 'text-gray-800 font-bold';
@@ -38,11 +45,15 @@ const TagItem = ({
 		return 'plus';
 	}
 
-	const tagClicked = () => onClicked(tag);
+	const tagClicked = () => {
+		onClicked(tag);
+		pillClickEffect(tagRef.current);
+	};
 
 	return (
 		<div
 			onClick={tagClicked}
+			ref={tagRef}
 			className={`flex relative w-full items-center px-1 py-1`}
 		>
 			<div className={`relative w-full h-full`}>
