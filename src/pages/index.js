@@ -11,6 +11,7 @@ import TextTitle from '/src/components/text/text-title';
 import TextSubText from '/src/components/text/text-subtext';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TextMark from '/src/components/text/text-mark';
+import TextBold from '/src/components/text/text-bold';
 import TextLink from '/src/components/text/text-link';
 import AffinityCard from '/src/components/affinity-card';
 import Timeline, {
@@ -31,6 +32,7 @@ const IndexPage = ({ location, setContents }) => {
 				{ displayName: 'Final Year of College', id: 'history-college-final-year', children: [] },
 				{ displayName: 'Writing Vibrant Venture Dialogue', id: 'history-vv-dialogue', children: [] },
 				{ displayName: 'Graduating', id: 'history-graduating', children: [] },
+				{ displayName: 'Rico\'s Softworks', id: 'history-ricosoftworks', children: [] },
 				// { displayName: 'Semag Games\' Website', id: 'history-semag-website', children: [] },
 				{ displayName: 'Present Day', id: 'history-present-day', children: [] },
 			] },
@@ -67,7 +69,9 @@ const IndexPage = ({ location, setContents }) => {
 						Familiar with object oriented principles {'&'} source control.<br/>
 						<br/>
 						Experienced in using languages such as:<br/>
-						C#, Python, GDScript, Php, Lua, JavaScript.<br/>
+						<TextBold>
+							C#, Python, GDScript, Php, Lua, JavaScript.<br/>
+						</TextBold>
 					</AffinityCard>
 					<AffinityCard
 						faClassName={'fa-chalkboard-teacher'}
@@ -100,7 +104,7 @@ const IndexPage = ({ location, setContents }) => {
 						as well as being experienced in designing and implementing databases.<br/>
 						<br/>
 						Experience in using the following:<br/>
-						Laravel, ReactJS, Gatsby, Wordpress, MySQL, Drupal, Django, JQuery, Vue, HTML, JSX, CSS, SCSS, Tailwind
+						<TextBold>Laravel, ReactJS, Next, Gatsby, Wordpress, MySQL, Drupal, Django, JQuery, Vue, HTML, JSX, CSS, SCSS, Tailwind</TextBold>
 					</AffinityCard>
 				</div>
 			</div>
@@ -195,6 +199,20 @@ const IndexPage = ({ location, setContents }) => {
 						Development on the prototype <TextLink to={`/projects/eterna`}>Project Eterna</TextLink> was started.<br/>
 						Development on the prototype <TextLink to={`/projects/birds`}>Project Birds</TextLink> was started.<br/>
 					</TimelineEntry>
+					<TimelineEntry
+						id={`history-ricosoftworks`}
+						date={`2021 Aug. - 2021 Sep.`}
+					>
+						<TextSubTitle>Rico's Softworks</TextSubTitle><br/>
+						<br/>
+						Development is started on the 2nd rendition of Rico's Softworks, 
+						alongside aiding development in a yet-to-be-announced project.<br />
+						<br />
+						Later that month, development on the website was completed, 
+						and writing the posts and polishing existing content began.<br />
+						<br />
+						You can read more about the development of this website <TextLink to={`/projects/ricosoftworks`}>here</TextLink>.
+					</TimelineEntry>
 					{/* <TimelineEntry
 						id={`history-semag-website`}
 						date={`2021 Aug.`}
@@ -217,9 +235,9 @@ const IndexPage = ({ location, setContents }) => {
 					>
 						<TextSubTitle>Present Day</TextSubTitle><br/>
 						<br/>
-						Currently looking for contract work,<br/>
-						working on Project Eterna {'&'} Birds simultaneously,<br/>
-						and tending to this website.
+						I am currently looking for a job!<br />
+						<br />
+						Please <TextLink to={`/contact`}>contact me</TextLink> if you're interested.
 					</TimelineEntry>
 				</Timeline>
 			</div>

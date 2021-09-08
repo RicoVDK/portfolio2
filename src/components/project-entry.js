@@ -15,6 +15,7 @@ import {
 const ProjectEntry = ({
 	title = 'No Title',
 	desc = 'No Desc',
+	updated = '--/--/----',
 	img = null,
 	url = '#',
 	id = '',
@@ -50,6 +51,10 @@ const ProjectEntry = ({
 							onLoad={(event) => event.target.style.opacity = 1}
 						/>
 
+						<div className={`absolute py-2 px-4 top-0 right-0 bg-gray-800 border-b border-l border-gray-700 text-gray-300 font-bold rounded-bl-3xl`}>
+							{updated} <i className={`fas fa-pencil-alt pl-2`} />
+						</div>
+
 						<div className={`absolute py-2 px-4 bottom-0 bg-gray-800 border-t border-r border-gray-700 font-bold rounded-tr-3xl`}>
 							{title}
 						</div>
@@ -63,7 +68,7 @@ const ProjectEntry = ({
 
 					{/** Disabled. */}
 					{disabled && <div className={`absolute w-full`}>
-						<div className={`relative w-full px-4 py-6 text-center italic text-xl bg-black bg-opacity-25`}>
+						<div className={`relative w-full px-4 py-12 text-center italic text-xl bg-black bg-opacity-25`}>
 							This entry is currently unavailable
 						</div>
 					</div>}

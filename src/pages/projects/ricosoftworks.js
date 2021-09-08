@@ -60,6 +60,7 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				{ displayName: 'Contact Page', id: 'contact-page', children: [] },
 				{ displayName: 'Posts', id: 'posts', children: [] },
 			] },
+			{ displayName: 'Afterword', id: 'afterword', children: [] },
 			{ displayName: 'Old Website', id: 'old-website', children: [] },
 		]);
 	}, [setContents]);
@@ -341,9 +342,16 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 					/>
 				</IMGGridEntry>
 			</IMGGrid>
-			<br />
-			<TextCenter><TextSubTitle className={`py-6`} id={`old-website`}>Old Website</TextSubTitle></TextCenter>
-			<br />
+
+			<TextTitle id={`afterword`}>
+				Afterword
+			</TextTitle>
+			In the end, finishing the website took roughly 3 weeks, while the remaining time was spent writing posts and the necessary formatting components.<br />
+			Polishing changes were also made, like including an "updated" label on posts, and adding click effects.<br />
+
+			<TextTitle id={`old-website`}>
+				Old Website
+			</TextTitle>
 			<TextCenter>
 				Enjoy some older images and gifs from the scrapped website!<br />
 				<br />

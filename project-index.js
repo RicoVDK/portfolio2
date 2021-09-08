@@ -3,6 +3,7 @@ import Tags from '/src/components/tags';
 import EntryPortfolioIcon from '/src/images/projects/ricosoftworks/ricosoftworks-icon.png';
 import EntryEternaIcon from '/src/images/projects/eterna/eterna-icon.png';
 import EntryDartScoreIcon from '/src/images/projects/dartscore/dartscore-icon.png';
+import EntryPrinterIcon from '/src/images/projects/3d-printer-dashboard/printer-icon.png';
 
 const Projects = [
 	{
@@ -14,6 +15,7 @@ const Projects = [
 		`,
 		id: 'entry-portfolio',
 		url: 'ricosoftworks',
+		updated: '08/09/2021',
 		img: EntryPortfolioIcon,
 		disabled: false,
 		children: [],
@@ -49,6 +51,7 @@ const Projects = [
 		`,
 		id: 'entry-eterna',
 		url: 'eterna',
+		updated: '08/09/2021',
 		img: EntryEternaIcon,
 		disabled: false,
 		children: [],
@@ -68,6 +71,7 @@ const Projects = [
 		`,
 		id: 'entry-birds',
 		url: 'birds',
+		updated: '--/--/----',
 		img: null,
 		disabled: true,
 		children: [],
@@ -88,6 +92,7 @@ const Projects = [
 		`,
 		id: 'entry-vibrant-venture',
 		url: 'vibrant-venture',
+		updated: '--/--/----',
 		img: null,
 		disabled: true,
 		children: [],
@@ -97,7 +102,7 @@ const Projects = [
 		]
 	},
 	{
-		displayName: 'DartScore',
+		displayName: 'Dart-score',
 		description: `
 			One of the projects I took part in as a full stack developer during my 2nd internship.<br/>
 			<br/>
@@ -105,6 +110,7 @@ const Projects = [
 		`,
 		id: 'entry-dartscore',
 		url: 'dartscore',
+		updated: '08/09/2021',
 		img: EntryDartScoreIcon,
 		disabled: false,
 		children: [],
@@ -125,8 +131,9 @@ const Projects = [
 		`,
 		id: 'entry-3d-printer-dashboard',
 		url: '3d-printer-dashboard',
-		img: null,
-		disabled: true,
+		updated: '08/09/2021',
+		img: EntryPrinterIcon,
+		disabled: false,
 		children: [],
 		tags: [
 			Tags.WebDev, Tags.School,
@@ -146,6 +153,7 @@ const Projects = [
 		`,
 		id: 'entry-phantasma',
 		url: 'phantasma',
+		updated: '--/--/----',
 		img: null,
 		disabled: true,
 		children: [],
@@ -167,6 +175,7 @@ const Projects = [
 		`,
 		id: 'entry-2_5d-unity-prototype',
 		url: '2_5d-unity-prototype',
+		updated: '--/--/----',
 		img: null,
 		disabled: true,
 		children: [],
@@ -185,6 +194,7 @@ const Projects = [
 		`,
 		id: 'entry-dreamventure',
 		url: 'dreamventure',
+		updated: '--/--/----',
 		img: null,
 		disabled: true,
 		children: [],

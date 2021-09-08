@@ -9,6 +9,7 @@ import TextClipboard from '/src/components/text/text-clipboard';
 import IconTextTable from '/src/components/icon-text-table';
 import TextLink from '/src/components/text/text-link';
 import TextCenterLeft from '/src/components/text/text-center-left';
+import ULOut from '/src/components/ul-out';
 import TNFTable, {
 	TNFIconClass
 } from '/src/components/tnf-table';
@@ -36,7 +37,7 @@ const ContactPage = ({ location, setContents }) => {
 			</TextTitle>
 			<div className={`w-full px-4 pb-4 text-center`}>
 				<TextItalic>
-					Updated 05/09/2021
+					Updated 08/09/2021
 				</TextItalic><br/>
 				{/* <br/>
 				<TextCenterLeft>
@@ -55,6 +56,13 @@ const ContactPage = ({ location, setContents }) => {
 					{ displayName: 'Volunteer', tnf: false },
 				]}
 			/>
+			<br />
+			<TextCenterLeft>
+				<ULOut>
+					<li>Able to and preferrably work remote.</li>
+					<li>Able to meet face-to-face using public transport within the Netherlands.</li>
+				</ULOut>
+			</TextCenterLeft>
 
 			<TextTitle id={`when-contacting`}>
 				When Contacting
@@ -111,7 +119,7 @@ const ContactPage = ({ location, setContents }) => {
 							to={siteMetadata.socials.twitter}
 							external={true}
 						>
-							@twitter<i className={`fas fa-external-link-alt text-xs pl-2`} />
+							@ricovdk<i className={`fas fa-external-link-alt text-xs pl-2`} />
 						</TextLink>
 					},
 				]}

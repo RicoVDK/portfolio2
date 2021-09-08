@@ -191,6 +191,11 @@ const ProjectSearch = ({
 		resultsTimeStamp.current = performance.now();
 		checkCount.current = 0;
 		waitFrame.current = requestAnimationFrame(checkResultsTimeStamp);
+
+		return () => {
+			cancelAnimationFrame(animFrame.current);
+			cancelAnimationFrame(waitFrame.current);
+		}
 	}, [setWaiting, searchOptions]);
 	
 	return (

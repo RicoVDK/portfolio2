@@ -1,6 +1,7 @@
 import React, {
 	useState,
 	useRef,
+	useLayoutEffect,
 } from 'react';
 
 import TextMark from '/src/components/text/text-mark';
@@ -26,6 +27,12 @@ const TextClipboard = ({
 
 		timer.current = setTimeout(() => setCopied(false), 1500);
 	}
+
+	useLayoutEffect(() => {
+		return () => {
+			clearTimeout(timer.current);
+		}
+	}, [timer]);
 
 	return (
 		<span

@@ -67,125 +67,125 @@ const Eterna = ({ setModal, setContents }) => {
 			</TextCenter>
 			
 			<TextTitle id={`july-2021`}>July 2021 (v0.0.1p)</TextTitle>
+			<TextCenter><TextSubTitle id={`july-2021-dev`} className={`py-4`}>Development</TextSubTitle></TextCenter><br/>
+			<br/>
+			Development on the first prototype is started <TextBold><TextItalic>and so far has only been worked on in one afternoon and one evening</TextItalic></TextBold>.<br/>
+			The goal is to eventually have a prototype that contains player abilities (movement, jumping, etc), 
+			as well as other main features such as a start on the combat system and interaction, and some UI.<br/>
+			<br/>
+			Speaking of UI, I implemented a debug menu early on so that I would be able to proofread the variable values in real-time.<br/>
+			In <TextLink to={'/projects/birds'}>Project Birds</TextLink>, 
+			I managed to fix some bugs I wouldn't have noticed without a debug menu, so I find having one early on in Eterna essential.<br/>
+			<br/>
+			I sadly haven't been able to work on Eterna for the entirety of August and half of July, 
+			due to my attention being put into developing this website as well as contributing in various areas to Semag Games.<br/>
+			<br/>
+			<TextCenter><TextSubTitle id={`july-2021-gameplay`} className={`py-4`}>Gameplay</TextSubTitle></TextCenter><br/>
+			<br/>
 			<TextCenter>
-				<TextSubTitle id={`july-2021-dev`} className={`py-4`}>Development</TextSubTitle><br/>
-				<br/>
-				Development on the first prototype is started <TextBold><TextItalic>and so far has only been worked on in one afternoon and one evening</TextItalic></TextBold>.<br/>
-				The goal is to eventually have a prototype that contains player abilities (movement, jumping, etc), 
-				as well as other main features such as a start on the combat system and interaction, and some UI.<br/>
-				<br/>
-				Speaking of UI, I implemented a debug menu early on so that I would be able to proofread the variable values in real-time.<br/>
-				In <TextLink to={'/projects/birds'}>Project Birds</TextLink>, 
-				I managed to fix some bugs I wouldn't have noticed without a debug menu, so I find having one early on in Eterna essential.<br/>
-				<br/>
-				I sadly haven't been able to work on Eterna for the entirety of August and half of July, 
-				due to my attention being put into developing this website as well as contributing in various areas to Semag Games.<br/>
-				<br/>
-				<TextSubTitle id={`july-2021-gameplay`} className={`py-4`}>Gameplay</TextSubTitle><br/>
-				<br/>
 				<TextBold>WARNING</TextBold><br/>
-				Intense action packed gameplay below...<br/>
-				<br/>
-				<IMGGrid>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`Custom physics`}
-							date={`30/08/2021`}
-							src={Gameplay01}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`Smooth & Dynamic slope physics`}
-							date={`30/08/2021`}
-							src={Gameplay02}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`Early fully custom debug menu`}
-							date={`30/08/2021`}
-							src={Gameplay03}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-				</IMGGrid>
-				<br/>
-				<TextSubTitle id={`july-2021-node`} className={`py-4`}>Node Structure</TextSubTitle><br/>
-				<br/>
-				The main scene that loads when the app is ran is called "App".<br/>
-				It houses all nodes that are required on startup and handle global app functionalities.<br/>
-				The Game scene contains all the game logic (loading the proper levels, inventory, etc), 
-				while the App scene is where this can be switched out for something like the title screen.<br/>
-				Using this same pattern, the Game scene will have something similar, but for its levels and areas.<br/>
-				<br/>
-				In the second image you can see the structure of the player node.<br/>
-				The controller for the the player is seperate from the player and input logic.<br/>
-				A new script is required that changes the properties of the controller directly, 
-				so that the player body can read from the controller.<br/>
-				For this I simply make a custom KeyboardInput node and program it to change specific values on the controller.<br/>
-				The same process could be done for the gamepad and any other control types.<br/>
-				<br/>
-				<IMGGrid>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`App structure`}
-							date={`30/08/2021`}
-							src={Node02}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`Player node structure`}
-							date={`30/08/2021`}
-							src={Node01}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-				</IMGGrid>
-				<br/>
-				<TextSubTitle id={`july-2021-code`} className={`py-4`}>Code</TextSubTitle><br/>
-				<br/>
-				<IMGGrid>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`Movable entity physics loop`}
-							date={`30/08/2021`}
-							src={Code01}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`Movable entity controller. This is where a movable entity reads its variables from.`}
-							date={`30/08/2021`}
-							src={Code02}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-					<IMGGridEntry>
-						<IMGViewer
-							title={
-								`UI window controller (as seen in the 3rd gameplay GIF).`
-							}
-							date={`30/08/2021`}
-							src={Code03}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-					<IMGGridEntry>
-						<IMGViewer
-							title={`Debug menu`}
-							date={`30/08/2021`}
-							src={Code04}
-							setModal={setModal}
-						/>
-					</IMGGridEntry>
-				</IMGGrid>
+				Intense action packed gameplay below...
 			</TextCenter>
+			<br/>
+			<IMGGrid>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Custom physics`}
+						date={`30/08/2021`}
+						src={Gameplay01}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Smooth & Dynamic slope physics`}
+						date={`30/08/2021`}
+						src={Gameplay02}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Early fully custom debug menu`}
+						date={`30/08/2021`}
+						src={Gameplay03}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+			</IMGGrid>
+			<br/>
+			<TextCenter><TextSubTitle id={`july-2021-node`} className={`py-4`}>Node Structure</TextSubTitle></TextCenter><br/>
+			<br/>
+			The main scene that loads when the app is ran is called "App".<br/>
+			It houses all nodes that are required on startup and handle global app functionalities.<br/>
+			The Game scene contains all the game logic (loading the proper levels, inventory, etc), 
+			while the App scene is where this can be switched out for something like the title screen.<br/>
+			Using this same pattern, the Game scene will have something similar, but for its levels and areas.<br/>
+			<br/>
+			In the second image you can see the structure of the player node.<br/>
+			The controller for the the player is seperate from the player and input logic.<br/>
+			A new script is required that changes the properties of the controller directly, 
+			so that the player body can read from the controller.<br/>
+			For this I simply make a custom KeyboardInput node and program it to change specific values on the controller.<br/>
+			The same process could be done for the gamepad and any other control types.<br/>
+			<br/>
+			<IMGGrid>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`App structure`}
+						date={`30/08/2021`}
+						src={Node02}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Player node structure`}
+						date={`30/08/2021`}
+						src={Node01}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+			</IMGGrid>
+			<br/>
+			<TextCenter><TextSubTitle id={`july-2021-code`} className={`py-4`}>Code</TextSubTitle></TextCenter><br/>
+			<br/>
+			<IMGGrid>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Movable entity physics loop`}
+						date={`30/08/2021`}
+						src={Code01}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Movable entity controller. This is where a movable entity reads its variables from.`}
+						date={`30/08/2021`}
+						src={Code02}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={
+							`UI window controller (as seen in the 3rd gameplay GIF).`
+						}
+						date={`30/08/2021`}
+						src={Code03}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Debug menu`}
+						date={`30/08/2021`}
+						src={Code04}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+			</IMGGrid>
 
 			<TextTitle id={`future`}>In the Future</TextTitle>
 			<TextCenter>

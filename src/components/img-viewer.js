@@ -1,4 +1,10 @@
-import React from 'react';
+import React, {
+	useRef
+} from 'react';
+
+import {
+	squareClickEffect
+} from '/src/components/click-effects';
 
 const IMGViewer = ({
 	id = '',
@@ -8,6 +14,8 @@ const IMGViewer = ({
 	src = null,
 	setModal,
 }) => {
+	const imgRef = useRef(null);
+
 	const showModal = () => {
 		if (!src)
 			return;
@@ -51,11 +59,17 @@ const IMGViewer = ({
 		setModal(null);
 	}
 
+	const onViewerClicked = () => {
+		showModal();
+		squareClickEffect(imgRef.current);
+	}
+
 	return (
 		<div
+			ref={imgRef}
 			id={id}
 			className={`relative overflow-hidden cursor-pointer group text-white ${className ? className : 'w-full h-full'}`}
-			onClick={showModal}
+			onClick={onViewerClicked}
 		>
 			{/** Glow. */}
 			<div className={`absolute flex flex-col justify-between items-center w-full h-full italic text-left opacity-0 group-hover:opacity-100 z-10`}>
