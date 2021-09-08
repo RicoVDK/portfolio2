@@ -8,6 +8,8 @@ import TextTitle from '/src/components/text/text-title';
 import TextCenter from '/src/components/text/text-center';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TextBold from '/src/components/text/text-bold';
+import TextCenterLeft from '/src/components/text/text-center-left';
+import ULOut from '/src/components/ul-out';
 import IMGViewer from '/src/components/img-viewer';
 import PostIMG from '/src/components/post-img';
 import IMGGrid, {
@@ -26,6 +28,7 @@ import Sign02 from '/src/images/projects/dartscore/dartscore-sign02.gif';
 const Dartscore = ({ setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([
+			{ displayName: 'Experience', id: 'experience', children: [] },
 			{ displayName: 'About', id: 'about', children: [] },
 			{ displayName: 'Preparation', id: 'preparation', children: [] },
 			{ displayName: 'Implementation', id: 'implementation', children: [
@@ -45,14 +48,31 @@ const Dartscore = ({ setModal, setContents }) => {
 				img={Scheme01}
 				setModal={setModal}
 			>
-				DartScore
+				Dart-score
 			</ProjectBanner>
+
+			<TextTitle id={`experience`}>
+				Experience
+			</TextTitle>
+			<TextBold>
+				<TextCenterLeft>
+					<ULOut>
+						<li>Learned ReactJS (Hooks), Tailwind, Python + Django within the first 3 weeks of my internship.</li>
+						<li>NextJS.</li>
+						<li>Designing and working with a complex database system</li>
+						<li>Communicating from front-end to back-end and vice versa in real-time.</li>
+						<li>Full-stack development.</li>
+						<li>Working with time-constraint pressure.</li>
+						<li>Working with a flexible, constantly changing team.</li>
+					</ULOut>
+				</TextCenterLeft>
+			</TextBold>
 
 			<TextTitle id={`about`}>
 				About
 			</TextTitle>
 			<TextCenter>
-				DartScore was a project I worked on during my final internship, which also acted as my exams for my Software Dev course on college.<br />
+				Dart-score was a project I worked on during my final internship, which also acted as my exams for my Software Dev course on college.<br />
 				The website itself allowed for darters, whether new or experienced, to play dart matches through a webcam feed, 
 				where the website would keep track of user inputted score, effectively giving players a method to play without the need to be in the same room as your opponent.<br />
 				This post will be covering some of the things that I did, which will also include a few images and videos of the front-end.<br />

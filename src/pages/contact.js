@@ -66,7 +66,7 @@ const ContactPage = ({ location, setContents }) => {
 				<div className={`relative text-center text-base italic`}>
 					- The name of the company/business you represent. -<br/>
 					- A link to your official website, or social media if the former is not applicable. -<br/>
-					- The reason for contacting. What is it about? I'm curious! -
+					- What does the job include? What will I be responsible for? -
 				</div>
 				<br/>
 				<TextSubTitle id={`general-questions`}>For general questions:</TextSubTitle><br/>

@@ -6,11 +6,14 @@ import ProjectLayout from '/src/layouts/project-layout';
 import ProjectBanner from '/src/components/project-banner';
 import TextLink from '/src/components/text/text-link';
 import TextCenter from '/src/components/text/text-center';
+import TextCenterLeft from '/src/components/text/text-center-left';
 import TextLeft from '/src/components/text/text-left';
 import TextTitle from '/src/components/text/text-title';
 import TextItalic from '/src/components/text/text-italic';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TextBold from '/src/components/text/text-bold';
+import ULOut from '/src/components/ul-out';
+import PostIMG from '/src/components/post-img';
 import IMGViewer from '/src/components/img-viewer';
 import IMGGrid, {
 	Entry as IMGGridEntry
@@ -37,28 +40,27 @@ import PostCode03 from '/src/images/projects/ricosoftworks/ricosoftworks-post-co
 import PostCode04 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code04.png';
 import PostCode05 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code05.png';
 import PostCode06 from '/src/images/projects/ricosoftworks/ricosoftworks-post-code06.png';
+import Layout01 from '/src/images/projects/ricosoftworks/ricosoftworks-layout01.png';
+import Old01 from '/src/images/projects/ricosoftworks/ricosoftworks-old01.gif';
+import Old02 from '/src/images/projects/ricosoftworks/ricosoftworks-old02.gif';
+import Old03 from '/src/images/projects/ricosoftworks/ricosoftworks-old03.png';
+import Old04 from '/src/images/projects/ricosoftworks/ricosoftworks-old04.gif';
+import Old05 from '/src/images/projects/ricosoftworks/ricosoftworks-old05.gif';
+import Old06 from '/src/images/projects/ricosoftworks/ricosoftworks-old06.gif';
 
 const RicoSoftworks = ({ setContents, setModal }) => {
 	useLayoutEffect(() => {
 		setContents([
+			{ displayName: 'Experience', id: 'experience', children: [] },
 			{ displayName: 'Motivation', id: 'motivation', children: [] },
-			{ displayName: 'Preparation', id: 'preparation', children: [
-				{ displayName: 'Important Questions', id: 'important-questions', children: [] },
-				{ displayName: 'Defining Purpose', id: 'defining-purpose', children: [] },
-				{ displayName: 'Defining Resources', id: 'defining-resources', children: [] },
-				{ displayName: 'The Plan', id: 'the-plan', children: [] },
+			{ displayName: '(Re) Implementation', id: 're-implementation', children: [
+				{ displayName: 'General Structure', id: 'general-structure', children: [] },
+				{ displayName: 'About Page', id: 'about-page', children: [] },
+				{ displayName: 'Projects Page', id: 'projects-page', children: [] },
+				{ displayName: 'Contact Page', id: 'contact-page', children: [] },
+				{ displayName: 'Posts', id: 'posts', children: [] },
 			] },
-			{ displayName: 'Implementation', id: 'implementation', children: [
-				{ displayName: 'About Page (Design)', id: 'about-page-design', children: [] },
-				{ displayName: 'About Page (Code)', id: 'about-page-code', children: [] },
-				{ displayName: 'Projects Page (Design)', id: 'projects-page-design', children: [] },
-				{ displayName: 'Projects Page (Code)', id: 'projects-page-code', children: [] },
-				{ displayName: 'Contact Page (Design)', id: 'contact-page-design', children: [] },
-				{ displayName: 'Contact Page (Code)', id: 'contact-page-code', children: [] },
-			] },
-			{ displayName: 'Celebration', id: 'celebration', children: [
-				{ displayName: 'Post Entries (Code)', id: 'post-code', children: [] },
-			] },
+			{ displayName: 'Old Website', id: 'old-website', children: [] },
 		]);
 	}, [setContents]);
 
@@ -74,150 +76,85 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 			>
 				Rico's Softworks
 			</ProjectBanner>
+
+			<TextTitle id={`experience`}>
+				Experience
+			</TextTitle>
+			<TextBold>
+				<TextCenterLeft>
+					<ULOut>
+						<li>Front-end development.</li>
+						<li>ReactJS (Hooks) + Gatsby.</li>
+						<li>SEO {'&'} Accessibility.</li>
+						<li>Tailwind.</li>
+						<li>SCSS.</li>
+						<li>Taking responsibility {'&'} managing valuable time.</li>
+						<li>Webhosting.</li>
+					</ULOut>
+				</TextCenterLeft>
+			</TextBold>
 			
 			<TextTitle id={`motivation`}>
 				Motivation
 			</TextTitle>
 			<TextCenter>
-				It's early July, 2021.<br/>
-				I had just finished my final exams and internship for the Software Development course 
-				and knew that I wanted to be able to put my talents to use and develop them while out in the field.<br/>
-				Obviously what I felt was the urge to get a job and work!<br/>
-				<br/>
-				But before that, I wanted something better than a boring Word document to house my experiences.<br/>
-				I wanted to go the extra mile to prove my abilities through actions, not just words.<br/>
-				<br/>
-				And so, right after finishing my internship I started working on this website.
-			</TextCenter><br/>
-
-			<TextTitle id={`preparation`}>
-				Preparation
-			</TextTitle>
-			<TextCenter><TextSubTitle id={`important-questions`} className={`py-4`}>
-				Important Questions
-			</TextSubTitle></TextCenter>
-			<br/>
-			Before we dive right into implementing features, I thought of 3 important questions to ask myself.<br/>
-			So let's answer these first! These questions are fairly straightforward and listed in general perspective, 
-			but can help define the ground works we should be focusing on:<br/>
-			<br/>
-			<TextLeft>
-				<TextItalic><TextBold>
-					- Why should this product be worked on? (Motivation/Reason)<br/>
-					- What is the goal of the product? (Purpose/Goal)<br/>
-					- Can our team make it? (Resources/Probability)
-				</TextBold></TextItalic>
-			</TextLeft><br/>
-			<TextCenter><TextSubTitle id={`defining-purpose`} className={`py-4`}>
-				Defining Purpose
-			</TextSubTitle></TextCenter>
-			<br/>
-			We already talked about the motivation, but what about its purpose?<br/>
-			Right from the start, I already knew what the purpose of my very own website would be:<br/>
-			<br/>
-			<TextLeft>
-				<TextItalic><TextBold>
-					- To showcase who I am, what I do, and what drives me.<br/>
-					- To list my past projects and contributions in detail.<br/>
-					- To act as a bridge between myself and potential clients or recruiters.
-				</TextBold></TextItalic>
-			</TextLeft><br/>
-			<TextCenter><TextSubTitle id={`defining-resources`} className={`py-4`}>
-				Defining Resources
-			</TextSubTitle></TextCenter>
-			<br/>
-			Having defined its purpose, we can then use that to establish the minimum we need in order to meet the requirements for fulfilling the purpose of our product.<br/>
-			Keeping in mind the fact that I'm going to be working on a website, 
-			I thought the best way to summarize my capabilities is by having an about page that lists my skills and experiences.<br/>
-			I thought of having a person visit my site and have the about page be the very first thing they see, because it's the very core of the website.<br/>
-			They would be able to quickly get an idea of who I am and what I can do, and then optionally take a look at my projects or contact me straight away.<br/>
-			<br/>
-			The next obvious thing to decide was having the projects be its own seperate page.<br/>
-			I wanted to be able to write detailed posts about a project if I wanted to, so that would mean I would have to make seperate pages for each project post.<br/>
-			The projects page itself would contain a list of projects, perhaps with additional search functionalities just to make it easier for people to find what they're interested in, 
-			which would also give me the perfect opportunity to show off my capabilities a bit by creating a filter system. Perfect!<br/>
-			<br/>
-			Lastly, I needed something that told visitors how they could reach out to me if needed.<br/>
-			Most if not all websites of this kind do this by providing a contact page, so I thought it was a good idea to do the same thing.<br/>
-			One primary feature most contact pages have is a contact form.<br/>
-			I personally wasn't sure if I wanted to spend the time making something like this, 
-			since forms usually require lots of validation checks, very much so for mailing.<br/>
-			So I decided to move that idea aside for the time being and keep it as an optional thing to add eventually.<br/>
-			<br/>
-			Having established the basic necessities for my website, I can now split them up into smaller components and think about what I will use to make them.<br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`the-plan`} className={`py-4`}>
-				The Plan
-			</TextSubTitle></TextCenter>
-			<br/>
-			Before I think about all of the features each page is going to have, it's important to determine a deadline.<br/>
-			I mean, I do want to finish this project <TextBold>at some point</TextBold>, right?<br/>
-			Even if there's no one telling you when they want something to be finished, 
-			it's still very useful to tell yourself when you should be finished in effort to encourage productivity.<br/>
-			Not only that, but it's especially useful to get a feeling of what features you should be focusing on first, and what you shouldn't focus on at all.<br/>
-			<br/>
-			In any case, I knew that I officially entered summer holidays after having graduated college, 
-			and I want to have a job in September.<br/>
-			So I determined the deadline to be the 31st of August, 2021.<br/>
-			<br/>
-			Great! I successfully visualized my deadline, giving me the ability to accurately determine what tasks need to be done and when, so let's start doing that now.<br/>
-			I won't go into too much detail about every single component on each page, but the main idea here is that you basically take the requirements, 
-			and "disect" them into something known as "user stories".<br/>
-			User stories describe a feature on a project.<br/>
-			For example, a user story could be something like "As a visitor, I want to be able to search for a project.".<br/>
-			Still, it's quite a lengthy sentence, isn't it?<br/>
-			Usually when you plan projecs on paper you would want to keep things a bit short yet easy to understand, so naming your user story "Project Search" is fine too.<br/>
-			<br/>
-			With that example out of the way, you can imagine me creating additional stories for other components, like the timeline on the about page, and so on.<br/>
-			This may all sound very familiar to you if you've heard of Scrum or Agile before, 
-			and you can guess that the next thing to do would be to disect those user stories even further into sub tasks and assign points to them,
-			and then determine when to work on what.<br/>
-			<br/>
-			Officially for bigger projects that involve a client you would split your time into sprints and assign a goal to each sprint, but for this project I'm my own client,
-			so I decided to skip that part and get right to work the next day.<br/>
-			Props to you if you read all that!
-
-			<TextTitle id={`implementation`}>
-				Implementation
-			</TextTitle>
-			Before I started working on anything I already decided that I wanted to build my website using ReactJS.<br/>
-			I knew that my website was going to be static and I didn't need any back-end, so I looked into a framework that optimized for exactly that purpose.<br/>
-			That's when I stumbled upon Gatsby, and determined it would be good to encapsulate my website in its framework as it's primarily targeted towards portfolio websites, 
-			which is exactly the kind of website I'm making!<br/>
-			<br/>
-			As far as it goes design-wise, I was thinking of mixing retro with modern.<br/>
-			For that, I want to use some bold colours and get a bit creative with page decoration.<br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`about-page-design`} className={`py-4`}>About Page (Design)</TextSubTitle></TextCenter>
-			<br/>
-			After having installed all the dependencies, like Tailwind to speed up styling, I started working on the about page.<br/>
-			First tackling the about page is actually something very beneficial, because as I build the page I am also making several things into reusable components,
-			like one for styling text into <TextItalic>italic</TextItalic>, a <TextSubTitle>subtitle</TextSubTitle>, or making it a <TextLink>link</TextLink>, and so on!<br/>
-			<br/>
-			I wanted to structure the about page in 3 parts, where it's ordened from quick and shortened information to more detailed.<br/>
-			That's why when you visit the page, the first thing you see is a short introduction about myself and what I do.<br/>
-			If people are interested, they can scroll down to what exactly my affinities are, which go into more detail than the quick introduction.<br/>
-			Afterward, if people <TextBold>are still interested</TextBold>, they can see most of my experience history below that.<br/>
-			Would be weird if it was the other way around, right?<br/>
-			<br/>
-			Aside from that, I wanted to put the sidebar I included in my design to good use by having it contain a table of contents, 
-			since there will be pages with a lot of text (no kidding) and I know from experience that I often just want to be able to see where I can find something.<br/>
-			So, I made myself a component that accepts a list of objects, each containing a display name and an id that refers to the corresponding element.<br/>
-			With that, inside the component I can simply add an anchor tag that refers to the id.<br/>
-			Due to the way anchor tags work, including a hashtag as the first character in its href attribute and 
-			clicking the anchor will scroll the window to make the element with that id visible.<br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`about-page-code`} className={`py-4`}>About Page (Code)</TextSubTitle></TextCenter>
-			<br/>
-			<TextCenter>
-				Anyways, after such a massive wall of text, I figure you probably want to see some code.<br/>
-				No worries, got some right here!
+				Near the end of my last internship I already began working on my own site that I could use as a portfolio.<br />
+				I developed it to the point where mobile had a game-like navigation style using my custom made scrolling module.<br />
+				You could scroll the navigation menu horizontally and optionally use arrows to increment the scroll position.<br />
+				It had translation support as well! So why did I drop it?<br />
+				<br />
+				At the time of writing this, I have 4 years of experience in web development.<br />
+				However, even experienced developers learn new things constantly.<br />
+				In my case, I had never set up a React website from scratch before, and despite my experience gained from <TextLink to={`/projects/dartscore`}>dart-score</TextLink>, 
+				there were still many things I did not know about React.<br />
+				As I developed that website, its code became difficult to manage and expand upon, and I also grew to dislike my design more and more, 
+				so I made the decision to start over and begin development on the website you're browsing right now, using the experience gained from the last.<br />
+				<br />
+				Not surprisingly, compared to the first website taking nearly 2 months to get to the state where you could search for a project, 
+				that only took me a little less than 2 weeks to complete for this website, not reusing code from the old one.<br />
+				<br />
+				In this post you'll be having a look at the inner workings of this website and the thoughts behind key components, 
+				and at the end I'll show you a few things from the old website.
 			</TextCenter>
-			<br/>
+
+			<TextTitle id={`re-implementation`}>
+				(Re) Implementation
+			</TextTitle>
+			<TextCenter><TextSubTitle className={`py-6`} id={`general-structure`}>General Structure</TextSubTitle></TextCenter>
+			<br />
+			I always wanted an easy on the eyes and a mix of retro and modern kind of theme for the website, 
+			as well as for there to be a way to have a "table of contents" on all the things a page has to offer.<br />
+			So I began writing out a basic html structure, which was even faster thanks to tailwind allowing for quickly accessible styles, 
+			and ended up with something that contained page contents in a window separate from its outer contents, 
+			the latter of which would house things like the header and nav menu.<br />
+			<br />
+			The page section, which would re-render on navigation, contained the page itself as well as the contents sidebar.<br />
+			To you it may look like the site is divided horizontally, but underneath the hood it's actually divided <TextBold>vertically</TextBold>.<br />
+			<br />
+			<PostIMG
+				title={`Site structure visualized`}
+				date={`08/09/2021`}
+				src={Layout01}
+				setModal={setModal}
+				className={`w-80 m-auto`}
+			/>
+			<br />
+			<TextCenter><TextSubTitle className={`py-6`} id={`about-page`}>About Page</TextSubTitle></TextCenter>
+			<br />
+			One of the only two things I ended up reworking from the old website is the timeline, the old one of which you'll be able to see at the end of this post.<br />
+			Aside from that, I divided the about page in 3 major segments, sorted on visitor priority interest.<br />
+			Someone in for a quick glance would want to read a short version of who I am and what I do, 
+			while someone with more time would want to read about my affinities ontop of that.<br />
+			Finally, someone hooked from the two prior introductions would be interested in looking through my history, the timeline.<br />
+			In the end, any of those 3 types of visitors would have the option to look through <TextLink to={`/projects`}>my projects</TextLink> after a glance at the about page, 
+			where they can really get an idea of what I have been capable of so far.<br />
+			<br />
+			<TextCenter>Here's a look underneath the about page's hood</TextCenter>
+			<br />
 			<IMGGrid>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Imports, dynamic dates, & applying page contents`}
+						title={`Setting up the page contents`}
 						date={`27/08/2021`}
 						src={AboutCode01}
 						setModal={setModal}
@@ -225,7 +162,7 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Reusable components example`}
+						title={`Reusing components`}
 						date={`27/08/2021`}
 						src={AboutCode02}
 						setModal={setModal}
@@ -233,7 +170,7 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Page content button example`}
+						title={`Table of contents button source code`}
 						date={`27/08/2021`}
 						src={AboutCode03}
 						setModal={setModal}
@@ -241,167 +178,119 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Rendering the content buttons with recursion. (Optimizable using .map())`}
+						title={`Rendering table of contents`}
 						date={`27/08/2021`}
 						src={AboutCode04}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
-			</IMGGrid><br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`projects-page-design`} className={`py-4`}>Projects Page (Design)</TextSubTitle></TextCenter>
-			<br/>
-			The best part about this website. The treasure vault. The projects page!<br/>
-			I already decided that I wanted to incorporate a way to search and filter the project entries.<br/>
-			The reason why I think this page needs it, is because I'm always working on <TextItalic>something</TextItalic>.<br/>
-			There are constant new additions to the page due to my endless curiosity.<br/>
-			<br/>
-			First things first, the search bar.<br/>
-			Keeping in mind the fact that everything on the page is pretty much centered, and the site has a "rounded" style,<br/>
-			I decided to center the search bar and give it a rounded border as to keep things consistent. That was a piece of cake!<br/>
-			<br/>
-			The toolbar, however, was a piece of work.<br/>
-			The window needs the ability to be opened and closed, preferrably not shrinking down the contents in its process, 
-			while also making the height of the window scale with its content.<br/>
-			The window would house all of the tags, since they take up a considerable amount of space if there are lots of them.<br/>
-			Speaking of there being a lot of tags... If that's the case, I should probably add the ability to select or deselect them all in one go.<br/>
-			Visitor quality of life heavily outweights the downsides (as there are practically none), so let's include that too.<br/>
-			<br/>
-			Back on the topic of the actual toolbar window, I need to somehow grab the height of the inner relative element that houses the actual tags, 
-			and then apply that height onto the absolute element that wraps that inner relative element whenever the toggle is pressed.<br/>
-			That way, I can scale my window according to the dynamic content height, and also prevent the contents from shrinking down. Neat!<br/>
-			<br/>
-			Lastly, I need a way to visualize all projects.<br/>
-			I decided to go with a 2-column grid because this kind of thing is essentially why grid exists.<br/>
-			Coupling it with the actual project entries that used flexbox, I should be able to make some pretty okay looking entries.<br/>
-			<br/>
-			What about pagination? Meh. I personally don't think its necessary because of the versatile filter we have.<br/>
-			However, once the projects start piling up to the 100s I think it becomes a necessity.<br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`projects-page-code`} className={`py-4`}>Projects Page (Code)</TextSubTitle></TextCenter>
-			<br/>
-			<TextCenter>
-				Less talking more code!!!
-			</TextCenter>
-			<br/>
+			</IMGGrid>
+			<br />
+			<TextCenter><TextSubTitle className={`py-6`} id={`projects-page`}>Projects Page</TextSubTitle></TextCenter>
+			<br />
+			The projects page needed to be swiftly accessible, 
+			so I included search {'&'} filter functionality so that visitors can look for posts that meet their interests in the snap of a finger.<br />
+			I made a custom module for this which filters based on an array of objects, in this case the project entries.<br />
+			For optimization reasons I also included a timer that would restart itself on every key input in the search bar, 
+			as to avoid processing every key hit.<br />
+			<br />
+			<TextCenter>You've likely already experienced the rest for yourself, so here's a look at its code.</TextCenter>
+			<br />
 			<IMGGrid>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Search filter & bulk tag selecting`}
-						date={`28/08/2021`}
+						title={`Search filter & Bulk controls`}
+						date={`08/09/2021`}
 						src={ProjectsCode01}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Animating & applying query settings`}
-						date={`28/08/2021`}
+						title={`Window animations & filter functionalities`}
+						date={`27/08/2021`}
 						src={ProjectsCode02}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Toggle & debounce timer`}
-						date={`28/08/2021`}
+						title={`Timer, initialization, and toggle functionality`}
+						date={`27/08/2021`}
 						src={ProjectsCode03}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Search JSX structure`}
-						date={`28/08/2021`}
+						title={`Search options window`}
+						date={`27/08/2021`}
 						src={ProjectsCode04}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
-				<IMGGridEntry>
-					<IMGViewer
-						title={`Projects page source code`}
-						date={`28/08/2021`}
-						src={ProjectsCode05}
-						setModal={setModal}
-					/>
-				</IMGGridEntry>
-				<IMGGridEntry>
-					<IMGViewer
-						title={`Project entry source code`}
-						date={`28/08/2021`}
-						src={ProjectsCode06}
-						setModal={setModal}
-					/>
-				</IMGGridEntry>
-			</IMGGrid><br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`contact-page-design`} className={`py-4`}>Contact Page (Design)</TextSubTitle></TextCenter>
-			<br/>
-			The important thing here was to first make sure people include the right information <TextItalic>before</TextItalic> sharing contact info.<br/>
-			So, I designed a table which I call a "TNF table" (true, null, false), which would accept an array of objects, 
-			each containing a display name and its TNF value.<br/>
-			True would display a check, false would display a cross, and null would display an orange question mark for uncertainty.<br/>
-			With this I can already showcase what I'm available for, eliminating the need for people to ask me personally.<br/>
-			I also made up a list of subjects I could potentially be approached with and added information which I would like to receive.<br/>
-			<br/>
-			Lastly I wanted to display my contact information in a way that differed slightly from the rest, 
-			so I made each into a "bar" that contained an icon and text.<br/>
-			It needed to be swift and interactive, so I made the text for twitter a link and the text for mailing copyable.<br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`contact-page-code`} className={`py-4`}>Contact Page (Code)</TextSubTitle></TextCenter>
-			<br/>
+			</IMGGrid>
+			<br />
+			<TextCenter><TextSubTitle className={`py-6`} id={`contact-page`}>Contact Page</TextSubTitle></TextCenter>
+			<br />
+			This page needed to first and foremost tell a visitor what I'm available for, 
+			and what would be important to include when reaching out to me before showing contact info.<br />
+			<br />
+			For this I made what I call a TNF table which stands for true, null, and false.<br />
+			<br />
+			<TextCenterLeft>
+				<ULOut>
+					<li>"true" displays a green check mark.</li>
+					<li>"null" displays an orange question mark for uncertainty.</li>
+					<li>"false" displays a red cross.</li>
+				</ULOut>
+			</TextCenterLeft>
+			<br />
+			Lastly the contact information needed to be differentiated from normal text on the page, 
+			so I made a new component that allowed for an icon, a title, and its content.<br />
+			Exclusively to the email text since there's no contact form, I added a one-click-copy functionality.<br />
+			<br />
+			<TextCenter>See for yourself!</TextCenter>
+			<br />
 			<IMGGrid>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`The contact page (mostly)`}
-						date={`28/08/2021`}
+						title={`Contact page source`}
+						date={`27/08/2021`}
 						src={ContactCode01}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`TNF table source code`}
-						date={`28/08/2021`}
+						title={`TNF table source`}
+						date={`27/08/2021`}
 						src={ContactCode02}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Contact info component source code`}
-						date={`28/08/2021`}
+						title={`Contact info table`}
+						date={`27/08/2021`}
 						src={ContactCode03}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
 				<IMGGridEntry>
 					<IMGViewer
-						title={`Text clipboard component source code`}
-						date={`28/08/2021`}
+						title={`Clipboard component`}
+						date={`27/08/2021`}
 						src={ContactCode04}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
-			</IMGGrid><br/>
-
-			<TextTitle id={`celebration`}>
-				Celebration
-			</TextTitle>
-			I finished working on all site functionalities the 30th of august, a day away from the project deadline!<br/>
-			In the end I didn't work on the website every day, as I was still allowing myself to have some days off 
-			since it's still summer vacation at this time of the year. So I wanted to enjoy my last one a bit too!<br/>
-			<br/>
-			That's about all I felt like writing about for now!<br/>
-			After all the implementing, which takes us to the present day, I started writing some project posts.<br/>
-			This was the very first one! I hope you could enjoy it in some way.<br/>
-			<br/>
-			For any additional questions or feedback, feel free to <TextLink to={`/contact`}>contact me</TextLink>!<br/>
-			<br/>
-			<TextCenter><TextSubTitle id={`post-code`} className={`py-4`}>Post Entries (Code)</TextSubTitle></TextCenter>
-			<br/>
-			<TextCenter>As a small bonus, here's an insight into how project posts are made.</TextCenter>
-			<br/>
+			</IMGGrid>
+			<br />
+			<TextCenter><TextSubTitle className={`py-6`} id={`posts`}>Posts</TextSubTitle></TextCenter>
+			<br />
+			<TextCenter>As a bonus, here's a look at how posts are made.</TextCenter>
+			<br />
 			<IMGGrid>
 				<IMGGridEntry>
 					<IMGViewer
@@ -448,6 +337,67 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 						title={`Defining tags`}
 						date={`04/09/2021`}
 						src={PostCode06}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+			</IMGGrid>
+			<br />
+			<TextCenter><TextSubTitle className={`py-6`} id={`old-website`}>Old Website</TextSubTitle></TextCenter>
+			<br />
+			<TextCenter>
+				Enjoy some older images and gifs from the scrapped website!<br />
+				<br />
+				The old design was inspired by google's material design, 
+				and aimed to look a bit like a theme you'd see used in sports car dashboards.<br />
+				It's all custom, just like the current website.
+			</TextCenter>
+			<br />
+			<IMGGrid>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Page layout`}
+						date={`--/06/2021`}
+						src={Old06}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Custom navigation menu & scroller`}
+						date={`--/06/2021`}
+						src={Old01}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Custom localization support`}
+						date={`--/06/2021`}
+						src={Old02}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Contact page`}
+						date={`--/06/2021`}
+						src={Old03}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Projects page layout & searching`}
+						date={`--/09/2021`}
+						src={Old04}
+						setModal={setModal}
+					/>
+				</IMGGridEntry>
+				<IMGGridEntry>
+					<IMGViewer
+						title={`Projects page tags filter`}
+						date={`--/09/2021`}
+						src={Old05}
 						setModal={setModal}
 					/>
 				</IMGGridEntry>
