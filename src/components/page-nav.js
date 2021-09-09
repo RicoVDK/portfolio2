@@ -70,13 +70,15 @@ const PageNav = ({ location }) => {
 					<div className={`relative flex flex-row h-full px-2 desktop:px-4 py-2 tablet:py-4`}>
 						{Object.keys(pages).map((page, index) => (
 							<div key={index} className={`relative h-full px-2 flex-grow tablet:text-lg`}>
-								<Link
-									to={pages[page].url}
-									getProps={getLinkProps}
-									onClick={onLinkClicked}
-								>
-									{pages[page].display}
-								</Link>
+								<div className={`absolute w-full h-full px-2 left-0`}>
+									<Link
+										to={pages[page].url}
+										getProps={getLinkProps}
+										onClick={onLinkClicked}
+									>
+										{pages[page].display}
+									</Link>
+								</div>
 							</div>
 						))}
 					</div>
