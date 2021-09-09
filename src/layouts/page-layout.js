@@ -8,6 +8,7 @@ import React, {
 
 import TextSubTitle from '/src/components/text/text-subtitle';
 import SocialsBar from '/src/components/socials-bar';
+import TextItalic from '/src/components/text/text-italic';
 import {
 	OnMobile,
 	OnDesktop
@@ -164,6 +165,19 @@ export const MobilePageLayout = ({
 				</div>
 
 				<div ref={pageScroller} className={`absolute w-full h-full overflow-y-scroll pt-6 pb-10 tablet:pb-14 pl-6 pr-3`}>
+					<div className={`relative flex flex-col justify-evenly items-center w-full max-w-400px border border-red-600 bg-red-600 bg-opacity-10 rounded-3xl p-4 m-auto`}>
+						<i className={`fas fa-exclamation-triangle text-red-600 text-4xl`} />
+
+						<div className={`relative text-center text-red-600 text-sm pt-4 font-bold`}>
+							I'm aware of the issue regarding mobile browser toolbars overlapping the site's menu and what's causing it, 
+							and I'm working on a solution.<br />
+							<br />
+							<TextItalic>In the meantime, tapping the visible part of the site's menu and swiping up should temporarily fix the issue.</TextItalic><br />
+							<br />
+							I apologize for the inconvenience.
+						</div>
+					</div>
+
 					{children}
 				</div>
 			</div>

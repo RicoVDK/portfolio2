@@ -14,6 +14,7 @@ module.exports = {
     "gatsby-plugin-postcss",
     "gatsby-plugin-sass",
     "gatsby-plugin-react-helmet",
+    "gatsby-plugin-cname",
     "gatsby-plugin-sitemap",
     {
       resolve: "gatsby-plugin-breakpoints",
