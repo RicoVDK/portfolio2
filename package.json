@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && gh-pages -d public -b main"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
@@ -34,5 +35,8 @@
     "react-helmet": "^6.1.0",
     "sass": "^1.37.5",
     "tailwindcss": "^2.2.7"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
   }
 }
