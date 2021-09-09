@@ -26,7 +26,7 @@ import Code02 from '/src/images/projects/eterna/eterna-code02.png';
 import Code03 from '/src/images/projects/eterna/eterna-code03.png';
 import Code04 from '/src/images/projects/eterna/eterna-code04.png';
 
-const Eterna = ({ setModal, setContents }) => {
+const Eterna = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([
 			{ displayName: 'What is Eterna?', id: 'about', children: [] },
@@ -41,7 +41,7 @@ const Eterna = ({ setModal, setContents }) => {
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-eterna`}>
+		<ProjectLayout location={location} projectId={`entry-eterna`}>
 			<ProjectBanner
 				id={`project`}
 				imgTitle={`Extremely early prototype screenshot`}

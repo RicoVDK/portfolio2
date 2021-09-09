@@ -4,13 +4,13 @@ import React, {
 
 import ProjectLayout from '/src/layouts/project-layout';
 
-const Phantasma = ({ setModal, setContents }) => {
+const Phantasma = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([]);
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-phantasma`}>
+		<ProjectLayout location={location} projectId={`entry-phantasma`}>
 
 		</ProjectLayout>
 	)

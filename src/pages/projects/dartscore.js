@@ -25,7 +25,7 @@ import Ranking01 from '/src/images/projects/dartscore/dartscore-ranking01.png';
 import Sign01 from '/src/images/projects/dartscore/dartscore-sign01.gif';
 import Sign02 from '/src/images/projects/dartscore/dartscore-sign02.gif';
 
-const Dartscore = ({ setModal, setContents }) => {
+const Dartscore = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([
 			{ displayName: 'Experience', id: 'experience', children: [] },
@@ -40,7 +40,7 @@ const Dartscore = ({ setModal, setContents }) => {
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-dartscore`}>
+		<ProjectLayout location={location} projectId={`entry-dartscore`}>
 			<ProjectBanner
 				id={`project`}
 				imgTitle={`Tournament scheme`}
@@ -57,8 +57,9 @@ const Dartscore = ({ setModal, setContents }) => {
 			<TextBold>
 				<TextCenterLeft>
 					<ULOut>
-						<li>Learned ReactJS (Hooks), Tailwind, Python + Django within the first 3 weeks of my internship.</li>
+						<li>Learned ReactJS (Hooks), Tailwind, Python + Django within the first 2 weeks of my internship.</li>
 						<li>NextJS.</li>
+						<li>Rest API</li>
 						<li>Designing and working with a complex database system</li>
 						<li>Communicating from front-end to back-end and vice versa in real-time.</li>
 						<li>Full-stack development.</li>

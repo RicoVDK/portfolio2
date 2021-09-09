@@ -10,6 +10,7 @@ import IconTextTable from '/src/components/icon-text-table';
 import TextLink from '/src/components/text/text-link';
 import TextCenterLeft from '/src/components/text/text-center-left';
 import ULOut from '/src/components/ul-out';
+import SEO from '/src/components/seo';
 import TNFTable, {
 	TNFIconClass
 } from '/src/components/tnf-table';
@@ -32,6 +33,12 @@ const ContactPage = ({ location, setContents }) => {
 
 	return (
 		<div id={`contact`}>
+			<SEO
+				pageTitle={`Contact`}
+				desc={`Contact me for hiring or questions.`}
+				location={location}
+			/>
+
 			<TextTitle id={`availability`}>
 				Availability
 			</TextTitle>

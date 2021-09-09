@@ -10,5 +10,19 @@ module.exports = {
       git: "https://github.com/RicoVDK",
     },
   },
-  plugins: ["gatsby-plugin-postcss", "gatsby-plugin-sass"],
+  plugins: [
+    "gatsby-plugin-postcss",
+    "gatsby-plugin-sass",
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sitemap",
+    {
+      resolve: "gatsby-plugin-breakpoints",
+      options: {
+        queries: {
+          tablet: '(min-width: 768px)',
+          desktop: '(min-width: 1024px)',
+        },
+      },
+    },
+  ],
 };

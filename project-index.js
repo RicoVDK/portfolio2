@@ -9,9 +9,7 @@ const Projects = [
 	{
 		displayName: 'Rico\'s Softworks',
 		description: `
-			The website you're currently browsing on!<br/>
-			<br/>
-			This entry includes an insight in its development.
+			This project post includes an insight into how this website was developed.
 		`,
 		id: 'entry-portfolio',
 		url: 'ricosoftworks',
@@ -47,7 +45,9 @@ const Projects = [
 	{
 		displayName: 'Project Eterna',
 		description: `
-			A 2.5D story-driven action adventure RPG.
+			A 2.5D story-driven action adventure RPG.<br />
+			<br />
+			Currently a W.I.P. prototype.
 		`,
 		id: 'entry-eterna',
 		url: 'eterna',

@@ -12,11 +12,10 @@ import TextSubText from '/src/components/text/text-subtext';
 import TextLink from '/src/components/text/text-link';
 import TextBold from '/src/components/text/text-bold';
 import TextItalic from '/src/components/text/text-italic';
+import SEO from '/src/components/seo';
 
 import Projects from '/project-index';
-import {
-	siteMetadata
-} from '/gatsby-config';
+import { siteMetadata } from '/gatsby-config';
 
 const ProjectsPage = ({ location, setContents, }) => {
 	const [results, setResults] = useState(Projects);
@@ -58,6 +57,12 @@ const ProjectsPage = ({ location, setContents, }) => {
 
 	return (
 		<div id={`projects`}>
+			<SEO
+				pageTitle={`Projects`}
+				desc={`Learn about the development process behind my projects.`}
+				location={location}
+			/>
+
 			<TextSubText wrapClassName={`text-center pt-6`}>
 				Here you'll find <TextBold>{'>'}some{'<'}</TextBold> of the projects I have worked, or am working on!<br/>
 				For real-time updates, you could also check out <TextLink to={siteMetadata.socials.twitter} external={true}>my twitter</TextLink>.<br />

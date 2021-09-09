@@ -4,13 +4,13 @@ import React, {
 
 import ProjectLayout from '/src/layouts/project-layout';
 
-const Dreamventure = ({ setModal, setContents }) => {
+const Dreamventure = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([]);
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-dreamventure`}>
+		<ProjectLayout location={location} projectId={`entry-dreamventure`}>
 
 		</ProjectLayout>
 	)

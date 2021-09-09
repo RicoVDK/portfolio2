@@ -1,6 +1,11 @@
 import React from 'react';
 
+import isBrowser from '/src/components/is-browser';
+
 export const pillClickEffect = ( element ) => {
+	if (!isBrowser)
+		return;
+
 	const effElement = document.createElement('div');
 
 	effElement.className = 'absolute bg-transparent border-2 rounded-full border-gray-400 animate-pill-click-effect pointer-events-none z-50';
@@ -9,6 +14,9 @@ export const pillClickEffect = ( element ) => {
 }
 
 export const squareClickEffect = ( element ) => {
+	if (!isBrowser)
+		return;
+
 	const effElement = document.createElement('div');
 
 	effElement.className = 'absolute bg-transparent border-2 rounded-3xl border-gray-400 animate-square-click-effect pointer-events-none z-50';
@@ -17,6 +25,9 @@ export const squareClickEffect = ( element ) => {
 }
 
 export const circleClickEffect = ( element, target = 'width' ) => {
+	if (!isBrowser)
+		return;
+
 	const effElement = document.createElement('div');
 
 	effElement.className = 'absolute bg-transparent border-2 rounded-full border-gray-400 animate-square-click-effect pointer-events-none z-50';
@@ -25,6 +36,9 @@ export const circleClickEffect = ( element, target = 'width' ) => {
 }
 
 const clickEffect = (element, effElement, target) => {
+	if (!isBrowser)
+		return;
+
 	const elRect = element.getBoundingClientRect();
 	const effHeight = target === 'width' ? elRect.width : elRect.height;
 	const effWidth = target === 'height' ? elRect.height : elRect.width;

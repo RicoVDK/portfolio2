@@ -15,7 +15,7 @@ import Header from '/src/images/projects/3d-printer-dashboard/printer-header.png
 import Dashboard01 from '/src/images/projects/3d-printer-dashboard/dashboard01.mp4';
 import Dashboard02 from '/src/images/projects/3d-printer-dashboard/dashboard02.mp4';
 
-const PrinterDashboard3D = ({ setModal, setContents }) => {
+const PrinterDashboard3D = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([
 			{ displayName: 'Experience', id: 'experience', children: [] },
@@ -26,7 +26,7 @@ const PrinterDashboard3D = ({ setModal, setContents }) => {
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-3d-printer-dashboard`}>
+		<ProjectLayout location={location} projectId={`entry-3d-printer-dashboard`}>
 			<ProjectBanner
 				id={`project`}
 				className={`mb-6`}

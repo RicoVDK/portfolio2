@@ -1,16 +1,19 @@
 import React from 'react';
-import { theme } from '/tailwind.config';
-import { layoutGenerator } from 'react-break';
+import { useBreakpoint } from 'gatsby-plugin-breakpoints';
 
-const exclude = ['tablet'];
-let breakpoints = { mobile: 0 };
 
-for (let screen in theme.screens) {
-	if (!exclude.includes(screen))
-		breakpoints[screen] = parseInt(theme.screens[screen])
-};
+export const OnMobile = ({
+	children
+}) => {
+	const breakpoint = useBreakpoint();
 
-const layout = layoutGenerator(breakpoints);
+	return !breakpoint.desktop ? children : null;
+}
 
-export const OnMobile = layout.is('mobile');
-export const OnDesktop = layout.is('desktop');
+export const OnDesktop = ({
+	children
+}) => {
+	const breakpoint = useBreakpoint();
+
+	return breakpoint.desktop ? children : null;
+}

@@ -4,13 +4,13 @@ import React, {
 
 import ProjectLayout from '/src/layouts/project-layout';
 
-const UnityPrototype25D = ({ setModal, setContents }) => {
+const UnityPrototype25D = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([]);
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-2_5d-unity-prototype`}>
+		<ProjectLayout location={location} projectId={`entry-2_5d-unity-prototype`}>
 
 		</ProjectLayout>
 	)

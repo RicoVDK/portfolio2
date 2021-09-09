@@ -4,13 +4,13 @@ import React, {
 
 import ProjectLayout from '/src/layouts/project-layout';
 
-const VibrantVenture = ({ setModal, setContents }) => {
+const VibrantVenture = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([]);
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-vibrant-venture`}>
+		<ProjectLayout location={location} projectId={`entry-vibrant-venture`}>
 
 		</ProjectLayout>
 	)

@@ -4,13 +4,13 @@ import React, {
 
 import ProjectLayout from '/src/layouts/project-layout';
 
-const Birds = ({ setModal, setContents }) => {
+const Birds = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([]);
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-birds`}>
+		<ProjectLayout location={location} projectId={`entry-birds`}>
 
 		</ProjectLayout>
 	)

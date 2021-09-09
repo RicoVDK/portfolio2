@@ -41,7 +41,7 @@ const ProjectEntry = ({
 			>
 				<div
 					id={id}
-					className={`relative flex flex-col w-full h-full bg-gray-800 border border-gray-700 rounded-3xl items-center m-auto group overflow-hidden ${buttonScaleHover}`}
+					className={`relative flex flex-col w-full h-full max-w-400px bg-gray-800 border border-gray-700 rounded-3xl items-center m-auto group overflow-hidden ${buttonScaleHover}`}
 				>
 					{/** Image. */}
 					<div className={`relative w-full h-56 overflow-hidden bg-black border-b border-gray-700 text-primary-3`}>

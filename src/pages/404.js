@@ -4,6 +4,7 @@ import React, {
 
 import TextLink from '/src/components/text/text-link';
 import NoContent from '/src/components/no-content';
+import SEO from '/src/components/seo';
 
 const NotFoundPage = ({ location, setContents }) => {
 	useLayoutEffect(() => {
@@ -12,6 +13,12 @@ const NotFoundPage = ({ location, setContents }) => {
 
   return (
     <div id={`404`} className={`min-h-full`}>
+      <SEO
+        pageTitle={`Not Found`}
+        desc={`This page does not exist...`}
+        location={location}
+      />
+
       <div className={`relative flex w-full h-full max-w-700px justify-center items-center m-auto`}>
         <NoContent
           icon={<i className={`fas fa-question text-8xl`} />}

@@ -14,6 +14,7 @@ import TextMark from '/src/components/text/text-mark';
 import TextBold from '/src/components/text/text-bold';
 import TextLink from '/src/components/text/text-link';
 import AffinityCard from '/src/components/affinity-card';
+import SEO from '/src/components/seo';
 import Timeline, {
 	Entry as TimelineEntry
 } from '/src/components/timeline';
@@ -41,6 +42,12 @@ const IndexPage = ({ location, setContents }) => {
 
 	return (
 		<div id={`index`}>
+			<SEO
+				pageTitle={`About`}
+				desc={`Learn about who I am and what I do.`}
+				location={location}
+			/>
+
 			<TextSubText
 				id={'intro'}
 				wrapClassName={`text-center pt-4`}
@@ -51,8 +58,8 @@ const IndexPage = ({ location, setContents }) => {
 				(Equivalent to college on Associate level)<br/>
 				and live in the Netherlands.<br/>
 				<br/>
-				My passion is to work on video games, which is what I do as a hobby in my spare time.<br/>
-				My dream is to be able to live out the rest of my life working on video games that people can enjoy.<br/>
+				My passion is to work on video games, which is what I do as a hobby in my spare time, 
+				and my dream is to be able to live out the rest of my life working on video games that people can enjoy.<br/>
 			</TextSubText>
 
 			<TextTitle id={'affinities'}>
@@ -66,7 +73,7 @@ const IndexPage = ({ location, setContents }) => {
 						title={'Programming'}
 					>
 						4+ years of experience as well as a hobby.<br/>
-						Familiar with object oriented principles {'&'} source control.<br/>
+						Familiar with <TextBold>object oriented principles {'&'} source control</TextBold>.<br/>
 						<br/>
 						Experienced in using languages such as:<br/>
 						<TextBold>
@@ -80,8 +87,8 @@ const IndexPage = ({ location, setContents }) => {
 						2+ years of experience managing projects as a scrum master,
 						while also being a part of their development teams.<br/>
 						<br/>
-						Scrum {'&'} Agile is a norm.<br/>
-						Also capable of working with Jira {'&'} Trello as well as the good old fashioned paper and markers.
+						<TextBold>Scrum {'&'} Agile</TextBold> is a norm.<br/>
+						Also capable of working with <TextBold>Jira {'&'} Trello</TextBold> as well as the good old fashioned paper and markers.
 					</AffinityCard>
 					<AffinityCard
 						faClassName={'fa-gamepad'}
@@ -92,19 +99,19 @@ const IndexPage = ({ location, setContents }) => {
 						<br/>
 						Currently working on 2 additional prototypes of my own, which you can find <TextLink to={`/projects`}>here</TextLink>.<br/>
 						<br/>
-						Experienced in using both Unity {'&'} Godot.
+						Experienced in using both <TextBold>Unity {'&'} Godot</TextBold>.
 					</AffinityCard>
 					<AffinityCard
 						faClassName={'fa-file-code'}
 						title={'Web Development'}
 					>
-						4+ years of experience as well as 2 successfull internships, back-end {'&'} front-end.<br/>
+						4+ years of experience as well as 2 successfull internships, <TextBold>back-end {'&'} front-end</TextBold>.<br/>
 						<br/>
 						Capable of designing websites in a variety of styles,<br/>
-						as well as being experienced in designing and implementing databases.<br/>
+						as well as being experienced in <TextBold>designing and implementing databases</TextBold>.<br/>
 						<br/>
 						Experience in using the following:<br/>
-						<TextBold>Laravel, ReactJS, Next, Gatsby, Wordpress, MySQL, Drupal, Django, JQuery, Vue, HTML, JSX, CSS, SCSS, Tailwind</TextBold>
+						<TextBold>Laravel, ReactJS, Next, Gatsby, Wordpress, MySQL, Drupal, Django + REST, JQuery, Vue, HTML, JSX, CSS, SCSS, Tailwind</TextBold>
 					</AffinityCard>
 				</div>
 			</div>
@@ -162,7 +169,8 @@ const IndexPage = ({ location, setContents }) => {
 						One half of the school year was spent working on 2 projects.<br/>
 						The first project being a <TextLink to={`/projects/3d-printer-dashboard`}>3D printer dashboard</TextLink>, 
 						which could both be used by students and teachers.<br/>
-						The second and last one was an early Unity 2.5D prototype, in which I taught myself the basics of 3D {'&'} grid movement + more.<br/>
+						The second and last one was an early <TextLink to={`/projects/2_5d-unity-prototype`}>Unity 2.5D prototype</TextLink>, 
+						in which I taught myself the basics of 3D {'&'} grid movement + more.<br/>
 						<br/>
 						The last half of the school year was an exam in the form of a final internship.<br/>
 						Once again, Web Development, I learned Python + Django in the first two weeks,
@@ -235,7 +243,7 @@ const IndexPage = ({ location, setContents }) => {
 					>
 						<TextSubTitle>Present Day</TextSubTitle><br/>
 						<br/>
-						I am currently looking for a job!<br />
+						I am currently looking for work!<br />
 						<br />
 						Please <TextLink to={`/contact`}>contact me</TextLink> if you're interested.
 					</TimelineEntry>

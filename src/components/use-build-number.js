@@ -6,9 +6,7 @@ import {
 } from 'date-fns';
 import preval from 'preval.macro';
 
-import {
-	siteMetadata
-} from '/gatsby-config';
+import { siteMetadata } from '/gatsby-config';
 
 const buildDate = preval`module.exports = new Date().getTime();`
 

@@ -48,7 +48,7 @@ import Old04 from '/src/images/projects/ricosoftworks/ricosoftworks-old04.gif';
 import Old05 from '/src/images/projects/ricosoftworks/ricosoftworks-old05.gif';
 import Old06 from '/src/images/projects/ricosoftworks/ricosoftworks-old06.gif';
 
-const RicoSoftworks = ({ setContents, setModal }) => {
+const RicoSoftworks = ({ location, setContents, setModal }) => {
 	useLayoutEffect(() => {
 		setContents([
 			{ displayName: 'Experience', id: 'experience', children: [] },
@@ -66,7 +66,7 @@ const RicoSoftworks = ({ setContents, setModal }) => {
 	}, [setContents]);
 
 	return (
-		<ProjectLayout projectId={`entry-portfolio`}>
+		<ProjectLayout location={location} projectId={`entry-portfolio`}>
 			<ProjectBanner
 				id={`project`}
 				className={`mb-6`}
