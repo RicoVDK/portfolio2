@@ -1,12 +1,14 @@
 import React, {
 	useState,
 	useRef,
+	useLayoutEffect,
 } from 'react';
 
 import SiteHeader from '/src/components/site-header';
 import SocialsBar from '/src/components/socials-bar';
 import useBuildNumber from '/src/components/use-build-number';
 import SiteTitleTag from '/src/components/site-title-tag';
+import isBrowser from '/src/components/is-browser';
 import {
 	circleClickEffect
 } from '/src/components/click-effects';
@@ -24,6 +26,13 @@ export const MobileSiteLayout = ({ location, children }) => {
 		setSideOpen(!sideOpen);
 		circleClickEffect(vRef.current);
 	}
+
+	useLayoutEffect(() => {
+		if (!isBrowser)
+			return;
+
+		document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+	}, [isBrowser]);
 
 	return (
 		<div

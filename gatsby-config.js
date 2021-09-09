@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    version: "v1.0.0r",
+    version: "v1.0.1r",
     siteUrl: "https://www.ricosoftworks.com",
     title: "Rico's Softworks",
     socials: {
