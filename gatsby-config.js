@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     version: "v1.0.4r",
-    siteUrl: "https://www.ricosoftworks.com",
+    siteUrl: process.env.SITE_URL,
     title: "Rico's Softworks",
     socials: {
       twitter: "https://twitter.com/ricovdk",
@@ -28,8 +28,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://www.ricosoftworks.com',
-        sitemap: 'https://www.ricosoftworks.com/sitemap.xml',
+        host: process.env.SITE_URL,
+        sitemap: `${process.env.SITE_URL}/sitemap.xml`,
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
