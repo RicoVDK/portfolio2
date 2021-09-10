@@ -64,12 +64,11 @@ const ProjectsPage = ({ location, setContents, }) => {
 			/>
 
 			<TextSubText wrapClassName={`text-center pt-6`}>
-				Here you'll find <TextBold>{'>'}some{'<'}</TextBold> of the projects I have worked, or am working on!<br/>
-				For real-time updates, you could also check out <TextLink to={siteMetadata.socials.twitter} external={true}>my twitter</TextLink>.<br />
+				This page contains posts about the projects that I was involved in.<br />
 				<br />
-				<TextItalic>Please keep in mind that not all of these projects are necessarily owned by me.</TextItalic><br />
-				<br/>
-				You can filter by using the search field below, as well as including and excluding tags by opening the options menu below the search field.<br/>
+				Use the <TextBold>options toggle beneath the search bar</TextBold> to allow for tag filtering.<br />
+				Is your project of interest not available or not listed?<br />
+				<TextLink to={`/contact`}>contact me</TextLink> for a short recap.<br />
 				<br />
 				<TextItalic>Projects are sorted from new to old.</TextItalic>
 			</TextSubText>

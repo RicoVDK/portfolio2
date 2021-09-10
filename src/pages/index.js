@@ -158,7 +158,8 @@ const IndexPage = ({ location, setContents }) => {
 						Inbetween my tasks there were also occurences where some of their clients' websites needed bugfixing,<br/>
 						as well as new features, which I pushed through.<br/>
 						<br/>
-						After my internship I was handed a prototype game project, which we designed to be a 2D "Luigi's Mansion" type of game.
+						After my internship I was tasked with making a game prototype, 
+						which we designed to be a <TextLink to={`/projects/phantasma`}>2D "Luigi's Mansion" type of game</TextLink>.
 					</TimelineEntry>
 					<TimelineEntry
 						id={`history-college-final-year`}

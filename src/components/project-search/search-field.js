@@ -33,7 +33,7 @@ const SearchField = ({
 			onChange={onInput}
 			onClick={onClick}
 			value={value}
-			date-hj-allow
+			data-hj-allow={true}
 		/>
 	)
 }

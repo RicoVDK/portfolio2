@@ -11,6 +11,7 @@ import TextLink from '/src/components/text/text-link';
 import TextCenterLeft from '/src/components/text/text-center-left';
 import ULOut from '/src/components/ul-out';
 import SEO from '/src/components/seo';
+import JTypeHours from '/src/components/jtype-hours';
 import TNFTable, {
 	TNFIconClass
 } from '/src/components/tnf-table';
@@ -44,7 +45,7 @@ const ContactPage = ({ location, setContents }) => {
 			</TextTitle>
 			<div className={`w-full px-4 pb-4 text-center`}>
 				<TextItalic>
-					Updated 08/09/2021
+					Updated 10/09/2021
 				</TextItalic><br/>
 				{/* <br/>
 				<TextCenterLeft>
@@ -57,10 +58,10 @@ const ContactPage = ({ location, setContents }) => {
 			<TNFTable
 				className={`m-auto`}
 				contents={[
-					{ displayName: 'Full time', tnf: false },
-					{ displayName: 'Part time', tnf: true },
-					{ displayName: 'Commission', tnf: false },
-					{ displayName: 'Volunteer', tnf: false },
+					{ displayName: <JTypeHours hours={`(32-40h p/w)`}>Fulltime</JTypeHours>, tnf: false },
+					{ displayName: <JTypeHours hours={`(8-32h p/w)`}>Parttime</JTypeHours>, tnf: true },
+					{ displayName: <JTypeHours hours={`-`}>Commission</JTypeHours>, tnf: false },
+					{ displayName: <JTypeHours hours={`-`}>Volunteer</JTypeHours>, tnf: false },
 				]}
 			/>
 			<br />

@@ -24,7 +24,7 @@ const Entry = ({
 	return (
 		<>
 			{/** Display. */}
-			<div className={`relative py-2 px-4 text-right font-bold bg-gray-800 border-r border-gray-700 ${getBorder(index)}`}>
+			<div className={`relative py-2 px-4 h-14 text-right font-bold bg-gray-800 border-r border-gray-700 ${getBorder(index)}`}>
 				{entry.displayName}
 			</div>
 

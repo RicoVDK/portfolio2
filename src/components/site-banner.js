@@ -10,7 +10,7 @@ const SiteBanner = () => {
 	return (
 		<div
 			id={`banner`}
-			className={`relative w-full h-8 tablet:h-16 desktop:h-24 bg-gray-800 border-r border-l border-primary z-40`}
+			className={`relative w-full h-9 tablet:h-16 desktop:h-24 bg-gray-800 border-r border-l border-primary z-40`}
 		>
 			<div className={`relative w-full h-full overflow-hidden`}>
 

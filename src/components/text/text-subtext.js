@@ -9,7 +9,7 @@ const TextSubText = ({
 	return (
 		<div
 			id={id}
-			className={`relative w-full text-lg ${wrapClassName}`}
+			className={`relative w-full text-base tablet:text-lg ${wrapClassName}`}
 		>
 			<div className={`relative ${textClassName}`}>
 				{children}

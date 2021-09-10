@@ -84,6 +84,9 @@ module.exports = {
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(ellipse closest-side, var(--tw-gradient-stops))',
+      },
+      spacing: {
+        '19': '5.25rem',
       }
     },
     screens: {
