@@ -37,7 +37,7 @@ export const MobileSiteLayout = ({ location, children }) => {
 	return (
 		<div
 			id={`page-wrapper`}
-			className={`relative flex flex-col items-center h-screen w-full overflow-hidden text-gray-300`}
+			className={`relative flex flex-col items-center h-full w-full overflow-hidden text-gray-300`}
 		>
 			{modal}
 
