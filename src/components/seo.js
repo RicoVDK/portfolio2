@@ -12,7 +12,7 @@ const SEO = ({
 	isPost = false,
 	location,
 }) => {
-	const displayTitle = `${siteMetadata.title} | ${pageTitle}`
+	const displayTitle = `${siteMetadata.title} | ${pageTitle}`;
 
 	return (
 		<Helmet>

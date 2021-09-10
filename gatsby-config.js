@@ -25,5 +25,29 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://www.ricosoftworks.com',
+        sitemap: 'https://www.ricosoftworks.com/sitemap.xml',
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
+        }
+      }
+    },
+    {
+      resolve: `gatsby-plugin-hotjar`,
+      options: {
+        includeInDevelopment: true, // optional parameter to include script in development
+        id: 2596412,
+        sv: 6,
+      },
+    },
   ],
 };
