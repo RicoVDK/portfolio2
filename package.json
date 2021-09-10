@@ -7,11 +7,6 @@
   "keywords": [
     "gatsby"
   ],
-  "browser": {
-    "fs": false,
-    "path": false,
-    "os": false
-  },
   "scripts": {
     "develop": "gatsby develop",
     "start": "gatsby develop",
