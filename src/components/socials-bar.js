@@ -7,7 +7,7 @@ import { siteMetadata } from '/gatsby-config';
 
 const SocialsBar = ({ className }) => {
 	return (
-		<div className={`relative flex w-full h-20 justify-evenly items-center ${className}`}>
+		<div className={`relative flex w-full h-16 tablet:h-20 justify-evenly items-center ${className}`}>
 			<div className={`absolute w-full h-full border border-t-0 border-primary rounded-bl-3xl rounded-br-3xl `} />
 
 			<SocialButton

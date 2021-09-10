@@ -52,7 +52,7 @@ export const MobileSiteLayout = ({ location, children }) => {
 			</div>
 
 			{/** Side Toggle. */}
-			<div className={`absolute w-16 h-8 tablet:w-24 tablet:h-12 z-40 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-30 tablet:-translate-y-36`}>
+			<div className={`absolute w-16 h-8 tablet:w-24 tablet:h-12 z-40 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-20 tablet:-translate-y-36`}>
 				<div
 					onClick={onTogglePressed}
 					ref={vRef}
