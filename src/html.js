@@ -2,6 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 
 import FavIcon from '/src/images/favicon.png';
+import OGIMG from '/src/images/og-img.png';
 
 export default function HTML(props) {
   return (
@@ -9,6 +10,10 @@ export default function HTML(props) {
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+			  <meta name="twitter:image" content={ OGIMG } />
+			  <meta name="og:image" content={ OGIMG } />
+			  <meta name="image" content={ OGIMG } />
+
         <link rel="shortcut icon" type="image/png" href={FavIcon}/>
         {/* <meta
           name="viewport"

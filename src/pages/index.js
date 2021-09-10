@@ -44,7 +44,7 @@ const IndexPage = ({ location, setContents }) => {
 		<div id={`index`}>
 			<SEO
 				pageTitle={`About`}
-				desc={`Learn about who I am and what I do.`}
+				desc={`Learn about who I am and what I do!`}
 				location={location}
 			/>
 
