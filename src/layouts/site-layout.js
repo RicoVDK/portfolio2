@@ -65,8 +65,8 @@ export const MobileSiteLayout = ({ location, children }) => {
 			</div>
 			
 			{/** Fade. */}
-			<div className={`absolute w-28 h-28 tablet:w-40 tablet:h-40 z-30 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-30 tablet:-translate-y-36 overflow-hidden pointer-events-none`}>
-				<div className={`relative w-full h-full bottom-0 transform translate-y-1/2 bg-gradient-radial from-gray-900 to-transparent`} />
+			<div className={`absolute w-24 h-24 tablet:w-40 tablet:h-40 z-30 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-20 tablet:-translate-y-36 overflow-hidden pointer-events-none`}>
+				<div className={`relative w-full h-full bottom-0 transform translate-y-1/2 bg-gradient-radial from-gray-900 via-gray-900 to-transparent`} />
 			</div>
 		</div>
 	)
