@@ -30,8 +30,14 @@ module.exports = {
       options: {
         host: `https://www.ricosoftworks.com`,
         sitemap: `https://www.ricosoftworks.com/sitemap.xml`,
+        resolveEnv: () => 'production',
         env: {
-          policy: [{ userAgent: '*', allow: '/' }]
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
+          }
         }
       }
     },
