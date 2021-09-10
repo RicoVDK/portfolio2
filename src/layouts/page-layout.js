@@ -165,7 +165,7 @@ export const MobilePageLayout = ({
 				</div>
 
 				<div ref={pageScroller} className={`absolute w-full h-full overflow-y-scroll pt-6 pb-10 tablet:pb-14 pl-6 pr-3`}>
-					<div className={`relative flex flex-col justify-evenly items-center w-full max-w-400px border border-red-600 bg-red-600 bg-opacity-10 rounded-3xl p-4 m-auto`}>
+					{/* <div className={`relative flex flex-col justify-evenly items-center w-full max-w-400px border border-red-600 bg-red-600 bg-opacity-10 rounded-3xl p-4 m-auto`}>
 						<i className={`fas fa-exclamation-triangle text-red-600 text-4xl`} />
 
 						<div className={`relative text-center text-red-600 text-sm pt-4 font-bold`}>
@@ -176,7 +176,7 @@ export const MobilePageLayout = ({
 							<br />
 							I apologize for the inconvenience.
 						</div>
-					</div>
+					</div> */}
 
 					{children}
 				</div>

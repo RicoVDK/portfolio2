@@ -27,13 +27,6 @@ export const MobileSiteLayout = ({ location, children }) => {
 		circleClickEffect(vRef.current);
 	}
 
-	useLayoutEffect(() => {
-		if (!isBrowser)
-			return;
-
-		document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
-	}, [isBrowser]);
-
 	return (
 		<div
 			id={`page-wrapper`}
