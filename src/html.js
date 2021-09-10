@@ -1,12 +1,15 @@
 import React from "react"
 import PropTypes from "prop-types"
 
+import FavIcon from '/src/images/favicon.png';
+
 export default function HTML(props) {
   return (
-    <html {...props.htmlAttributes}>
+    <html {...props.htmlAttributes} lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+        <link rel="shortcut icon" type="image/png" href={FavIcon}/>
         {/* <meta
           name="viewport"
           content="width=device-width, initial-scale=1, shrink-to-fit=no"

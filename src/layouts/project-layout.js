@@ -19,6 +19,7 @@ const ProjectLayout = ({
 		<SEO
 			pageTitle={`Projects > ${project.current.displayName}`}
 			desc={project.current.description.replace('/<br/>/g', ' ')}
+			img={project.current.img}
 			location={location}
 		/>
 	);

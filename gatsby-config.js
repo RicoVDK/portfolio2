@@ -44,7 +44,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-hotjar`,
       options: {
-        includeInDevelopment: true, // optional parameter to include script in development
+        includeInDevelopment: false, // optional parameter to include script in development
         id: 2596412,
         sv: 6,
       },

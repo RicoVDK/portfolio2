@@ -141,13 +141,13 @@ export const MobilePageLayout = ({
 
 							<div className={`relative w-full flex-grow`}>
 								<div className={`absolute w-full h-full`}>
-									<div className={`relative flex flex-col w-full h-full pt-4 pb-10 tablet:pb-14 px-1 overflow-hidden`}>
+									<div className={`relative flex flex-col w-full h-full pt-2 tablet:pt-4 pb-10 tablet:pb-14 px-1 overflow-hidden`}>
 
 										<div className={`absolute w-full h-4 top-0 z-10 pointer-events-none`}>
 											<div className={`relative w-full h-full bg-gradient-to-t from-transparent to-gray-900`}></div>
 										</div>
 
-										<TextSubTitle className={`relative block text-center w-full pb-4`}>
+										<TextSubTitle className={`relative block text-center w-full pb-2 tablet:pb-4`}>
 											Page contents
 										</TextSubTitle>
 
