@@ -19,6 +19,7 @@ export default function HTML(props) {
         <meta name="description" content={siteMetadata.desc} />
 
         <meta property="og:url" content={siteMetadata.siteUrl} />
+        <meta property="og:type" content={`website`} />
         <meta property="og:title" content={siteMetadata.title} />
         <meta property="og:description" content={siteMetadata.desc} />
 			  <meta property="og:image" content={`${siteMetadata.siteUrl}${OGIMG}`} />
