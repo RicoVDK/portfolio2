@@ -15,19 +15,19 @@ export default function HTML(props) {
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
 
-			  <meta name="image" content={`${siteMetadata.siteUrl}/${OGIMG}`} />
+			  <meta name="image" content={`${siteMetadata.siteUrl}${OGIMG}`} />
         <meta name="description" content={siteMetadata.desc} />
 
         <meta property="og:url" content={siteMetadata.siteUrl} />
         <meta property="og:title" content={siteMetadata.title} />
         <meta property="og:description" content={siteMetadata.desc} />
-			  <meta property="og:image" content={`${siteMetadata.siteUrl}/${OGIMG}`} />
+			  <meta property="og:image" content={`${siteMetadata.siteUrl}${OGIMG}`} />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@ricovdk" />
         <meta name="twitter:title" content={siteMetadata.title} />
         <meta name="twitter:description" content={siteMetadata.desc} />
-			  <meta name="twitter:image" content={`${siteMetadata.siteUrl}/${TwitterIMG}`} />
+			  <meta name="twitter:image" content={`${siteMetadata.siteUrl}${TwitterIMG}`} />
 
         <link rel="shortcut icon" type="image/png" href={FavIcon}/>
         {/* <meta
