@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 
 import FavIcon from '/src/images/favicon.png';
 import OGIMG from '/src/images/og-img.png';
+import TwitterIMG from '/src/images/twitter-img.png';
 
 import { siteMetadata } from '/gatsby-config';
 
@@ -22,11 +23,11 @@ export default function HTML(props) {
         <meta property="og:description" content={siteMetadata.desc} />
 			  <meta name="og:image" content={ OGIMG } />
 
-        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@ricovdk" />
         <meta name="twitter:title" content={siteMetadata.title} />
         <meta name="twitter:description" content={siteMetadata.desc} />
-			  <meta name="twitter:image" content={ OGIMG } />
+			  <meta name="twitter:image" content={ TwitterIMG } />
 
         <link rel="shortcut icon" type="image/png" href={FavIcon}/>
         {/* <meta
