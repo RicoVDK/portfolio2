@@ -4,15 +4,29 @@ import PropTypes from "prop-types"
 import FavIcon from '/src/images/favicon.png';
 import OGIMG from '/src/images/og-img.png';
 
+import { siteMetadata } from '/gatsby-config';
+
 export default function HTML(props) {
   return (
     <html {...props.htmlAttributes} lang="en">
       <head>
         <meta charSet="utf-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-			  <meta name="twitter:image" content={ OGIMG } />
-			  <meta name="og:image" content={ OGIMG } />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+
 			  <meta name="image" content={ OGIMG } />
+        <meta name="description" content={siteMetadata.desc} />
+
+        <meta property="og:url" content={location.href} />
+        <meta property="og:title" content={siteMetadata.title} />
+        <meta property="og:description" content={siteMetadata.desc} />
+			  <meta name="og:image" content={ OGIMG } />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:creator" content="@ricovdk" />
+        <meta name="twitter:title" content={siteMetadata.title} />
+        <meta name="twitter:description" content={siteMetadata.desc} />
+			  <meta name="twitter:image" content={ OGIMG } />
 
         <link rel="shortcut icon" type="image/png" href={FavIcon}/>
         {/* <meta

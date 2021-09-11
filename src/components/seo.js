@@ -16,20 +16,7 @@ const SEO = ({
 
 	return (
 		<Helmet>
-			<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
-
 			<title>{displayTitle}</title>
-			<meta name="description" content={desc} />
-
-			<meta property="og:url" content={location.href} />
-			{ isPost ? <meta property="og:type" content="article" /> : null }
-			<meta property="og:title" content={displayTitle} />
-			<meta property="og:description" content={desc} />
-
-			<meta name="twitter:card" content="summary_large_image" />
-			<meta name="twitter:creator" content="@ricovdk" />
-			<meta name="twitter:title" content={displayTitle} />
-			<meta name="twitter:description" content={desc} />
 		</Helmet>
 	)
 }
