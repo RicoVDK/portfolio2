@@ -21,7 +21,7 @@ export default function HTML(props) {
         <meta property="og:url" content={siteMetadata.siteUrl} />
         <meta property="og:title" content={siteMetadata.title} />
         <meta property="og:description" content={siteMetadata.desc} />
-			  <meta name="og:image" content={ OGIMG } />
+			  <meta property="og:image" content={ OGIMG } />
 
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:creator" content="@ricovdk" />
