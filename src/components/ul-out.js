@@ -8,7 +8,7 @@ const ULOut = ({
 	return (
 		<ul
 			id={id}
-			className={`list-disc list-outside ${className}`}
+			className={`list-disc list-outside pl-6 ${className}`}
 		>
 			{children}
 		</ul>

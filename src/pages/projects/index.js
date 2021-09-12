@@ -12,6 +12,7 @@ import TextSubText from '/src/components/text/text-subtext';
 import TextLink from '/src/components/text/text-link';
 import TextBold from '/src/components/text/text-bold';
 import TextItalic from '/src/components/text/text-italic';
+import TextCenter from '/src/components/text/text-center';
 import SEO from '/src/components/seo';
 
 import Projects from '/project-index';
@@ -20,6 +21,10 @@ import { siteMetadata } from '/gatsby-config';
 const ProjectsPage = ({ location, setContents, }) => {
 	const [results, setResults] = useState(Projects);
 	const [waiting, setWaiting] = useState(false);
+	const [counts, setCounts] = useState({
+		available: 0,
+		unavailable: 0,
+	});
 
 	const getResults = () => {
 		if (waiting) {
@@ -53,7 +58,16 @@ const ProjectsPage = ({ location, setContents, }) => {
 			{ displayName: 'Search', id: 'search', children: [] },
 			{ displayName: 'Results', id: 'results', children: results },
 		]);
-	}, [setContents, results]);
+
+		setCounts({
+			available: results.reduce((count, result) => (!result.disabled ? (count || 0) + 1 : count), 0),
+			unavailable: results.reduce((count, result) => (result.disabled ? (count || 0) + 1 : count), 0),
+		})
+	}, [setContents, setCounts, results]);
+
+	useLayoutEffect(() => {
+		console.log(counts);
+	}, [counts])
 
 	return (
 		<div id={`projects`}>
@@ -64,7 +78,7 @@ const ProjectsPage = ({ location, setContents, }) => {
 			/>
 
 			<TextSubText wrapClassName={`text-center pt-6`}>
-				This page contains posts about the projects that I was involved in.<br />
+				This page contains posts about some of the projects that I was involved in.<br />
 				<br />
 				Use the <TextBold>options toggle beneath the search bar</TextBold> to allow for tag filtering.<br />
 				Is your project of interest not available or not listed?<br />
@@ -87,6 +101,15 @@ const ProjectsPage = ({ location, setContents, }) => {
 				<TextTitle id={`results`}>
 					Results
 				</TextTitle>
+				{ results.length > 0 && !waiting &&
+					<TextCenter className={`pb-12`}>
+						<TextBold>{counts.available}</TextBold> available {counts.available < 2 ? `project was` : `projects were`} found!<br />
+						{ counts.unavailable > 0 && 
+							<span className={`text-sm italic text-gray-400`}>
+								<TextBold>{counts.unavailable}</TextBold> of which {counts.unavailable < 2 ? `is` : `are`} unavailable.
+							</span>}
+					</TextCenter>
+				}
 				
 				{getResults()}
 			</div>
