@@ -99,7 +99,7 @@ const ProjectsPage = ({ location, setContents, }) => {
 				</TextTitle>
 				{ results.length > 0 && !waiting &&
 					<TextCenter className={`pb-12`}>
-						<TextBold>{counts.available}</TextBold> available {counts.available < 2 ? `project was` : `projects were`} found!<br />
+						<TextBold>{counts.available}</TextBold> available {counts.available < 2 ? (counts.available === 0 ? `projects were` : `project was`) : `projects were`} found!<br />
 						{ counts.unavailable > 0 && 
 							<span className={`text-sm italic text-gray-400`}>
 								<TextBold>{counts.unavailable}</TextBold> of which {counts.unavailable < 2 ? `is` : `are`} unavailable.
