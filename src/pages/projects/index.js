@@ -65,10 +65,6 @@ const ProjectsPage = ({ location, setContents, }) => {
 		})
 	}, [setContents, setCounts, results]);
 
-	useLayoutEffect(() => {
-		console.log(counts);
-	}, [counts])
-
 	return (
 		<div id={`projects`}>
 			<SEO
