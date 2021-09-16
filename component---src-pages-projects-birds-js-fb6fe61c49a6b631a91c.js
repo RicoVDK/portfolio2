@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[600],{3726:function(t,e,o){o.r(e);var n=o(7294),r=o(1784);e.default=function(t){var e=t.location,o=(t.setModal,t.setContents);return(0,n.useLayoutEffect)((function(){o([])}),[o]),n.createElement(r.Z,{location:e,projectId:"entry-birds"})}}}]);
+//# sourceMappingURL=component---src-pages-projects-birds-js-fb6fe61c49a6b631a91c.js.map

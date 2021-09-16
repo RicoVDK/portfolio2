@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[952],{9999:function(t,e,o){o.r(e);var n=o(7294),r=o(1784);e.default=function(t){var e=t.location,o=(t.setModal,t.setContents);return(0,n.useLayoutEffect)((function(){o([])}),[o]),n.createElement(r.Z,{location:e,projectId:"entry-dreamventure"})}}}]);
+//# sourceMappingURL=component---src-pages-projects-dreamventure-js-7f4489f39d45623e9858.js.map

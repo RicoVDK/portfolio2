@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkportfolio=self.webpackChunkportfolio||[]).push([[549],{5824:function(t,e,o){o.r(e);var n=o(7294),a=o(1784);e.default=function(t){var e=t.location,o=(t.setModal,t.setContents);return(0,n.useLayoutEffect)((function(){o([])}),[o]),n.createElement(a.Z,{location:e,projectId:"entry-phantasma"})}}}]);
+//# sourceMappingURL=component---src-pages-projects-phantasma-js-9cc77732059243e2be3d.js.map
