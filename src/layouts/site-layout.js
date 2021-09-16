@@ -65,7 +65,7 @@ export const MobileSiteLayout = ({ location, children }) => {
 			</div>
 			
 			{/** Fade. */}
-			<div className={`absolute w-24 h-24 tablet:w-40 tablet:h-40 z-30 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-19 tablet:-translate-y-36 overflow-hidden pointer-events-none`}>
+			<div className={`absolute w-28 h-28 tablet:w-40 tablet:h-40 z-30 left-1/2 bottom-0 transform -translate-x-1/2 -translate-y-19 tablet:-translate-y-36 overflow-hidden pointer-events-none`}>
 				<div className={`relative w-full h-full bottom-0 transform translate-y-1/2 bg-gradient-radial from-gray-900 via-gray-900 to-transparent`} />
 			</div>
 		</div>
@@ -93,10 +93,9 @@ export const DesktopSiteLayout = ({ location, children }) => {
 					<div className={`relative flex flex-col w-1/4 min-w-72`}>
 						{/** Title. */}
 						<div className={`relative flex flex-col justify-center items-center w-full h-24 border-r border-primary overflow-hidden`}>
-							{/* <SpinningCog
-								wrapClassName={`top-1/2 left-full transform -translate-x-1/2 -translate-y-1/2`}
-								cogClassName={`text-10xl tablet:text-12xl text-gray-800 animate-spin-slower-right`}
-							/> */}
+							<div className={`absolute flex justify-center items-center w-20 h-20 left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-800 border-4 border-primary`}>
+								<i className={`fas fa-cog text-6xl text-primary`} />
+							</div>
 
 							<SiteTitleTag />
 

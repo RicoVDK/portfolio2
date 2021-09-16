@@ -16,6 +16,9 @@ import IMGGrid, {
 	Entry as IMGGridEntry
 } from '/src/components/img-grid';
 
+import Header from '/src/images/projects/2_5d-unity-prototype/25d-unity-header.png';
+import Code01 from '/src/images/projects/2_5d-unity-prototype/25d-unity-code01.png';
+
 const UnityPrototype25D = ({ location, setModal, setContents }) => {
 	useLayoutEffect(() => {
 		setContents([]);
@@ -23,7 +26,16 @@ const UnityPrototype25D = ({ location, setModal, setContents }) => {
 
 	return (
 		<ProjectLayout location={location} projectId={`entry-2_5d-unity-prototype`}>
-			
+			<ProjectBanner
+				id={`project`}
+				className={`mb-6`}
+				imgTitle={`A look at placeholder settings UI`}
+				date={`--/06/2020`}
+				img={Header}
+				setModal={setModal}
+			>
+				2.5D Unity Prototype
+			</ProjectBanner>
 		</ProjectLayout>
 	)
 }

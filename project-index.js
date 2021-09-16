@@ -4,6 +4,11 @@ import EntryPortfolioIcon from '/src/images/projects/ricosoftworks/ricosoftworks
 import EntryEternaIcon from '/src/images/projects/eterna/eterna-icon.png';
 import EntryDartScoreIcon from '/src/images/projects/dartscore/dartscore-icon.png';
 import EntryPrinterIcon from '/src/images/projects/3d-printer-dashboard/printer-icon.png';
+import Entry25DUnityIcon from '/src/images/projects/2_5d-unity-prototype/25d-unity-icon.png';
+import EntryBirdsIcon from '/src/images/projects/birds/birds-icon.png';
+import EntryPhantasmaIcon from '/src/images/projects/phantasma/phantasma-icon.png';
+import EntryVVDialogueIcon from '/src/images/projects/vvdialogue/vvdialogue-icon.png';
+import EntryDreamventureIcon from '/src/images/projects/dreamventure/dreamventure-icon.png';
 
 const Projects = [
 	{
@@ -72,7 +77,7 @@ const Projects = [
 		id: 'entry-birds',
 		url: 'birds',
 		updated: '--/--/----',
-		img: null,
+		img: EntryBirdsIcon,
 		disabled: true,
 		children: [],
 		tags: [
@@ -93,7 +98,7 @@ const Projects = [
 		id: 'entry-vibrant-venture',
 		url: 'vibrant-venture',
 		updated: '--/--/----',
-		img: null,
+		img: EntryVVDialogueIcon,
 		disabled: true,
 		children: [],
 		tags: [
@@ -154,7 +159,7 @@ const Projects = [
 		id: 'entry-phantasma',
 		url: 'phantasma',
 		updated: '--/--/----',
-		img: null,
+		img: EntryPhantasmaIcon,
 		disabled: true,
 		children: [],
 		tags: [
@@ -168,15 +173,15 @@ const Projects = [
 	{
 		displayName: '2.5D Unity Prototype',
 		description: `
-			A school "exam practice" project I asked to work on in order to improve my skills in Unity.<br/>
+			A school "exam practice" project I asked to work on in order to improve my skills in Unity C#.<br/>
 			<br/>
 			This is where I first got to tackle 3D, in an effort to make a base framework
-			for a top-down puzzle adventure game, in a very small timeframe.
+			for a top-down puzzle adventure game in a very small timeframe.
 		`,
 		id: 'entry-2_5d-unity-prototype',
 		url: '2_5d-unity-prototype',
-		updated: '--/--/----',
-		img: null,
+		updated: '16/09/2021',
+		img: Entry25DUnityIcon,
 		disabled: true,
 		children: [],
 		tags: [
@@ -191,11 +196,14 @@ const Projects = [
 		displayName: 'Dreamventure',
 		description: `
 			My first Unity school project that involved us having to make a 2D adventure game.<br/>
+			<br />
+			The player wakes up in a dream world of their own and tries to find their way back to reality, 
+			while encountering strange enemies and puzzles.
 		`,
 		id: 'entry-dreamventure',
 		url: 'dreamventure',
 		updated: '--/--/----',
-		img: null,
+		img: EntryDreamventureIcon,
 		disabled: true,
 		children: [],
 		tags: [

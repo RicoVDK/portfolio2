@@ -68,7 +68,7 @@ const ProjectEntry = ({
 
 					{/** Disabled. */}
 					{disabled && <div className={`absolute w-full`}>
-						<div className={`relative w-full px-4 py-12 text-center italic text-xl bg-black bg-opacity-25`}>
+						<div className={`relative w-full px-4 py-6 my-12 text-center italic text-xl bg-black bg-opacity-75`}>
 							This entry is currently unavailable
 						</div>
 					</div>}
