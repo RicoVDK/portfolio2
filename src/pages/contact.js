@@ -45,7 +45,7 @@ const ContactPage = ({ location, setContents }) => {
 			</TextTitle>
 			<div className={`w-full px-4 pb-4 text-center`}>
 				<TextItalic>
-					Updated 10/09/2021
+					Updated 22/09/2021
 				</TextItalic><br/>
 				{/* <br/>
 				<TextCenterLeft>
@@ -59,7 +59,7 @@ const ContactPage = ({ location, setContents }) => {
 				className={`m-auto`}
 				contents={[
 					{ displayName: <JTypeHours hours={`(32-40h p/w)`}>Fulltime</JTypeHours>, tnf: false },
-					{ displayName: <JTypeHours hours={`(8-32h p/w)`}>Parttime</JTypeHours>, tnf: true },
+					{ displayName: <JTypeHours hours={`(8-30h p/w)`}>Parttime</JTypeHours>, tnf: false },
 					{ displayName: <JTypeHours hours={`-`}>Commission</JTypeHours>, tnf: false },
 					{ displayName: <JTypeHours hours={`-`}>Volunteer</JTypeHours>, tnf: false },
 				]}

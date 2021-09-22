@@ -240,13 +240,12 @@ const IndexPage = ({ location, setContents }) => {
 					</TimelineEntry> */}
 					<TimelineEntry
 						id={`history-present-day`}
-						date={`${date.current}.`}
+						date={`2021 Sep. ${date.current}.`}
 					>
 						<TextSubTitle>Present Day</TextSubTitle><br/>
 						<br/>
-						I am currently looking for work!<br />
-						<br />
-						Please <TextLink to={`/contact`}>contact me</TextLink> if you're interested.
+						Currently working as a Software Engineer and developing 2 prototypes in my spare time:<br />
+						<TextLink to={`/projects/eterna`}>Project Eterna</TextLink> {'&'} <TextLink to={`/projects/birds`}>Project Birds</TextLink>.
 					</TimelineEntry>
 				</Timeline>
 			</div>
@@ -255,7 +254,7 @@ const IndexPage = ({ location, setContents }) => {
 				Thank you for your interest thus far!<br/>
 				<br/>
 				personal details are excluded on this website for privacy reasons.<br/>
-				For any additional questions, like requesting my CV, please feel free to contact me.<br/>
+				For any additional questions, please feel free to contact me.<br/>
 				<br/>
 				Contact info is shared on <TextLink to={`/contact`}>this page</TextLink>.
 			</TextSubText>
