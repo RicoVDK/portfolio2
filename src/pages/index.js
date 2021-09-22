@@ -240,11 +240,11 @@ const IndexPage = ({ location, setContents }) => {
 					</TimelineEntry> */}
 					<TimelineEntry
 						id={`history-present-day`}
-						date={`2021 Sep. ${date.current}.`}
+						date={`2021 Sep. - ${date.current}.`}
 					>
 						<TextSubTitle>Present Day</TextSubTitle><br/>
 						<br/>
-						Currently working as a Software Engineer and developing 2 prototypes in my spare time:<br />
+						Currently working as a Software Developer and developing 2 prototypes in my spare time:<br />
 						<TextLink to={`/projects/eterna`}>Project Eterna</TextLink> {'&'} <TextLink to={`/projects/birds`}>Project Birds</TextLink>.
 					</TimelineEntry>
 				</Timeline>
