@@ -28,25 +28,26 @@ const Projects = [
 			Tags.Frontend,
 		]
 	},
-	// {
-	// 	displayName: 'Semag Games\' Website',
-	// 	description: `
-	// 		I lend a hand in developing the company's website in order to help out my friend.<br/>
-	// 		<br/>
-	// 		Here you can also read about how I approached making existing content responsive,
-	//		as well as how I implemented the mobile nav menu.
-	// 	`,
-	// 	id: 'entry-semag-website',
-	//	url: '#',
-	//	img: null,
-	// 	disabled: false,
-	// 	children: [],
-	// 	tags: [
-	// 		Tags.WebDev, Tags.Complete,
-	// 		Tags.Contribution, Tags.ReactJS,
-	// 		Tags.Frontend,
-	// 	]
-	// },
+	{
+		displayName: 'Semag Games\' Website',
+		description: `
+			I lend a hand in developing the company's website in order to help out my friend.<br/>
+			<br/>
+			I made existing content responsive,
+			as well as implemented the mobile nav menu.
+		`,
+		id: 'entry-semag-website',
+		url: '#',
+		updated: '--/--/----',
+		img: null,
+		disabled: true,
+		children: [],
+		tags: [
+			Tags.WebDev, Tags.Complete,
+			Tags.Contribution, Tags.ReactJS,
+			Tags.Frontend,
+		]
+	},
 	{
 		displayName: 'Project Eterna',
 		description: `

@@ -12,6 +12,7 @@ import TextSubText from '/src/components/text/text-subtext';
 import TextSubTitle from '/src/components/text/text-subtitle';
 import TextMark from '/src/components/text/text-mark';
 import TextBold from '/src/components/text/text-bold';
+import TextItalic from '/src/components/text/text-italic';
 import TextLink from '/src/components/text/text-link';
 import AffinityCard from '/src/components/affinity-card';
 import SEO from '/src/components/seo';
@@ -34,7 +35,7 @@ const IndexPage = ({ location, setContents }) => {
 				{ displayName: 'Writing Vibrant Venture Dialogue', id: 'history-vv-dialogue', children: [] },
 				{ displayName: 'Graduating', id: 'history-graduating', children: [] },
 				{ displayName: 'Rico\'s Softworks', id: 'history-ricosoftworks', children: [] },
-				// { displayName: 'Semag Games\' Website', id: 'history-semag-website', children: [] },
+				{ displayName: 'Semag Games\' Website', id: 'history-semag-website', children: [] },
 				{ displayName: 'Present Day', id: 'history-present-day', children: [] },
 			] },
 		])
@@ -186,7 +187,7 @@ const IndexPage = ({ location, setContents }) => {
 					>
 						<TextSubTitle>Writing Vibrant Venture Dialogue</TextSubTitle><br/>
 						<br/>
-						A good friend of mine and owner of <TextMark>Semag Games</TextMark> gave me the opportunity to write dialogue for his game <TextLink
+						A good friend of mine and owner of <TextLink to={`https://www.semag-games.com/`} external={true}>Semag Games</TextLink> gave me the opportunity to write dialogue for his game <TextLink
 							external={true}
 							to={`https://store.steampowered.com/app/1264520/Vibrant_Venture/`}
 						>Vibrant Venture</TextLink>.<br/>
@@ -222,7 +223,7 @@ const IndexPage = ({ location, setContents }) => {
 						<br />
 						You can read more about the development of this website <TextLink to={`/projects/ricosoftworks`}>here</TextLink>.
 					</TimelineEntry>
-					{/* <TimelineEntry
+					<TimelineEntry
 						id={`history-semag-website`}
 						date={`2021 Aug.`}
 					>
@@ -236,15 +237,18 @@ const IndexPage = ({ location, setContents }) => {
 						and helped him get a hang of ReactJS {'&'} Sass.<br/>
 						<br/>
 						I also made the website responsive, added a mobile nav bar, and helped fixing styling related issues.<br/>
-						You can read more on this <TextMark>here</TextMark>.
-					</TimelineEntry> */}
+						<br />
+						...More than just advice, in the end.<br />
+						<br />
+						<TextLink to={`https://www.semag-games.com/`} external={true}>View the Semag Games website</TextLink>
+					</TimelineEntry>
 					<TimelineEntry
 						id={`history-present-day`}
 						date={`2021 Sep. - ${date.current}.`}
 					>
 						<TextSubTitle>Present Day</TextSubTitle><br/>
 						<br/>
-						Currently working as a Software Developer and developing 2 prototypes in my spare time:<br />
+						Currently working as a Software Engineer and developing 2 prototypes in my spare time:<br />
 						<TextLink to={`/projects/eterna`}>Project Eterna</TextLink> {'&'} <TextLink to={`/projects/birds`}>Project Birds</TextLink>.
 					</TimelineEntry>
 				</Timeline>
