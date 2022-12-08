@@ -15,4 +15,9 @@ To install, run `npm i --g gatsby-cli`.
 4. Run `gatsby develop`
 5. Voila, `localhost:8000` is now yours.
 
+## Branches
+- `source`
+  - Development.
+- `main`
+  - Production.
 
