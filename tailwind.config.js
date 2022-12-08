@@ -100,7 +100,8 @@ module.exports = {
       borderWidth: ['responsive'],
       margin: ['last'],
       transitionProperty: ['hover'],
-      display: ['hover', 'group-hover']
+      display: ['hover', 'group-hover'],
+      backgroundColor: ['even'],
     },
   },
   plugins: [],
