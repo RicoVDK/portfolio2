@@ -102,6 +102,7 @@ module.exports = {
       transitionProperty: ['hover'],
       display: ['hover', 'group-hover'],
       backgroundColor: ['even'],
+      border: ['last'],
     },
   },
   plugins: [],

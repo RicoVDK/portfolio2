@@ -49,23 +49,21 @@ const CdPage = ({ location, setContents }) => {
 
 			<table className={`block w-full whitespace-nowrap overflow-x-scroll`}>
 				<thead>
-					<tr>
-						<th>Owned</th>
-						<th>Artist</th>
-						<th>Title</th>
-						<th>Info</th>
-						<th>Purchase</th>
+					<tr className={`bg-gray-700`}>
+						<th className={`border-r border-gray-800`}>Artist</th>
+						<th className={`border-r border-gray-800`}>Title</th>
+						<th className={`border-r border-gray-800`}>Info</th>
+						<th className={`border-l border-gray-800`}>Purchase</th>
 					</tr>
 				</thead>
 
 				<tbody>
 					{cdCollection.getCds().map((cd, index) => (
-						<tr key={index} className={`even:bg-gray-800`}>
-							<td className={`align-top p-2`}>{cd.isOwned() ? "Yes" : "No"}</td>
-							<td className={`align-top p-2`}>{cd.getArtist()}</td>
-							<td className={`align-top p-2`}>{cd.getTitle()}</td>
-							<td className={`align-top p-2`}><TextLink to={cd.getInfoLink()} external={true}>{cd.getInfoLink()}</TextLink></td>
-							<td className={`align-top p-2`}>
+						<tr key={index} className={`hover:bg-gray-800 border-gray-700 border-t last:border-b`}>
+							<td className={`align-top p-2 border-r border-gray-700`}>{cd.getArtist()}</td>
+							<td className={`align-top p-2 border-r border-gray-700`}>{cd.getTitle()}</td>
+							<td className={`align-top p-2 border-r border-gray-700`}><TextLink to={cd.getInfoLink()} external={true}>{cd.getInfoLink()}</TextLink></td>
+							<td className={`align-top p- border-r border-gray-700`}>
 								<ULOut>
 									{cd.getPurchaseLinks().map((link, index) => (
 										<li key={index}><TextLink to={link} external={true}>{link}</TextLink></li>
