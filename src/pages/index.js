@@ -49,6 +49,20 @@ const IndexPage = ({ location, setContents }) => {
 				location={location}
 			/>
 
+			<div className={`relative flex flex-col justify-evenly items-center w-full max-w-600px border border-yellow-600 bg-yellow-500 bg-opacity-10 rounded-3xl p-4 m-auto`}>
+				<i className={`fas fa-exclamation-triangle text-yellow-600 text-4xl`} />
+
+				<div className={`relative text-center text-yellow-600 text-sm pt-4 font-bold`}>
+					This website no longer represents my current skillsets and ongoing activities since it was written well over a year ago.<br/>
+					It is slated for a large overhaul and redesign some time in the far future.<br/>
+					<br/>
+					If you have any questions about my present day activities, you can reach out to me through the <TextLink to={`/contact`}>contact page</TextLink>.<br/>
+					Please note that I may not always be able to respond very soon.<br/>
+					<br/>
+					<TextItalic>- 10/12/2022, Rico -</TextItalic>
+				</div>
+			</div>
+
 			<TextSubText
 				id={'intro'}
 				wrapClassName={`text-center pt-4`}
