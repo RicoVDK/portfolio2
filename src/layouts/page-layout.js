@@ -29,7 +29,7 @@ export const PageLayout = ({
 	const lastPathName = useRef('');
 
 	const getInnerContents = (children) => {
-		if (children.length > 0)
+		if ((children?.length ?? 0) > 0)
 			return buildPageContentEntries(children);
 
 		// Otherwise return void.

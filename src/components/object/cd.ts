@@ -4,7 +4,6 @@ export class Cd
         private artist: string,
         private title: string,
         private infoLink: string,
-        private owned: boolean,
         private purchaseLinks: Array<string>,
     ) {
     }
@@ -22,11 +21,6 @@ export class Cd
     getInfoLink(): string
     {
         return this.infoLink;
-    }
-
-    isOwned(): boolean
-    {
-        return this.owned;
     }
 
     getPurchaseLinks(): Array<string>
