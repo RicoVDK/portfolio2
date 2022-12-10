@@ -5,7 +5,6 @@ module.exports = {
     title: "Rico's Softworks",
     desc: "Learn about who I am and what I do! Here you can take a look at my past and current projects, and get into contact with me.",
     socials: {
-      twitter: "https://twitter.com/ricovdk",
       mail: "work@ricosoftworks.com",
       gitlab: "https://gitlab.com/rico_vdk/",
       git: "https://github.com/RicoVDK",

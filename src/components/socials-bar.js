@@ -16,12 +16,12 @@ const SocialsBar = ({ className }) => {
 			>
 				<i className={`fab fa-gitlab text-2xl`} />
 			</SocialButton>
-			<SocialButton
+			{/* <SocialButton
 				className={`bg-blue-500 hover:bg-blue-400 ${buttonScaleHover}`}
 				to={siteMetadata.socials.twitter}
 			>
 				<i className={`fab fa-twitter text-2xl`} />
-			</SocialButton>
+			</SocialButton> */}
 			<SocialButton
 				className={`bg-transparent hover:text-gray-400 ${buttonScaleHover}`}
 				to={siteMetadata.socials.git}
