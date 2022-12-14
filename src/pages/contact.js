@@ -119,17 +119,6 @@ const ContactPage = ({ location, setContents }) => {
 							{siteMetadata.socials.mail}<i className={`far fa-copy text-sm pl-2`} />
 						</TextClipboard>
 					},
-					{
-						icon: 'fab fa-twitter',
-						displayName: 'Twitter',
-						child: <TextLink
-							className={`block text-center w-full truncate`}
-							to={siteMetadata.socials.twitter}
-							external={true}
-						>
-							@ricovdk<i className={`fas fa-external-link-alt text-xs pl-2`} />
-						</TextLink>
-					},
 				]}
 			/>
 		</div>
