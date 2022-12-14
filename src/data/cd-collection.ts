@@ -48,7 +48,6 @@ export const cdCollection: CdCollection = new CdCollection([
         "https://vgmdb.net/album/45405",
         [
             "https://www.cdjapan.co.jp/product/TKCA-74120",
-            "https://www.amazon.com/When-Marnie-Was-There-S-T/dp/B00UA80SPE",
         ],
     ),
     new Cd(
@@ -57,39 +56,6 @@ export const cdCollection: CdCollection = new CdCollection([
         "https://vgmdb.net/album/23022",
         [
             "https://solarisjapan.com/products/tv-animation-ookami-to-koushinryou-o-s-t-ookami-to-tabi-no-ongaku#",
-            "https://www.amazon.com/%E7%8B%BC%E3%81%A8%E9%A6%99%E8%BE%9B%E6%96%99-original-soundtracks-TV%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9/dp/B00120VGZA/ref=pd_bxgy_img_sccl_1/144-7725087-0919940?pd_rd_w=LmmkP&content-id=amzn1.sym.7f0cf323-50c6-49e3-b3f9-63546bb79c92&pf_rd_p=7f0cf323-50c6-49e3-b3f9-63546bb79c92&pf_rd_r=0XV0V962VXEBNQA4HF1X&pd_rd_wg=GURC4&pd_rd_r=f32feeb4-d849-43bb-bfc2-58bbc8f145a9&pd_rd_i=B00120VGZA&psc=1",
-        ],
-    ),
-    new Cd(
-        "Yuji Yoshino",
-        "TV Animation \"Ookami to Koushinryou II\" O.S.T. Ookami to \"Shiawase de ari Tsudzukeru Monogatari\" no Ongaku",
-        "https://vgmdb.net/album/23035",
-        [
-            "https://www.amazon.com/Spice-Wolf-Ii-Original-Soundtrack/dp/B002HUQ1PE",
-        ],
-    ),
-    new Cd(
-        "Choro Club",
-        "ARIA The ANIMATION ORIGINAL SOUNDTRACK",
-        "https://vgmdb.net/album/23380",
-        [
-            "https://www.amazon.com/dp/B002AD9UEW/ref=dm_rwp_pur_lnd_albm_unrg",
-        ],
-    ),
-    new Cd(
-        "Choro Club",
-        "ARIA The NATURAL ORIGINAL SOUNDTRACK due",
-        "https://vgmdb.net/album/23711",
-        [
-            "https://www.amazon.com/ARIA-NATURAL-%E3%82%AA%E3%83%AA%E3%82%B8%E3%83%8A%E3%83%AB%E3%82%B5%E3%82%A6%E3%83%B3%E3%83%89%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF-due-TV%E3%82%B5%E3%83%B3%E3%83%88%E3%83%A9/dp/B002AD9UF6",
-        ],
-    ),
-    new Cd(
-        "Choro Club",
-        "ARIA The ORIGINATION ORIGINAL SOUNDTRACK tre",
-        "https://vgmdb.net/album/25474",
-        [
-            "https://www.amazon.com/Aria-Animation-Senoo/dp/B00120VGZK",
         ],
     ),
     new Cd(
@@ -106,6 +72,14 @@ export const cdCollection: CdCollection = new CdCollection([
         "https://akisai.bandcamp.com/album/images",
         [
             "https://akisai.bandcamp.com/album/images",
+        ],
+    ),
+    new Cd(
+        "Guitar",
+        "Saltykisses",
+        "https://guitarsunkissed.bandcamp.com/album/saltykisses",
+        [
+            "https://www.bol.com/nl/nl/p/saltykisses/1000004006394028/",
         ],
     ),
     new Cd(
@@ -139,24 +113,7 @@ export const cdCollection: CdCollection = new CdCollection([
         "VIOLET EVERGARDEN : Automemories",
         "https://vgmdb.net/album/74032",
         [
-            "https://www.amazon.com/Violet-Evergarden-Original-Soundtrack-EVERGARDEN/dp/B078X9KR96",
             "https://www.cdjapan.co.jp/product/LACA-9573",
-        ],
-    ),
-    new Cd(
-        "Hiroyuki Sawano",
-        "TV animation Gigantic Formula Original Sound Track Vol.1",
-        "https://vgmdb.net/album/25857",
-        [
-            "https://www.amazon.co.uk/Kishin-Taisen-Gigantic-Formula-Soundtrack/dp/B0011EUIVA",
-        ],
-    ),
-    new Cd(
-        "Hiroyuki Sawano",
-        "TV animation Gigantic Formula Original Sound Track Vol.2",
-        "https://vgmdb.net/album/25858",
-        [
-            "https://www.amazon.com/Gigantic-Formula-S-T-2-Hiroyuki-Sawano/dp/B000WGULFG",
         ],
     ),
     new Cd(
@@ -173,7 +130,6 @@ export const cdCollection: CdCollection = new CdCollection([
         "https://vgmdb.net/album/48448",
         [
             "https://www.cdjapan.co.jp/product/SVWC-70040",
-            "https://www.amazon.com/Seven-Deadly-Sins-Original-Soundtrack/dp/B00O6F59OC",
         ],
     ),
     new Cd(
@@ -182,7 +138,6 @@ export const cdCollection: CdCollection = new CdCollection([
         "https://vgmdb.net/album/50415",
         [
             "https://www.cdjapan.co.jp/product/SVWC-70063",
-            "https://www.amazon.com/Seven-Deadly-Anime-Original-Soundtrack/dp/B00STULAV6",
         ],
     ),
 ]);
